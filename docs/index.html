@@ -136,6 +136,13 @@ a.lecrow .lecrow__code{color:var(--subject)}
   font-size:13px;color:var(--ink-3)}
 .foot strong{color:var(--ink-2);font-weight:500}
 main.haspdf{padding-bottom:90px}
+.pdfview{width:100%;height:80vh;min-height:520px;border:1px solid var(--line);
+  border-radius:var(--radius);background:#fff;display:block;margin:20px 0 0}
+.pdfcard{display:block;text-decoration:none;background:var(--tint);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;text-align:center;margin:20px 0 0}
+.pdfcard__title{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:4px}
+.pdfcard__meta{font-size:13.5px;color:var(--ink-2);margin-bottom:14px}
 @media (min-width:700px){.pagehead h1{font-size:36px}.pagehead{padding:46px 0 30px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -340,9 +347,23 @@ function viewLecture(blockId, subjId, code){
     ? `<a href="#/l/${b.id}/${sub.id}/${slug(next.code)}">${esc(next.code)} →</a>`
     : pending ? `<span>${esc(pending.code)} coming</span>` : `<span>End of subject</span>`;
 
-  const notes = Array.isArray(l.notes) && l.notes.length
-    ? `<ul>${l.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`
-    : `<div class="empty">This one is a PDF.<br>Use the download button below.</div>`;
+  let notes;
+  if (Array.isArray(l.notes) && l.notes.length){
+    notes = `<ul>${l.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`;
+  } else if (l.pdf){
+    const src = "pdfs/" + encodeURIComponent(l.pdf);
+    const narrow = window.matchMedia("(max-width: 780px)").matches;
+    notes = narrow
+      ? `<a class="pdfcard" href="${src}" target="_blank" rel="noopener">
+           <div class="pdfcard__title">Open the summary</div>
+           <div class="pdfcard__meta">${esc(l.pdf_note || "PDF")}</div>
+           <span class="btn">Open PDF</span>
+         </a>`
+      : `<iframe class="pdfview" src="${src}#view=FitH"
+           title="${esc(l.title)} summary"></iframe>`;
+  } else {
+    notes = `<div class="empty">Nothing attached to this one yet.</div>`;
+  }
 
   if (l.pdf){
     document.getElementById("bar").innerHTML =
