@@ -1,0 +1,50 @@
+MEDucation site — how it works
+==============================
+
+There are only THREE things in docs/ :
+
+  index.html     the whole website. Never needs editing.
+  content.json   the list of what exists. This is the only file you edit.
+  pdfs/          the PDFs students download.
+
+There is no build step. No Python. No terminal.
+
+
+ADDING A SUMMARY
+----------------
+1. Put the PDF in  docs/pdfs/
+2. Open docs/content.json and add the lecture (or set "published": true)
+3. GitHub Desktop -> Commit -> Push
+
+The site updates itself. Counts, dots, spine, prev/next all follow from
+content.json.
+
+
+WHAT A LECTURE LOOKS LIKE IN content.json
+-----------------------------------------
+  {
+    "code": "LG 4",
+    "title": "Liver",
+    "lecturer": "Dr Jawher Tahir Omer",
+    "published": true,
+    "pdf": "git-pathology-lg-4.pdf",
+    "pdf_note": "3 pages"
+  }
+
+Not ready yet? Same thing with "published": false and no pdf. It shows as a
+greyed "Coming" row so students know it exists.
+
+The PDF filename must match exactly. Lowercase, hyphens, no spaces.
+
+
+IF YOU ASK ANOTHER CHAT FOR HELP
+--------------------------------
+Tell it: "This is a static site. docs/index.html reads docs/content.json in the
+browser. There is no build step. Give me the updated content.json only."
+
+
+ONE CATCH
+---------
+Opening docs/index.html by double-clicking it in Finder will NOT work — browsers
+block reading content.json from a plain file. It only works at the real web
+address. That's normal.
