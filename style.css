@@ -1,0 +1,515 @@
+/* ---------------------------------------------------------------
+   MEDucation — site styles
+   One colour drives a whole page. Set it with a subject class on
+   <body>: subj-pathology, subj-physiology, subj-micro, subj-history,
+   subj-pharm, subj-anatomy.
+   --------------------------------------------------------------- */
+
+:root {
+  --ink:      #17140F;
+  --ink-2:    #5F584E;
+  --ink-3:    #8A8378;
+  --line:     #E5DFD4;
+  --paper:    #FDFCF9;
+  --card:     #FFFFFF;
+
+  --subject:  #17140F;
+  --tint:     #F2EFE9;
+
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:  "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:  "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --gutter: 20px;
+  --radius: 10px;
+}
+
+.subj-brand      { --subject: #1B6E48; --tint: #E7F1EB; }
+.subj-pathology  { --subject: #B3322B; --tint: #FBEAE8; }
+.subj-physiology { --subject: #1B7A4B; --tint: #E4F2EA; }
+.subj-micro      { --subject: #1F5FA8; --tint: #E5EEF9; }
+.subj-history    { --subject: #6B3FA0; --tint: #EFE8F7; }
+.subj-pharm      { --subject: #C2610A; --tint: #FCEDDD; }
+.subj-anatomy    { --subject: #0F6E72; --tint: #E0F0F0; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--subject);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 58px;
+  text-decoration: none;
+}
+
+.mark {
+  width: 26px;
+  height: 26px;
+  flex: none;
+  color: var(--subject);
+}
+
+.mark svg { display: block; width: 100%; height: 100%; }
+
+.wordmark {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.wordmark em { font-style: normal; color: var(--subject); }
+
+.masthead__back {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--ink-2);
+  text-decoration: none;
+  font-family: var(--mono);
+}
+
+.masthead__back:hover { color: var(--subject); }
+
+/* ---------- page head ---------- */
+
+.pagehead { padding: 34px 0 26px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--subject);
+  margin: 0 0 10px;
+}
+
+.pagehead h1 {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 8px;
+}
+
+.pagehead p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+/* ---------- section label ---------- */
+
+.seclabel {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.seclabel::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+section + section { margin-top: 40px; }
+
+/* ---------- block cards (home) ---------- */
+
+.blockcard {
+  display: block;
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--subject);
+  border-radius: var(--radius);
+  padding: 18px 18px 16px;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+
+.blockcard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(23,20,15,.07);
+}
+
+.blockcard__subject {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--subject);
+}
+
+.blockcard__title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 3px 0 12px;
+}
+
+/* progress ticker — one pip per lecture in the block */
+.ticker { display: flex; gap: 5px; margin-bottom: 9px; }
+
+.pip {
+  width: 22px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.pip--done { background: var(--subject); }
+
+.blockcard__count {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+/* ---------- the spine (block page) ---------- */
+
+.spine { list-style: none; margin: 0; padding: 0; }
+
+.spine li { position: relative; padding-left: 30px; }
+
+/* the rule running between nodes */
+.spine li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+
+.spine li:first-child::before { top: 26px; }
+.spine li:last-child::before  { bottom: calc(100% - 26px); }
+
+.node {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--paper);
+}
+
+.node--done { border-color: var(--subject); background: var(--subject); }
+
+.lecrow {
+  display: block;
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.spine li:last-child .lecrow { border-bottom: 0; }
+
+.lecrow__code {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+a.lecrow .lecrow__code { color: var(--subject); }
+
+.lecrow__title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 2px 0 4px;
+}
+
+.lecrow__meta {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.lecrow--soon { opacity: .55; }
+
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--tint);
+  color: var(--subject);
+}
+
+.tag--soon { background: #F0EDE6; color: var(--ink-3); }
+
+/* ---------- exam entry ---------- */
+
+.examcard {
+  display: block;
+  text-decoration: none;
+  background: var(--tint);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.examcard__title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 4px 0 6px;
+}
+
+.examcard__meta { font-size: 13.5px; color: var(--ink-2); }
+
+/* ---------- lecture page ---------- */
+
+.summary { padding-bottom: 90px; }
+
+.summary h2 {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 34px 0 12px;
+  padding-top: 14px;
+  border-top: 2px solid var(--subject);
+}
+
+.summary h3 {
+  font-size: 13px;
+  font-family: var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 22px 0 8px;
+}
+
+.summary ul { margin: 0 0 14px; padding-left: 20px; }
+.summary li { margin-bottom: 7px; }
+.summary strong { color: var(--ink); }
+
+.callout {
+  background: var(--tint);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 20px 0;
+}
+
+.callout h3 { margin-top: 0; color: var(--subject); }
+.callout ul { margin-bottom: 0; }
+
+.tablewrap { overflow-x: auto; margin: 14px 0 20px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  min-width: 420px;
+}
+
+th {
+  background: var(--subject);
+  color: #fff;
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 9px 12px;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.review {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+}
+
+.review span {
+  font-family: var(--mono);
+  font-size: 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 5px 12px;
+  color: var(--ink-2);
+}
+
+/* sticky download */
+.downloadbar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(253,252,249,.94);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  padding: 11px var(--gutter) calc(11px + env(safe-area-inset-bottom));
+  z-index: 20;
+}
+
+.downloadbar__inner {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.downloadbar__label {
+  font-size: 13px;
+  color: var(--ink-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--subject);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 7px;
+  white-space: nowrap;
+}
+
+.btn:hover { filter: brightness(1.08); }
+
+.btn--quiet {
+  background: transparent;
+  color: var(--subject);
+  border: 1px solid var(--subject);
+}
+
+/* prev / next */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.pager a { text-decoration: none; color: var(--subject); }
+.pager span { color: var(--ink-3); }
+
+/* ---------- notice ---------- */
+
+.notice {
+  border-left: 3px solid var(--subject);
+  padding: 2px 0 2px 14px;
+  margin: 24px 0;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+  margin-top: 56px;
+  padding: 22px 0 34px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.foot strong { color: var(--ink-2); font-weight: 500; }
+
+/* ---------- exam runner (chromeless) ---------- */
+
+body.exam-mode { background: var(--card); }
+
+.examshell {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 28px var(--gutter) 40px;
+  min-height: 100vh;
+}
+
+.examtop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 26px;
+}
+
+.examtop__id {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--subject);
+}
+
+.timer {
+  font-family: var(--mono);
+  font-size: 17px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 700px) {
+  .pagehead h1 { font-size: 36px; }
+  .pagehead { padding: 46px 0 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
