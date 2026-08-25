@@ -1,54 +1,83 @@
 # MEDucation site
 
-Static site, generated from one config file. No dependencies beyond Python 3.
+Static site, generated from one config file. Python 3, no other dependencies.
 
 ## Build
 
     python3 build.py
 
-Output lands in `docs/`. That folder is the website — nothing else gets deployed.
+Output goes to `docs/`. That folder is the website. GitHub Pages is set to serve
+`/docs` on the main branch.
 
-## Publishing a summary
+## Structure
 
-Four steps, and only one of them is an edit:
+    home          the four Stage 3 blocks
+      block       the eight subjects in that block
+        subject   the LGs and SGLs
+          lecture the summary, with its PDF download
 
-1. Put the PDF in `pdfs/`
-2. Put the summary body — the HTML that WeasyPrint prints from, without the
-   `<html>` wrapper — in `bodies/`
-3. In `content.json`, set that lecture's `"published": true` and name the two files
+## Publishing a summary — the weekly job
+
+1. Put the PDF in `pdfs/`, named `<block>-<subject>-<code>.pdf`
+   e.g. `git-pathology-lgl-2.pdf`
+2. Put the summary body in `bodies/` with the same name but `.html` —
+   this is the HTML WeasyPrint prints from, without the `<html>` wrapper
+3. In `content.json`, find that lecture and set:
+
+       "published": true,
+       "body": "git-pathology-lgl-2.html",
+       "pdf":  "git-pathology-lgl-2.pdf",
+       "pdf_note": "3 pages"
+
 4. `python3 build.py`
+5. Commit and push. Pages redeploys on its own.
 
-The block spine, the home page ticker, the "1 of 7" counts and the prev/next links
-are all derived from `content.json`. Nothing is edited in two places, so the site
-can't disagree with itself about what exists.
+The subject count, the block dots, the spine node, and the prev/next links all
+update from that one edit. If the PDF is missing, the download button says so
+instead of breaking silently.
 
-## Adding a block
+A lecture with no `pdf` key just has no download button. A summary can be
+web-only if you want.
 
-Append an object to `blocks` in `content.json`. It needs `id`, `subject`, `theme`,
-`block`, `title`, a `lectures` list, and optionally an `exam`. The home page picks
-it up on the next build.
+## Adding a lecture that isn't listed yet
 
-`theme` is one of: `pathology`, `physiology`, `micro`, `history`, `pharm`, `anatomy`.
+Append it to the right subject array in `content.json` with
+`"published": false`. It shows as a greyed "Coming" row, so students can see it
+exists and isn't lost.
 
-## Layout
+## Subject colours
 
-```
-content.json      what exists — the only file edited when publishing
-build.py          generator
-assets/           stylesheet and the logo mark
-bodies/           summary bodies (HTML fragments)
-pdfs/             the downloadable PDFs
-docs/             generated — do not edit, it gets wiped each build
-```
+    anatomy       #0F6E72   teal
+    physiology    #1B7A4B   green
+    biochemistry  #A32552   raspberry
+    histology     #6B3FA0   purple
+    genetics      #3C4A5A   steel
+    microbiology  #1F5FA8   blue
+    pharmacology  #C2610A   orange
+    pathology     #B3322B   brick
 
-## Hosting
+Change any of them in one line at the top of `assets/style.css`.
 
-Push the repo to GitHub, turn on Pages, point it at `/docs`. Free, and it
-redeploys on every push.
+## PDF size
 
-## Notes
+The build prints the total site size and the largest PDF. GitHub Pages wants the
+published site under 1 GB. Over roughly 200 summaries that means keeping each PDF
+in single-digit MB. To shrink one:
 
-- One colour themes a whole page, set by a `subj-*` class on `<body>`.
-- The lecture numbers currently in `content.json` are a guess at the GIT sequence
-  and need replacing with the real ones.
-- The exam page is a shell. The timer and questions aren't built yet.
+    gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH \
+       -sOutputFile=small.pdf big.pdf
+
+## Files
+
+    content.json   what exists — the only file edited when publishing
+    build.py       generator
+    assets/        stylesheet and logo mark
+    bodies/        summary bodies (HTML fragments)
+    pdfs/          the downloadable PDFs
+    docs/          generated — wiped and rebuilt each time, never edit by hand
+
+## Still to do
+
+- Real lecture lists for every subject. The GIT pathology list is a guess.
+- GUE, NS and Transitional have no lectures listed at all yet.
+- The exam page is a shell — no timer, no questions, no leaderboard.

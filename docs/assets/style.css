@@ -24,13 +24,15 @@
   --radius: 10px;
 }
 
-.subj-brand      { --subject: #1B6E48; --tint: #E7F1EB; }
-.subj-pathology  { --subject: #B3322B; --tint: #FBEAE8; }
-.subj-physiology { --subject: #1B7A4B; --tint: #E4F2EA; }
-.subj-micro      { --subject: #1F5FA8; --tint: #E5EEF9; }
-.subj-history    { --subject: #6B3FA0; --tint: #EFE8F7; }
-.subj-pharm      { --subject: #C2610A; --tint: #FCEDDD; }
-.subj-anatomy    { --subject: #0F6E72; --tint: #E0F0F0; }
+.subj-brand        { --subject: #1B6E48; --tint: #E7F1EB; }
+.subj-pathology    { --subject: #B3322B; --tint: #FBEAE8; }
+.subj-physiology   { --subject: #1B7A4B; --tint: #E4F2EA; }
+.subj-micro        { --subject: #1F5FA8; --tint: #E5EEF9; }
+.subj-histology    { --subject: #6B3FA0; --tint: #EFE8F7; }
+.subj-pharm        { --subject: #C2610A; --tint: #FCEDDD; }
+.subj-anatomy      { --subject: #0F6E72; --tint: #E0F0F0; }
+.subj-biochemistry { --subject: #A32552; --tint: #FAE7EE; }
+.subj-genetics     { --subject: #3C4A5A; --tint: #E9ECEF; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -512,4 +514,90 @@ body.exam-mode { background: var(--card); }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+
+/* ---------- block card: subject dots instead of a lecture ticker ---------- */
+
+.dots { display: flex; gap: 6px; margin: 12px 0 9px; flex-wrap: wrap; }
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+/* each dot carries its own subject colour when that subject has material */
+.dot--on { background: var(--subject); }
+
+/* ---------- subject grid (block page) ---------- */
+
+.subjgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.subjcard {
+  display: block;
+  text-decoration: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--subject);
+  border-radius: var(--radius);
+  padding: 14px 14px 13px;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+
+a.subjcard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(23,20,15,.07);
+}
+
+.subjcard__name {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.subjcard__count {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--subject);
+  margin-top: 5px;
+}
+
+.subjcard--empty { border-top-color: var(--line); opacity: .5; }
+.subjcard--empty .subjcard__count { color: var(--ink-3); }
+
+@media (max-width: 400px) {
+  .subjgrid { grid-template-columns: 1fr; }
+}
+
+/* ---------- crumb ---------- */
+
+.crumb {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 10px;
+}
+
+.crumb a { color: var(--ink-3); text-decoration: none; }
+.crumb a:hover { color: var(--subject); }
+
+/* ---------- empty state ---------- */
+
+.empty {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 26px 20px;
+  text-align: center;
+  color: var(--ink-2);
+  font-size: 14.5px;
 }
