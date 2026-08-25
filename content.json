@@ -3,41 +3,91 @@
     "name": "MEDucation",
     "author": "Mattin Majid",
     "institution": "Hawler Medical University, Erbil",
+    "stage": "Stage 3",
     "tagline": "Summaries for your block, in one place.",
     "subtitle": "Everything posted on the channel, kept here so you can find it again."
   },
 
+  "subjects": [
+    { "id": "anatomy",      "name": "Anatomy",      "theme": "anatomy" },
+    { "id": "physiology",   "name": "Physiology",   "theme": "physiology" },
+    { "id": "biochemistry", "name": "Biochemistry", "theme": "biochemistry" },
+    { "id": "histology",    "name": "Histology",    "theme": "histology" },
+    { "id": "genetics",     "name": "Genetics",     "theme": "genetics" },
+    { "id": "microbiology", "name": "Microbiology", "theme": "micro" },
+    { "id": "pharmacology", "name": "Pharmacology", "theme": "pharm" },
+    { "id": "pathology",    "name": "Pathology",    "theme": "pathology" }
+  ],
+
   "blocks": [
     {
-      "id": "pathology-git",
-      "subject": "Pathology",
-      "theme": "pathology",
-      "block": "GIT",
-      "title": "GIT Block",
-      "lectures": [
-        {
-          "code": "LGL 1",
-          "title": "Oral Cavity & Salivary Glands",
-          "lecturer": "Dr Jawher Tahir Omer",
-          "published": true,
-          "body": "pathology-git-lgl1.html",
-          "pdf": "pathology-git-lgl1.pdf",
-          "pdf_note": "4 pages · with lecture images"
-        },
-        { "code": "LGL 2", "title": "Oesophagus", "published": false },
-        { "code": "LGL 3", "title": "Stomach", "published": false },
-        { "code": "LGL 4", "title": "Small & Large Intestine", "published": false },
-        { "code": "LGL 5", "title": "Liver", "published": false },
-        { "code": "LGL 6", "title": "Gallbladder & Biliary Tract", "published": false },
-        { "code": "LGL 7", "title": "Pancreas", "published": false }
-      ],
+      "id": "git",
+      "title": "Gastrointestinal Tract",
+      "short": "GIT",
+      "subjects": {
+        "anatomy": [],
+        "physiology": [],
+        "biochemistry": [],
+        "histology": [],
+        "genetics": [],
+        "microbiology": [],
+        "pharmacology": [],
+        "pathology": [
+          {
+            "code": "LGL 1",
+            "title": "Oral Cavity & Salivary Glands",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "body": "git-pathology-lgl-1.html",
+            "pdf": "git-pathology-lgl-1.pdf",
+            "pdf_note": "4 pages"
+          },
+          { "code": "LGL 2", "title": "Oesophagus", "published": false },
+          { "code": "LGL 3", "title": "Stomach", "published": false },
+          { "code": "LGL 4", "title": "Small & Large Intestine", "published": false },
+          { "code": "LGL 5", "title": "Liver", "published": false },
+          { "code": "LGL 6", "title": "Gallbladder & Biliary Tract", "published": false },
+          { "code": "LGL 7", "title": "Pancreas", "published": false }
+        ]
+      },
       "exam": {
-        "id": "pathology-git",
+        "id": "git",
         "title": "GIT Block mock exam",
+        "theme": "pathology",
         "questions": 30,
         "minutes": 30,
         "state": "closed",
         "note": "opens October"
+      }
+    },
+
+    {
+      "id": "gue",
+      "title": "Genitourinary",
+      "short": "GUE",
+      "subjects": {
+        "anatomy": [], "physiology": [], "biochemistry": [], "histology": [],
+        "genetics": [], "microbiology": [], "pharmacology": [], "pathology": []
+      }
+    },
+
+    {
+      "id": "ns",
+      "title": "Nervous System",
+      "short": "NS",
+      "subjects": {
+        "anatomy": [], "physiology": [], "biochemistry": [], "histology": [],
+        "genetics": [], "microbiology": [], "pharmacology": [], "pathology": []
+      }
+    },
+
+    {
+      "id": "transitional",
+      "title": "Transitional",
+      "short": "Transitional",
+      "subjects": {
+        "anatomy": [], "physiology": [], "biochemistry": [], "histology": [],
+        "genetics": [], "microbiology": [], "pharmacology": [], "pathology": []
       }
     }
   ]
