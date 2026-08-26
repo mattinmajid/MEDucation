@@ -57,7 +57,24 @@
       "subjects": {
         "anatomy": [],
         "physiology": [],
-        "biochemistry": [],
+        "biochemistry": [
+{
+  "code": "LG 1",
+  "title": "GIT Enzymes and Hormones",
+  "lecturer": "Dr. Sardar N. Ahmed",
+  "published": true,
+  "pdf": "git-biochemistry-lg-1.pdf",
+  "pdf_note": "3 pages"
+},
+{
+  "code": "LG 2",
+  "title": "Liver Function Tests",
+  "lecturer": "Dr. Fargeen E. ALmukhtar",
+  "published": true,
+  "pdf": "git-biochemistry-lg-2.pdf",
+  "pdf_note": "3 pages"
+}
+],
         "histology": [
 {
   "code": "LG 1",
