@@ -60,6 +60,22 @@
         "biochemistry": [],
         "histology": [
 {
+  "code": "LG 1",
+  "title": "Basic Layers of the GI Wall",
+  "lecturer": "Dr Hero K. Mustafa",
+  "published": true,
+  "pdf": "git-histology-lg-1.pdf",
+  "pdf_note": "4 pages"
+},
+{
+  "code": "LG 2",
+  "title": "Gastric Mucosa — Regional Structure",
+  "lecturer": "Dr Hero K. Mustafa",
+  "published": true,
+  "pdf": "git-histology-lg-2.pdf",
+  "pdf_note": "5 pages"
+},
+{
   "code": "SGL 1",
   "title": "Oral Cavity & Salivary Glands",
   "lecturer": "Dr. Hero K. Mustafa",
