@@ -58,7 +58,16 @@
         "anatomy": [],
         "physiology": [],
         "biochemistry": [],
-        "histology": [],
+        "histology": [
+{
+  "code": "SGL 1",
+  "title": "Oral Cavity & Salivary Glands",
+  "lecturer": "Dr. Hero K. Mustafa",
+  "published": true,
+  "pdf": "git-histology-sgl-1.pdf",
+  "pdf_note": "6 pages"
+}
+],
         "genetics": [],
         "microbiology": [],
         "pharmacology": [],
