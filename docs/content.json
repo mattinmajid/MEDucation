@@ -82,7 +82,23 @@
   "published": true,
   "pdf": "git-histology-sgl-1.pdf",
   "pdf_note": "6 pages"
-}
+},
+{
+  "code": "SGL 2",
+  "title": "Small Intestine",
+  "lecturer": "Dr. Hero K. Mustafa",
+  "published": true,
+  "pdf": "git-histology-sgl-2.pdf",
+  "pdf_note": "5 pages"
+},
+{
+  "code": "SGL 3",
+  "title": "Large Intestine & Anal Canal",
+  "lecturer": "Dr. Hero K. Mustafa",
+  "published": true,
+  "pdf": "git-histology-sgl-3.pdf",
+  "pdf_note": "6 pages"
+},
 ],
         "genetics": [],
         "microbiology": [],
