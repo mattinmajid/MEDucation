@@ -17,7 +17,22 @@
   --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --gutter:20px; --radius:10px;
+  --shadow:rgba(23,20,15,.07);
+  --barbg:rgba(253,252,249,.94);
 }
+[data-theme="dark"]{
+  --ink:#EDE7DB; --ink-2:#A69E90; --ink-3:#7C7568;
+  --line:#302B23; --paper:#15130F; --card:#1D1A15;
+  --shadow:rgba(0,0,0,.4);
+  --barbg:rgba(21,19,15,.94);
+}
+.themebtn{background:none;border:0;padding:6px;margin-left:auto;cursor:pointer;
+  color:var(--ink-2);display:flex;align-items:center;border-radius:6px;line-height:0}
+.themebtn:hover{color:var(--subject);background:var(--tint)}
+.themebtn svg{width:18px;height:18px;display:block}
+.masthead__back{font-size:13px;color:var(--ink-2);
+  text-decoration:none;font-family:var(--mono)}
+.masthead__right{margin-left:auto;display:flex;align-items:center;gap:12px}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
@@ -32,8 +47,6 @@ a{color:inherit}
 .mark svg{display:block;width:100%;height:100%}
 .wordmark{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em}
 .wordmark em{font-style:normal;color:var(--subject)}
-.masthead__back{margin-left:auto;font-size:13px;color:var(--ink-2);
-  text-decoration:none;font-family:var(--mono)}
 .masthead__back:hover{color:var(--subject)}
 
 .pagehead{padding:34px 0 26px}
@@ -57,7 +70,7 @@ section+section{margin-top:40px}
   border-left:5px solid var(--subject);border-radius:var(--radius);
   padding:18px 18px 16px;text-decoration:none;margin-bottom:12px;
   transition:transform .14s ease,box-shadow .14s ease}
-.blockcard:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(23,20,15,.07)}
+.blockcard:hover{transform:translateY(-1px);box-shadow:0 4px 14px var(--shadow)}
 .blockcard__subject{font-family:var(--mono);font-size:11px;letter-spacing:.09em;
   text-transform:uppercase;color:var(--subject)}
 .blockcard__title{font-family:var(--serif);font-size:22px;font-weight:600;
@@ -72,7 +85,7 @@ section+section{margin-top:40px}
   border:1px solid var(--line);border-top:3px solid var(--subject);
   border-radius:var(--radius);padding:14px;
   transition:transform .14s ease,box-shadow .14s ease}
-a.subjcard:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(23,20,15,.07)}
+a.subjcard:hover{transform:translateY(-1px);box-shadow:0 4px 14px var(--shadow)}
 .subjcard__name{font-family:var(--serif);font-size:17px;font-weight:600;
   letter-spacing:-.01em;line-height:1.25}
 .subjcard__count{font-family:var(--mono);font-size:11px;letter-spacing:.04em;
@@ -102,7 +115,7 @@ a.lecrow .lecrow__code{color:var(--subject)}
 .tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;
   text-transform:uppercase;padding:2px 7px;border-radius:3px;
   background:var(--tint);color:var(--subject)}
-.tag--soon{background:#F0EDE6;color:var(--ink-3)}
+.tag--soon{background:var(--line);color:var(--ink-3)}
 
 .examcard{display:block;text-decoration:none;background:var(--tint);
   border:1px solid var(--line);border-radius:var(--radius);padding:18px}
@@ -115,7 +128,7 @@ a.lecrow .lecrow__code{color:var(--subject)}
 .btn:hover{filter:brightness(1.08)}
 .btn--quiet{background:transparent;color:var(--subject);border:1px solid var(--subject)}
 
-.downloadbar{position:fixed;left:0;right:0;bottom:0;background:rgba(253,252,249,.94);
+.downloadbar{position:fixed;left:0;right:0;bottom:0;background:var(--barbg);
   backdrop-filter:blur(8px);border-top:1px solid var(--line);
   padding:11px var(--gutter) calc(11px + env(safe-area-inset-bottom));z-index:20}
 .downloadbar__inner{max-width:620px;margin:0 auto;display:flex;align-items:center;gap:12px}
@@ -151,15 +164,21 @@ main.haspdf{padding-bottom:90px}
 
 <header class="masthead">
   <div class="wrap">
-    <a class="masthead__inner" href="#/">
+    <div class="masthead__inner">
+      <a class="masthead__inner" style="height:auto;flex:0 0 auto" href="#/">
       <span class="mark"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor"
         stroke-width="5" stroke-linecap="round" aria-hidden="true">
         <circle cx="50" cy="50" r="40"/>
         <path d="M35 28 v14 a15 15 0 0 0 30 0 V28"/>
         <path d="M50 57 v9"/><circle cx="50" cy="72" r="6"/></svg></span>
       <span class="wordmark">MED<em>ucation</em></span>
-      <span class="masthead__back" id="back"></span>
-    </a>
+      </a>
+      <span class="masthead__right">
+        <span class="masthead__back" id="back"></span>
+        <button class="themebtn" id="themebtn" type="button"
+                aria-label="Switch between light and dark"></button>
+      </span>
+    </div>
   </div>
 </header>
 
@@ -170,17 +189,43 @@ main.haspdf{padding-bottom:90px}
 <div id="bar"></div>
 
 <script>
+/* [ light colour, light tint, dark colour, dark tint ] */
 const THEMES = {
-  pathology:   ["#B3322B","#FBEAE8"],
-  physiology:  ["#1B7A4B","#E4F2EA"],
-  micro:       ["#1F5FA8","#E5EEF9"],
-  histology:   ["#6B3FA0","#EFE8F7"],
-  pharm:       ["#C2610A","#FCEDDD"],
-  anatomy:     ["#0F6E72","#E0F0F0"],
-  biochemistry:["#A32552","#FAE7EE"],
-  genetics:    ["#3C4A5A","#E9ECEF"],
-  brand:       ["#1B6E48","#E7F1EB"]
+  pathology:   ["#B3322B","#FBEAE8","#E4736A","#2E1D1B"],
+  physiology:  ["#1B7A4B","#E4F2EA","#4FBE85","#152A20"],
+  micro:       ["#1F5FA8","#E5EEF9","#6FA9EC","#16222F"],
+  histology:   ["#6B3FA0","#EFE8F7","#B08EDD","#221A2D"],
+  pharm:       ["#C2610A","#FCEDDD","#E89A4E","#2C2015"],
+  anatomy:     ["#0F6E72","#E0F0F0","#4FB2B6","#12272A"],
+  biochemistry:["#A32552","#FAE7EE","#E2739C","#2B1721"],
+  genetics:    ["#3C4A5A","#E9ECEF","#9DACBD","#1C2128"],
+  brand:       ["#1B6E48","#E7F1EB","#4FBE85","#152A20"]
 };
+
+const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>';
+const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg>';
+
+let MODE = "light";
+let CURRENT = "brand";
+
+function isDark(){ return MODE === "dark"; }
+function subjColor(name){
+  const t = THEMES[name] || THEMES.brand;
+  return isDark() ? t[2] : t[0];
+}
+function subjTint(name){
+  const t = THEMES[name] || THEMES.brand;
+  return isDark() ? t[3] : t[1];
+}
+
+function applyMode(mode, save){
+  MODE = mode;
+  document.documentElement.setAttribute("data-theme", mode);
+  document.getElementById("themebtn").innerHTML = mode === "dark" ? SUN : MOON;
+  if (save) { try { localStorage.setItem("meducation-theme", mode); } catch(e){} }
+  theme(CURRENT);
+  if (DATA) render();
+}
 
 let DATA = null;
 
@@ -190,9 +235,9 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g,
 const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 
 function theme(name){
-  const [c,t] = THEMES[name] || THEMES.brand;
-  document.documentElement.style.setProperty("--subject", c);
-  document.documentElement.style.setProperty("--tint", t);
+  CURRENT = name;
+  document.documentElement.style.setProperty("--subject", subjColor(name));
+  document.documentElement.style.setProperty("--tint", subjTint(name));
 }
 
 const pub = list => (list || []).filter(l => l.published);
@@ -218,7 +263,7 @@ function viewHome(){
     const total = Object.values(b.subjects).reduce((n,v) => n + pub(v).length, 0);
     const dots = DATA.subjects.map(sub => {
       const on = pub(b.subjects[sub.id]).length > 0;
-      const col = on ? THEMES[sub.theme][0] : "var(--line)";
+      const col = on ? subjColor(sub.theme) : "var(--line)";
       return `<span class="dot" style="background:${col}" title="${esc(sub.name)}"></span>`;
     }).join("");
     const count = total ? `${total} summar${total === 1 ? "y" : "ies"}` : "Nothing yet";
@@ -232,8 +277,7 @@ function viewHome(){
 
   const exams = DATA.blocks.filter(b => b.exam).map(b => {
     const e = b.exam;
-    const [c,t] = THEMES[e.theme] || THEMES.brand;
-    return `<a class="examcard" href="#/e/${b.id}" style="--subject:${c};--tint:${t}">
+    return `<a class="examcard" href="#/e/${b.id}" style="--subject:${subjColor(e.theme)};--tint:${subjTint(e.theme)}">
       <div class="blockcard__subject">${esc(b.short)} Block</div>
       <div class="examcard__title">${esc(e.title)}</div>
       <div class="examcard__meta">${e.questions} questions · ${e.minutes} minutes · ${esc(e.note)}</div>
@@ -262,20 +306,18 @@ function viewBlock(id){
 
   const cards = DATA.subjects.map(sub => {
     const n = pub(b.subjects[sub.id]).length;
-    const [c,t] = THEMES[sub.theme];
     if (!n) return `<div class="subjcard subjcard--empty">
         <div class="subjcard__name">${esc(sub.name)}</div>
         <div class="subjcard__count">Nothing yet</div></div>`;
-    return `<a class="subjcard" href="#/s/${b.id}/${sub.id}" style="--subject:${c};--tint:${t}">
+    return `<a class="subjcard" href="#/s/${b.id}/${sub.id}" style="--subject:${subjColor(sub.theme)};--tint:${subjTint(sub.theme)}">
         <div class="subjcard__name">${esc(sub.name)}</div>
         <div class="subjcard__count">${n} summar${n === 1 ? "y" : "ies"}</div></a>`;
   }).join("");
 
   let exam = "";
   if (b.exam){
-    const [c,t] = THEMES[b.exam.theme] || THEMES.brand;
     exam = `<section><h2 class="seclabel">When the block ends</h2>
-      <a class="examcard" href="#/e/${b.id}" style="--subject:${c};--tint:${t}">
+      <a class="examcard" href="#/e/${b.id}" style="--subject:${subjColor(b.exam.theme)};--tint:${subjTint(b.exam.theme)}">
         <div class="blockcard__subject">Mock exam</div>
         <div class="examcard__title">${esc(b.exam.title)}</div>
         <div class="examcard__meta">${b.exam.questions} questions · ${b.exam.minutes} minutes · ${esc(b.exam.note)}</div>
@@ -441,6 +483,13 @@ function render(){
 }
 
 addEventListener("hashchange", render);
+
+let saved = null;
+try { saved = localStorage.getItem("meducation-theme"); } catch(e){}
+applyMode(saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"), false);
+document.getElementById("themebtn").addEventListener("click", () => {
+  applyMode(isDark() ? "light" : "dark", true);
+});
 
 fetch("content.json?v=" + Date.now())
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
