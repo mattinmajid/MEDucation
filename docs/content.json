@@ -73,6 +73,22 @@
   "pdf_note": "3 pages"
 },
 {
+  "code": "LG 3",
+  "title": "Physiology of the Defecation Reflex",
+  "lecturer": "Dr. Nazleen Shakir Akreyi",
+  "published": true,
+  "pdf": "git-physiology-lg-3.pdf",
+  "pdf_note": "3 pages"
+},
+{
+  "code": "LG 4",
+  "title": "Physiology of the Liver",
+  "lecturer": "Dr. Sherwan R Shal",
+  "published": true,
+  "pdf": "git-physiology-lg-4.pdf",
+  "pdf_note": "4 pages"
+},
+{
   "code": "SGL 1",
   "title": "Stomach and Duodenum",
   "lecturer": "TBC — not printed on slides",
@@ -87,6 +103,14 @@
   "published": true,
   "pdf": "git-physiology-sgl-2.pdf",
   "pdf_note": "4 pages"
+},
+{
+  "code": "SGL 3",
+  "title": "Physiology of the Large Intestine",
+  "lecturer": "Dr. Nidhal Gorgees Hanna",
+  "published": true,
+  "pdf": "git-physiology-sgl-3.pdf",
+  "pdf_note": "3 pages"
 }
 ],
         "biochemistry": [
