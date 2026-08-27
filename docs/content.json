@@ -198,7 +198,9 @@
             "title": "Oral Cavity & Salivary Glands",
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
-            "pdf": "git-pathology-lg-1.pdf"
+            "pdf": "git-pathology-lg-1.pdf",
+"lecture_pdf": "git-pathology-lg-1-lecture.pdf",
+    "lecture_note": "42 slides",
           },
           {
             "code": "LG 2",
