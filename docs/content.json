@@ -117,7 +117,7 @@
   "published": true,
   "pdf": "git-physiology-sgl-3.pdf",
   "pdf_note": "3 pages",
-"lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
+"lecture_pdf": "git-physiology-sgl-3-lecture.pdf"
 }
 ],
         "biochemistry": [
@@ -137,7 +137,7 @@
   "published": true,
   "pdf": "git-biochemistry-lg-2.pdf",
   "pdf_note": "3 pages",
-"lecture_pdf": "git-biochemistry-lg-1-lecture.pdf",
+"lecture_pdf": "git-biochemistry-lg-1-lecture.pdf"
 }
 ],
         "histology": [
@@ -202,7 +202,7 @@
   "published": true,
   "pdf": "git-histology-sgl-4.pdf",
   "pdf_note": "6 pages",
-"lecture_pdf": "git-histology-sgl-4-lecture.pdf",
+"lecture_pdf": "git-histology-sgl-4-lecture.pdf"
 }
 ],
         "genetics": [],
@@ -249,7 +249,7 @@
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
             "pdf": "git-pathology-lg-3.pdf",
-"lecture_pdf": "git-pathology-lg-3-lecture.pdf",
+"lecture_pdf": "git-pathology-lg-3-lecture.pdf"
           }
         ]
       },
