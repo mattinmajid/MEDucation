@@ -56,7 +56,39 @@
       "short": "GIT",
       "subjects": {
         "anatomy": [],
-        "physiology": [],
+        "physiology": [{
+  "code": "LG 1",
+  "title": "Oral Cavity & Salivation",
+  "lecturer": "Dr. Sherwan R Shal",
+  "published": true,
+  "pdf": "git-physiology-lg-1.pdf",
+  "pdf_note": "3 pages"
+},
+{
+  "code": "LG 2",
+  "title": "Swallowing (Deglutition)",
+  "lecturer": "Dr. Nazleen Shakir Akreyi",
+  "published": true,
+  "pdf": "git-physiology-lg-2.pdf",
+  "pdf_note": "3 pages"
+},
+{
+  "code": "SGL 1",
+  "title": "Stomach and Duodenum",
+  "lecturer": "TBC — not printed on slides",
+  "published": true,
+  "pdf": "git-physiology-sgl-1.pdf",
+  "pdf_note": "4 pages"
+},
+{
+  "code": "SGL 2",
+  "title": "Physiology of Small Intestine",
+  "lecturer": "Dr. Dler Qader Gallaly",
+  "published": true,
+  "pdf": "git-physiology-sgl-2.pdf",
+  "pdf_note": "4 pages"
+}
+],
         "biochemistry": [
 {
   "code": "LG 1",
