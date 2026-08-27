@@ -194,13 +194,14 @@
         "pharmacology": [],
         "pathology": [
           {
-            "code": "LG 1",
-            "title": "Oral Cavity & Salivary Glands",
-            "lecturer": "Dr Jawher Tahir Omer",
-            "published": true,
-            "pdf": "git-pathology-lg-1.pdf",
-"lecture_pdf": "git-pathology-lg-1-lecture.pdf",
-    "lecture_note": "42 slides",
+            "  "code": "LG 1",
+    "title": "Oral Cavity & Salivary Glands",
+    "lecturer": "Dr Jawher Tahir Omer",
+    "published": true,
+    "pdf": "git-pathology-lg-1.pdf",
+    "pdf_note": "4 pages",
+    "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
+    "lecture_note": "42 slides"
           },
           {
             "code": "LG 2",
