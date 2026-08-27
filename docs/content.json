@@ -62,7 +62,8 @@
   "lecturer": "Dr. Sherwan R Shal",
   "published": true,
   "pdf": "git-physiology-lg-1.pdf",
-  "pdf_note": "3 pages"
+  "pdf_note": "3 pages",
+"lecture_pdf": "git-physiology-lg-1-lecture.pdf",
 },
 {
   "code": "LG 2",
@@ -70,7 +71,8 @@
   "lecturer": "Dr. Nazleen Shakir Akreyi",
   "published": true,
   "pdf": "git-physiology-lg-2.pdf",
-  "pdf_note": "3 pages"
+  "pdf_note": "3 pages",
+"lecture_pdf": "git-physiology-lg-2-lecture.pdf",
 },
 {
   "code": "LG 3",
@@ -78,7 +80,8 @@
   "lecturer": "Dr. Nazleen Shakir Akreyi",
   "published": true,
   "pdf": "git-physiology-lg-3.pdf",
-  "pdf_note": "3 pages"
+  "pdf_note": "3 pages",
+"lecture_pdf": "git-physiology-lg-3-lecture.pdf",
 },
 {
   "code": "LG 4",
@@ -86,7 +89,8 @@
   "lecturer": "Dr. Sherwan R Shal",
   "published": true,
   "pdf": "git-physiology-lg-4.pdf",
-  "pdf_note": "4 pages"
+  "pdf_note": "4 pages",
+"lecture_pdf": "git-physiology-lg-4-lecture.pdf",
 },
 {
   "code": "SGL 1",
@@ -94,7 +98,8 @@
   "lecturer": "TBC — not printed on slides",
   "published": true,
   "pdf": "git-physiology-sgl-1.pdf",
-  "pdf_note": "4 pages"
+  "pdf_note": "4 pages",
+"lecture_pdf": "git-physiology-sgl-1-lecture.pdf",
 },
 {
   "code": "SGL 2",
@@ -102,7 +107,8 @@
   "lecturer": "Dr. Dler Qader Gallaly",
   "published": true,
   "pdf": "git-physiology-sgl-2.pdf",
-  "pdf_note": "4 pages"
+  "pdf_note": "4 pages",
+"lecture_pdf": "git-physiology-sgl-2-lecture.pdf",
 },
 {
   "code": "SGL 3",
@@ -110,7 +116,8 @@
   "lecturer": "Dr. Nidhal Gorgees Hanna",
   "published": true,
   "pdf": "git-physiology-sgl-3.pdf",
-  "pdf_note": "3 pages"
+  "pdf_note": "3 pages",
+"lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
 }
 ],
         "biochemistry": [
@@ -120,7 +127,8 @@
   "lecturer": "Dr. Sardar N. Ahmed",
   "published": true,
   "pdf": "git-biochemistry-lg-1.pdf",
-  "pdf_note": "3 pages"
+  "pdf_note": "3 pages",
+"lecture_pdf": "git-biochemistry-sgl-1-lecture.pdf",
 },
 {
   "code": "LG 2",
@@ -128,7 +136,8 @@
   "lecturer": "Dr. Fargeen E. ALmukhtar",
   "published": true,
   "pdf": "git-biochemistry-lg-2.pdf",
-  "pdf_note": "3 pages"
+  "pdf_note": "3 pages",
+"lecture_pdf": "git-biochemistry-lg-1-lecture.pdf",
 }
 ],
         "histology": [
@@ -138,7 +147,8 @@
   "lecturer": "Dr Hero K. Mustafa",
   "published": true,
   "pdf": "git-histology-lg-1.pdf",
-  "pdf_note": "4 pages"
+  "pdf_note": "4 pages",
+"lecture_pdf": "git-histology-lg-1-lecture.pdf",
 },
 {
   "code": "LG 2",
@@ -146,7 +156,8 @@
   "lecturer": "Dr Hero K. Mustafa",
   "published": true,
   "pdf": "git-histology-lg-2.pdf",
-  "pdf_note": "5 pages"
+  "pdf_note": "5 pages",
+"lecture_pdf": "git-histology-lg-2-lecture.pdf",
 },
 {
   "code": "LG 3",
@@ -154,7 +165,8 @@
   "lecturer": "Dr. Hero K. Mustafa",
   "published": true,
   "pdf": "git-histology-lg-3.pdf",
-  "pdf_note": "5 pages"
+  "pdf_note": "5 pages",
+"lecture_pdf": "git-histology-lg-3-lecture.pdf",
 },
 {
   "code": "SGL 1",
@@ -162,7 +174,8 @@
   "lecturer": "Dr. Hero K. Mustafa",
   "published": true,
   "pdf": "git-histology-sgl-1.pdf",
-  "pdf_note": "6 pages"
+  "pdf_note": "6 pages",
+"lecture_pdf": "git-histology-sgl-1-lecture.pdf",
 },
 {
   "code": "SGL 2",
@@ -170,7 +183,8 @@
   "lecturer": "Dr. Hero K. Mustafa",
   "published": true,
   "pdf": "git-histology-sgl-2.pdf",
-  "pdf_note": "5 pages"
+  "pdf_note": "5 pages",
+"lecture_pdf": "git-histology-sgl-2-lecture.pdf",
 },
 {
   "code": "SGL 3",
@@ -178,7 +192,8 @@
   "lecturer": "Dr. Hero K. Mustafa",
   "published": true,
   "pdf": "git-histology-sgl-3.pdf",
-  "pdf_note": "6 pages"
+  "pdf_note": "6 pages",
+"lecture_pdf": "git-histology-sgl-3-lecture.pdf",
 },
 {
   "code": "SGL 4",
@@ -186,7 +201,8 @@
   "lecturer": "Dr. Hero K. Mustafa",
   "published": true,
   "pdf": "git-histology-sgl-4.pdf",
-  "pdf_note": "6 pages"
+  "pdf_note": "6 pages",
+"lecture_pdf": "git-histology-sgl-4-lecture.pdf",
 }
 ],
         "genetics": [],
@@ -201,35 +217,39 @@
     "pdf": "git-pathology-lg-1.pdf",
     "pdf_note": "4 pages",
     "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
-    "lecture_note": "42 slides"
+    "lecture_note": "31 slides"
           },
           {
             "code": "LG 2",
             "title": "Esophagus",
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
-            "pdf": "git-pathology-lg-2.pdf"
+            "pdf": "git-pathology-lg-2.pdf",
+"lecture_pdf": "git-pathology-lg-2-lecture.pdf",
           },
           {
             "code": "SGL 1 · I",
             "title": "Stomach I — Gastritis & Peptic Ulcer Disease",
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
-            "pdf": "git-pathology-sgl-1-i.pdf"
+            "pdf": "git-pathology-sgl-1-i.pdf",
+"lecture_pdf": "git-pathology-sgl-1-i-lecture.pdf",
           },
           {
             "code": "SGL 1 · II",
             "title": "Stomach II — Polyps & Gastric Cancer",
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
-            "pdf": "git-pathology-sgl-1-ii.pdf"
+            "pdf": "git-pathology-sgl-1-ii.pdf",
+"lecture_pdf": "git-pathology-sgl-1-ii-lecture.pdf"
           },
           {
             "code": "LG 3",
             "title": "Non-neoplastic Intestinal Disease",
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
-            "pdf": "git-pathology-lg-3.pdf"
+            "pdf": "git-pathology-lg-3.pdf",
+"lecture_pdf": "git-pathology-lg-3-lecture.pdf",
           }
         ]
       },
