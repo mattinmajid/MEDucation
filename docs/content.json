@@ -205,7 +205,25 @@
 "lecture_pdf": "git-histology-sgl-4-lecture.pdf"
 }
 ],
-        "genetics": [],
+        "genetics": [{
+  "code": "LG 1",
+  "title": "GI Tract Genetic Disorders — Overview",
+  "lecturer": "Dr. Evan Latef Khlef",
+  "published": true,
+  "pdf": "git-genetics-lg-1.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-genetics-lg-1-lecture.pdf"
+},
+{
+  "code": "LG 2",
+  "title": "Reading a Genetic Analysis Report",
+  "lecturer": "Dr. Evan Latef Khlef",
+  "published": true,
+  "pdf": "git-genetics-lg-2.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-genetics-lg-2-lecture.pdf"
+}
+],
         "microbiology": [],
         "pharmacology": [{
   "code": "LG 1",
