@@ -126,7 +126,7 @@
   "title": "GIT Enzymes and Hormones",
   "lecturer": "Dr. Sardar N. Ahmed",
   "published": true,
-  "pdf": "git-biochemistry-lg-1.pdf",
+  "pdf": "git-biochemistry-sgl-1.pdf",
   "pdf_note": "3 pages",
 "lecture_pdf": "git-biochemistry-sgl-1-lecture.pdf"
 },
@@ -135,7 +135,7 @@
   "title": "Liver Function Tests",
   "lecturer": "Dr. Fargeen E. ALmukhtar",
   "published": true,
-  "pdf": "git-biochemistry-lg-2.pdf",
+  "pdf": "git-biochemistry-lg-1.pdf",
   "pdf_note": "3 pages",
 "lecture_pdf": "git-biochemistry-lg-1-lecture.pdf"
 }
@@ -207,7 +207,43 @@
 ],
         "genetics": [],
         "microbiology": [],
-        "pharmacology": [],
+        "pharmacology": [{
+  "code": "LG 1",
+  "title": "Emetic and Antiemetic Drugs",
+  "lecturer": "Dr. Jangi Shawkat Salai",
+  "published": true,
+  "pdf": "git-pharmacology-lg-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf"
+},
+{
+  "code": "LG 2",
+  "title": "Treatment of GI Parasitic Infestations",
+  "lecturer": "Dr. Begard O. Berzinji",
+  "published": true,
+  "pdf": "git-pharmacology-lg-2.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-pharmacology-lg-2-lecture.pdf"
+},
+{
+  "code": "LG 3",
+  "title": "Laxatives and Anti-diarrhoeal Agents",
+  "lecturer": "Dr. Susan Abdulkadir Farhadi",
+  "published": true,
+  "pdf": "git-pharmacology-lg-3.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-pharmacology-lg-3-lecture.pdf"
+},
+{
+  "code": "SGL 1",
+  "title": "Drugs in Bowel Diseases",
+  "lecturer": "Dr. Jangi Shawkat Salai",
+  "published": true,
+  "pdf": "git-pharmacology-sgl-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
+}
+],
         "pathology": [
           {
              "code": "LG 1",
