@@ -242,6 +242,33 @@
   "pdf": "git-pharmacology-sgl-1.pdf",
   "pdf_note": "4 pages",
   "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
+},
+{
+  "code": "SGL 2",
+  "title": "Acid-Related Disorders",
+  "lecturer": "Dr. Begard O. Berzinji",
+  "published": true,
+  "pdf": "git-pharmacology-sgl-2.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-pharmacology-sgl-2-lecture.pdf"
+},
+{
+  "code": "SGL 3",
+  "title": "GI Infections & Viral Hepatitis Therapy",
+  "lecturer": "Dr. Jangi Salai",
+  "published": true,
+  "pdf": "git-pharmacology-sgl-3.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-pharmacology-sgl-3-lecture.pdf"
+},
+{
+  "code": "SGL 4",
+  "title": "Drug-Induced Liver Injury (DILI)",
+  "lecturer": "Asst. Prof. Nidhal Abdulkader & Asst. Lect. Nermin Jamal",
+  "published": true,
+  "pdf": "git-pharmacology-sgl-4.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-pharmacology-sgl-4-lecture.pdf"
 }
 ],
         "pathology": [
