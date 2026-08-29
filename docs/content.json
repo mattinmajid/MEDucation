@@ -58,12 +58,15 @@
         "anatomy": [],
         "physiology": [
           {
+            "code": "LG 1",
+            "title": "Oral Cavity & Salivation",
+            "lecturer": "Dr. Sherwan R Shal",
+            "published": true,
+            "pdf": "git-physiology-lg-1.pdf",
+            "pdf_note": "3 pages",
             "lecture_pdf": "git-physiology-lg-1-lecture.pdf",
-"lecture_note": "original lecture slides",
-"pdf": "git-physiology-lg-1.pdf",
-"pdf_note": "3 pages",
-"mcq": "git-physiology-lg-1-mcq.pdf",
-"mcq_note": "20 questions"
+            "mcq": "git-physiology-lg-1-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
             "code": "LG 2",
@@ -72,6 +75,7 @@
             "published": true,
             "pdf": "git-physiology-lg-2.pdf",
             "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-lg-2-lecture.pdf",
             "mcq": "git-physiology-lg-2-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -82,6 +86,7 @@
             "published": true,
             "pdf": "git-physiology-lg-3.pdf",
             "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-lg-3-lecture.pdf",
             "mcq": "git-physiology-lg-3-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -92,6 +97,7 @@
             "published": true,
             "pdf": "git-physiology-lg-4.pdf",
             "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-lg-4-lecture.pdf",
             "mcq": "git-physiology-lg-4-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -102,6 +108,7 @@
             "published": true,
             "pdf": "git-physiology-sgl-1.pdf",
             "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-sgl-1-lecture.pdf",
             "mcq": "git-physiology-sgl-1-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -112,6 +119,7 @@
             "published": true,
             "pdf": "git-physiology-sgl-2.pdf",
             "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-sgl-2-lecture.pdf",
             "mcq": "git-physiology-sgl-2-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -122,6 +130,7 @@
             "published": true,
             "pdf": "git-physiology-sgl-3.pdf",
             "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
             "mcq": "git-physiology-sgl-3-mcq.pdf",
             "mcq_note": "20 questions"
           }
@@ -133,7 +142,8 @@
             "lecturer": "Dr Sardar N. Ahmed",
             "published": true,
             "pdf": "git-biochemistry-lg-1.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-biochemistry-lg-1-lecture.pdf"
           },
           {
             "code": "LG 2",
@@ -141,7 +151,8 @@
             "lecturer": "Dr Fargeen E. Almukhtar",
             "published": true,
             "pdf": "git-biochemistry-lg-2.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-biochemistry-lg-2-lecture.pdf"
           }
         ],
         "histology": [
@@ -151,7 +162,8 @@
             "lecturer": "Dr Hero K. Mustafa",
             "published": true,
             "pdf": "git-histology-lg-1.pdf",
-            "pdf_note": "4 pages"
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-lg-1-lecture.pdf"
           },
           {
             "code": "LG 2",
@@ -159,7 +171,8 @@
             "lecturer": "Dr Hero K. Mustafa",
             "published": true,
             "pdf": "git-histology-lg-2.pdf",
-            "pdf_note": "5 pages"
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-histology-lg-2-lecture.pdf"
           },
           {
             "code": "LG 3",
@@ -167,15 +180,17 @@
             "lecturer": "Dr Hero K. Mustafa",
             "published": true,
             "pdf": "git-histology-lg-3.pdf",
-            "pdf_note": "5 pages"
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-histology-lg-3-lecture.pdf"
           },
           {
             "code": "SGL 1",
             "title": "Oral Cavity & Salivary Glands",
-            "lecturer": "Dr. Hero K. Mustafa",
+            "lecturer": "Dr Hero K. Mustafa",
             "published": true,
             "pdf": "git-histology-sgl-1.pdf",
-            "pdf_note": "6 pages"
+            "pdf_note": "6 pages",
+            "lecture_pdf": "git-histology-sgl-1-lecture.pdf"
           },
           {
             "code": "SGL 2",
@@ -183,7 +198,8 @@
             "lecturer": "Dr Hero K. Mustafa",
             "published": true,
             "pdf": "git-histology-sgl-2.pdf",
-            "pdf_note": "5 pages"
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-histology-sgl-2-lecture.pdf"
           },
           {
             "code": "SGL 3",
@@ -191,7 +207,8 @@
             "lecturer": "Dr Hero K. Mustafa",
             "published": true,
             "pdf": "git-histology-sgl-3.pdf",
-            "pdf_note": "6 pages"
+            "pdf_note": "6 pages",
+            "lecture_pdf": "git-histology-sgl-3-lecture.pdf"
           },
           {
             "code": "SGL 4",
@@ -199,7 +216,8 @@
             "lecturer": "Dr Hero K. Mustafa",
             "published": true,
             "pdf": "git-histology-sgl-4.pdf",
-            "pdf_note": "6 pages"
+            "pdf_note": "6 pages",
+            "lecture_pdf": "git-histology-sgl-4-lecture.pdf"
           }
         ],
         "genetics": [
@@ -209,7 +227,8 @@
             "lecturer": "Dr. Evan Latef Khlef",
             "published": true,
             "pdf": "git-genetics-lg-1.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-genetics-lg-1-lecture.pdf"
           },
           {
             "code": "LG 2",
@@ -217,7 +236,8 @@
             "lecturer": "Dr. Evan Latef Khlef",
             "published": true,
             "pdf": "git-genetics-lg-2.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-genetics-lg-2-lecture.pdf"
           }
         ],
         "microbiology": [],
@@ -228,7 +248,10 @@
             "lecturer": "Dr. Jangi Shawkat Salai",
             "published": true,
             "pdf": "git-pharmacology-lg-1.pdf",
-            "pdf_note": "4 pages"
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf",
+            "mcq": "git-pharmacology-lg-1-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
             "code": "LG 2",
@@ -236,7 +259,10 @@
             "lecturer": "Dr. Begard O. Berzinji",
             "published": true,
             "pdf": "git-pharmacology-lg-2.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-lg-2-lecture.pdf",
+            "mcq": "git-pharmacology-lg-2-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
             "code": "LG 3",
@@ -244,7 +270,10 @@
             "lecturer": "Dr. Susan Abdulkadir Farhadi",
             "published": true,
             "pdf": "git-pharmacology-lg-3.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-lg-3-lecture.pdf",
+            "mcq": "git-pharmacology-lg-3-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
             "code": "SGL 1",
@@ -252,7 +281,10 @@
             "lecturer": "Dr. Jangi Shawkat Salai",
             "published": true,
             "pdf": "git-pharmacology-sgl-1.pdf",
-            "pdf_note": "4 pages"
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf",
+            "mcq": "git-pharmacology-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
             "code": "SGL 2",
@@ -260,7 +292,10 @@
             "lecturer": "Dr. Begard O. Berzinji",
             "published": true,
             "pdf": "git-pharmacology-sgl-2.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-sgl-2-lecture.pdf",
+            "mcq": "git-pharmacology-sgl-2-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
             "code": "SGL 3",
@@ -268,7 +303,10 @@
             "lecturer": "Dr. Jangi Salai",
             "published": true,
             "pdf": "git-pharmacology-sgl-3.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-sgl-3-lecture.pdf",
+            "mcq": "git-pharmacology-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
             "code": "SGL 4",
@@ -276,7 +314,10 @@
             "lecturer": "Asst. Prof. Nidhal Abdulkader & Asst. Lect. Nermin Jamal",
             "published": true,
             "pdf": "git-pharmacology-sgl-4.pdf",
-            "pdf_note": "3 pages"
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-sgl-4-lecture.pdf",
+            "mcq": "git-pharmacology-sgl-4-mcq.pdf",
+            "mcq_note": "20 questions"
           }
         ],
         "pathology": [
@@ -287,6 +328,7 @@
             "published": true,
             "pdf": "git-pathology-lg-1.pdf",
             "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
             "mcq": "git-pathology-lg-1-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -297,6 +339,7 @@
             "published": true,
             "pdf": "git-pathology-lg-2.pdf",
             "pdf_note": "5 pages",
+            "lecture_pdf": "git-pathology-lg-2-lecture.pdf",
             "mcq": "git-pathology-lg-2-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -307,6 +350,7 @@
             "published": true,
             "pdf": "git-pathology-sgl-1-i.pdf",
             "pdf_note": "3 pages",
+            "lecture_pdf": "git-pathology-sgl-1-i-lecture.pdf",
             "mcq": "git-pathology-sgl-1-i-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -317,6 +361,7 @@
             "published": true,
             "pdf": "git-pathology-sgl-1-ii.pdf",
             "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-1-ii-lecture.pdf",
             "mcq": "git-pathology-sgl-1-ii-mcq.pdf",
             "mcq_note": "20 questions"
           },
@@ -327,6 +372,7 @@
             "published": true,
             "pdf": "git-pathology-lg-3.pdf",
             "pdf_note": "3 pages",
+            "lecture_pdf": "git-pathology-lg-3-lecture.pdf",
             "mcq": "git-pathology-lg-3-mcq.pdf",
             "mcq_note": "20 questions"
           }
