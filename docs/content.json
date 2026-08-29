@@ -58,14 +58,12 @@
         "anatomy": [],
         "physiology": [
           {
-            "code": "LG 1",
-            "title": "Oral Cavity & Salivation",
-            "lecturer": "Dr. Sherwan R Shal",
-            "published": true,
-            "pdf": "git-physiology-lg-1.pdf",
-            "pdf_note": "3 pages",
-            "mcq": "git-physiology-lg-1-mcq.pdf",
-            "mcq_note": "20 questions"
+            "lecture_pdf": "git-physiology-lg-1-lecture.pdf",
+"lecture_note": "original lecture slides",
+"pdf": "git-physiology-lg-1.pdf",
+"pdf_note": "3 pages",
+"mcq": "git-physiology-lg-1-mcq.pdf",
+"mcq_note": "20 questions"
           },
           {
             "code": "LG 2",
