@@ -32,7 +32,8 @@
             "published": true,
             "pdf": "git-physiology-lg-1.pdf",
             "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-lg-1-lecture.pdf"
+            "lecture_pdf": "git-physiology-lg-1-lecture.pdf",
+"mcq": "git-physiology-lg-1-mcq.pdf"
           },
           {
             "code": "LG 2",
@@ -41,7 +42,8 @@
             "published": true,
             "pdf": "git-physiology-lg-2.pdf",
             "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-lg-2-lecture.pdf"
+            "lecture_pdf": "git-physiology-lg-2-lecture.pdf",
+"mcq": "git-physiology-lg-2-mcq.pdf"
           },
           {
             "code": "LG 3",
@@ -50,7 +52,8 @@
             "published": true,
             "pdf": "git-physiology-lg-3.pdf",
             "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-lg-3-lecture.pdf"
+            "lecture_pdf": "git-physiology-lg-3-lecture.pdf",
+"mcq": "git-physiology-lg-3-mcq.pdf"
           },
           {
             "code": "LG 4",
@@ -59,7 +62,8 @@
             "published": true,
             "pdf": "git-physiology-lg-4.pdf",
             "pdf_note": "4 pages",
-            "lecture_pdf": "git-physiology-lg-4-lecture.pdf"
+            "lecture_pdf": "git-physiology-lg-4-lecture.pdf",
+"mcq": "git-physiology-lg-4-mcq.pdf"
           },
           {
             "code": "SGL 1",
@@ -68,7 +72,8 @@
             "published": true,
             "pdf": "git-physiology-sgl-1.pdf",
             "pdf_note": "4 pages",
-            "lecture_pdf": "git-physiology-sgl-1-lecture.pdf"
+            "lecture_pdf": "git-physiology-sgl-1-lecture.pdf",
+"mcq": "git-physiology-sgl-1-mcq.pdf"
           },
           {
             "code": "SGL 2",
@@ -77,7 +82,8 @@
             "published": true,
             "pdf": "git-physiology-sgl-2.pdf",
             "pdf_note": "4 pages",
-            "lecture_pdf": "git-physiology-sgl-2-lecture.pdf"
+            "lecture_pdf": "git-physiology-sgl-2-lecture.pdf",
+"mcq": "git-physiology-sgl-2-mcq.pdf"
           },
           {
             "code": "SGL 3",
@@ -86,7 +92,8 @@
             "published": true,
             "pdf": "git-physiology-sgl-3.pdf",
             "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-sgl-3-lecture.pdf"
+            "lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
+"mcq": "git-physiology-sgl-3-mcq.pdf"
           }
         ],
         "biochemistry": [
