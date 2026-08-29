@@ -158,8 +158,11 @@ a.lecrow .lecrow__code{color:var(--subject)}
 .pager a{text-decoration:none;color:var(--subject)}
 .pager span{color:var(--ink-3)}
 .review{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
-.review span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);
-  border-radius:20px;padding:5px 12px;color:var(--ink-2)}
+.review button{font-family:var(--mono);font-size:12px;border:1px solid var(--line);
+  border-radius:20px;padding:5px 12px;color:var(--ink-2);background:var(--card);
+  cursor:pointer;transition:background-color .14s ease,color .14s ease,border-color .14s ease}
+.review button:hover{border-color:var(--subject);color:var(--subject)}
+.review button.review--on{background:var(--subject);border-color:var(--subject);color:#fff}
 .foot{margin-top:56px;padding:22px 0 34px;border-top:1px solid var(--line);
   font-size:13px;color:var(--ink-3)}
 .foot strong{color:var(--ink-2);font-weight:500}
@@ -178,6 +181,25 @@ main.haspdf{padding-bottom:90px}
   padding:9px 15px;border-radius:8px 8px 0 0;border:1px solid var(--line);border-bottom:none;
   background:var(--tint);color:var(--ink-2);cursor:pointer}
 .restab--on{background:var(--card);color:var(--subject);font-weight:600}
+
+/* ---------- resource list (lecture / summary / mcq rows) ---------- */
+.reslist{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.resrow{display:flex;align-items:center;gap:10px;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--radius);padding:12px 12px 12px 14px}
+.resrow--on{border-color:var(--subject)}
+.resrow__icon{flex:none;width:34px;height:34px;border-radius:8px;background:var(--tint);
+  color:var(--subject);display:flex;align-items:center;justify-content:center}
+.resrow__icon svg{width:17px;height:17px}
+.resrow__main{flex:1;min-width:0;text-decoration:none;color:inherit;cursor:pointer}
+.resrow__title{font-family:var(--serif);font-size:16.5px;font-weight:600;letter-spacing:-.005em}
+.resrow__meta{font-size:12.5px;color:var(--ink-2);margin-top:2px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.dlbtn{flex:none;display:flex;align-items:center;gap:6px;background:var(--subject);color:#fff;
+  border:0;border-radius:7px;padding:9px 13px;font-family:var(--sans);font-size:12.5px;
+  font-weight:500;cursor:pointer;white-space:nowrap}
+.dlbtn:hover{filter:brightness(1.08)}
+.dlbtn svg{width:14px;height:14px;flex:none}
+.dlbtn--busy{opacity:.6;pointer-events:none}
 
 @media (min-width:700px){.pagehead h1{font-size:36px}.pagehead{padding:46px 0 30px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -296,6 +318,15 @@ function saveProgress(p){
 }
 function lectureKey(blockId, subjId, code){ return blockId + "::" + subjId + "::" + code; }
 
+/* spaced-review checkpoints (Day 1 / 3 / 7 / 21 / Pre-exam), per browser */
+function loadReview(){
+  try { return JSON.parse(localStorage.getItem("meducation-review") || "{}"); }
+  catch(e){ return {}; }
+}
+function saveReview(r){
+  try { localStorage.setItem("meducation-review", JSON.stringify(r)); } catch(e){}
+}
+
 /* how many published lectures in a block are checked off */
 function blockProgress(b){
   const p = loadProgress();
@@ -356,9 +387,21 @@ function handleCheckboxChange(e){
   }
 }
 
+function handleReviewClick(e){
+  const btn = e.currentTarget;
+  const key = btn.getAttribute("data-review-key");
+  const r = loadReview();
+  r[key] = !r[key];
+  saveReview(r);
+  btn.classList.toggle("review--on", !!r[key]);
+}
+
 function attachInteractive(){
   document.querySelectorAll(".lecchk input[data-key]").forEach(cb => {
     cb.addEventListener("change", handleCheckboxChange);
+  });
+  document.querySelectorAll(".review button[data-review-key]").forEach(btn => {
+    btn.addEventListener("click", handleReviewClick);
   });
 }
 
@@ -400,16 +443,28 @@ function fireConfetti(){
   requestAnimationFrame(frame);
 }
 
-/* ---------------- resources (summary + original lecture) ---------------- */
+/* ---------------- resources (original lecture + summary + mcqs) ---------------- */
 
+const RES_ICONS = {
+  lecture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+  summary: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>',
+  mcq: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a2.9 2.9 0 0 1 5.7.8c0 1.9-2.6 2.2-2.8 3.7"/><path d="M12 17.2v.1"/></svg>'
+};
+const DL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>';
+
+/* order students see them: original lecture, then summary, then mcqs */
 function resourceList(l){
   const list = [];
-  if (l.pdf) list.push({ type: "summary", label: "Summary", pdf: l.pdf, note: l.pdf_note });
   if (l.lecture_pdf) list.push({ type: "lecture", label: "Original Lecture", pdf: l.lecture_pdf, note: l.lecture_note });
+  if (l.pdf) list.push({ type: "summary", label: "Summary", pdf: l.pdf, note: l.pdf_note });
+  if (l.mcq) list.push({ type: "mcq", label: "MCQs", pdf: l.mcq, note: l.mcq_note });
   return list;
 }
+function resourceFolder(type){
+  return type === "lecture" ? "lectures/" : type === "mcq" ? "mcqs/" : "pdfs/";
+}
 function resourceSrc(r){
-  return (r.type === "lecture" ? "lectures/" : "pdfs/") + encodeURIComponent(r.pdf);
+  return resourceFolder(r.type) + encodeURIComponent(r.pdf);
 }
 function selectResource(idx){
   const r = LEC_RES[idx];
@@ -417,6 +472,41 @@ function selectResource(idx){
   const iframe = document.getElementById("pdfview");
   if (iframe) iframe.src = resourceSrc(r) + "#view=FitH";
   document.querySelectorAll(".restab").forEach((btn, i) => btn.classList.toggle("restab--on", i === idx));
+  document.querySelectorAll(".resrow").forEach((row, i) => row.classList.toggle("resrow--on", i === idx));
+}
+
+/* download a resource. On iOS/iPadOS (and any browser with the Web Share
+   API for files) this opens the native share sheet so students can save
+   straight into Files, a notes app, etc. Falls back to a plain download. */
+async function downloadResource(btn){
+  const url = btn.getAttribute("data-url");
+  const filename = btn.getAttribute("data-filename");
+  const original = btn.innerHTML;
+  btn.classList.add("dlbtn--busy");
+  try{
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error("fetch failed");
+    const blob = await resp.blob();
+    const file = new File([blob], filename, { type: blob.type || "application/pdf" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })){
+      await navigator.share({ files: [file], title: filename });
+      btn.classList.remove("dlbtn--busy");
+      return;
+    }
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = blobUrl; a.download = filename; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 4000);
+  } catch(e){
+    if (e && e.name === "AbortError"){ btn.classList.remove("dlbtn--busy"); return; }
+    // last-resort fallback: plain navigation to the file
+    const a = document.createElement("a");
+    a.href = url; a.download = filename; a.rel = "noopener"; a.target = "_blank";
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+  btn.classList.remove("dlbtn--busy");
+  btn.innerHTML = original;
 }
 
 /* ---------------- home ---------------- */
@@ -582,36 +672,41 @@ function viewLecture(blockId, subjId, code){
   if (Array.isArray(l.notes) && l.notes.length){
     notes = `<ul>${l.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`;
   } else if (resources.length){
+    LEC_RES = resources;
     const narrow = window.matchMedia("(max-width: 780px)").matches;
-    if (narrow){
-      notes = resources.map(r => `
-        <a class="pdfcard" href="${resourceSrc(r)}" target="_blank" rel="noopener">
-          <div class="pdfcard__title">Open the ${r.type === "lecture" ? "original lecture" : "summary"}</div>
-          <div class="pdfcard__meta">${esc(r.note || "PDF")}</div>
-          <span class="btn">Open PDF</span>
-        </a>`).join("");
-    } else {
-      LEC_RES = resources;
-      const tabs = resources.length > 1
-        ? `<div class="restabs">${resources.map((r,idx) =>
-            `<button type="button" class="restab${idx === 0 ? " restab--on" : ""}" onclick="selectResource(${idx})">${esc(r.label)}</button>`
-          ).join("")}</div>`
-        : "";
-      notes = `${tabs}<iframe id="pdfview" class="pdfview" src="${resourceSrc(resources[0])}#view=FitH"
-           title="${esc(l.title)}"></iframe>`;
-    }
+
+    const rows = `<ul class="reslist">${resources.map((r,idx) => `
+        <li class="resrow${idx === 0 ? " resrow--on" : ""}">
+          <span class="resrow__icon">${RES_ICONS[r.type] || RES_ICONS.summary}</span>
+          <a class="resrow__main" href="${resourceSrc(r)}" target="_blank" rel="noopener"
+             onclick="${narrow ? "" : `return selectResourceClick(event, ${idx})`}">
+            <div class="resrow__title">${esc(r.label)}</div>
+            <div class="resrow__meta">${esc(r.note || "PDF")}</div>
+          </a>
+          <button type="button" class="dlbtn" data-url="${resourceSrc(r)}"
+                  data-filename="${esc(r.pdf)}" onclick="downloadResource(this)">
+            ${DL_ICON}<span>Download</span>
+          </button>
+        </li>`).join("")}</ul>`;
+
+    const preview = !narrow
+      ? `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
+           src="${resourceSrc(resources[0])}#view=FitH" title="${esc(l.title)}"></iframe>`
+      : "";
+
+    notes = rows + preview;
   } else {
     notes = `<div class="empty">Nothing attached to this one yet.</div>`;
   }
 
-  if (resources.length){
-    document.getElementById("bar").innerHTML =
-      `<div class="downloadbar"><div class="downloadbar__inner">
-        <span class="downloadbar__label">${esc(l.code)}${resources[0].note ? " · " + esc(resources[0].note) : ""}</span>
-        ${resources.map(r => `<a class="btn${r.type === "lecture" ? " btn--quiet" : ""}" href="${resourceSrc(r)}" download>${r.type === "lecture" ? "Download Lecture" : "Download Summary"}</a>`).join("")}
-      </div></div>`;
-    document.getElementById("app").classList.add("haspdf");
-  }
+  const reviewDays = ["Day 1","Day 3","Day 7","Day 21","Pre-exam"];
+  const reviewProgress = loadReview();
+  const reviewKeyBase = lectureKey(b.id, sub.id, l.code);
+  const review = `<div class="review">${reviewDays.map(day => {
+    const k = reviewKeyBase + "::" + day;
+    const on = !!reviewProgress[k];
+    return `<button type="button" class="review--btn${on ? " review--on" : ""}" data-review-key="${esc(k)}">${esc(day)}</button>`;
+  }).join("")}</div>`;
 
   return `<div class="pagehead">
       <p class="crumb"><a href="#/b/${b.id}">${esc(b.short)}</a> &nbsp;/&nbsp;
@@ -619,11 +714,17 @@ function viewLecture(blockId, subjId, code){
       <h1>${esc(l.title)}</h1><p>${esc(l.lecturer || "")}</p></div>
     ${notes}
     <h2 class="seclabel" style="margin-top:34px">Spaced review</h2>
-    <div class="review"><span>Day 1</span><span>Day 3</span><span>Day 7</span>
-      <span>Day 21</span><span>Pre-exam</span></div>
+    <p style="margin:0 0 4px;font-size:13px;color:var(--ink-2)">Tap a day once you've reviewed this lecture again.</p>
+    ${review}
     <div class="pager">${left}${right}</div>
     ${foot(sub.name + " · " + b.title + " Block · MEDucation by " + DATA.site.author,
            "Study alongside the lecture, not instead of it.")}`;
+}
+
+function selectResourceClick(evt, idx){
+  evt.preventDefault();
+  selectResource(idx);
+  return false;
 }
 
 /* ---------------- exam ---------------- */
