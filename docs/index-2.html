@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEDucation</title>
+<style>
+:root{
+  --ink:#14201C; --soft:#5A6863; --line:#DFE4E1; --bg:#FAFBF9; --card:#FFFFFF;
+  --brand:#1B7A4B; --brandtint:#E4F2EA;
+  --subject:#1B7A4B; --tint:#E4F2EA;
+  --r-red:#B3322B; --r-orange:#C2610A; --r-amber:#B8860B; --r-yellow:#7A9A2E;
+  --r-green:#1B7A4B; --r-gold:#B08D1E;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  line-height:1.5;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:760px;margin:0 auto;padding:20px 18px 60px;}
+
+/* ---- top bar ---- */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(250,251,249,.92);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);}
+.topinner{max-width:760px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:12px;}
+.brandmark{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:-.01em;}
+.brandmark svg{width:26px;height:26px;flex-shrink:0;}
+#back{font-size:13.5px;color:var(--soft);margin-left:auto;}
+#back:hover{color:var(--subject);}
+
+/* ---- scroll progress ---- */
+#scrollbar{position:fixed;top:0;left:0;height:2.5px;background:var(--subject);z-index:30;width:0%;
+  transition:width .1s linear;}
+
+/* ---- home / block cards ---- */
+.pagehead{margin:18px 0 22px;}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--subject);text-transform:uppercase;margin:0 0 4px;}
+h1{font-size:26px;margin:0 0 6px;letter-spacing:-.02em;}
+.pagehead p{color:var(--soft);margin:0;font-size:14.5px;}
+
+.blockgrid{display:grid;grid-template-columns:1fr;gap:12px;}
+.blockcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;transition:transform .15s ease,box-shadow .15s ease;}
+.blockcard:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(20,32,28,.06);}
+.blockcard__subject{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--soft);text-transform:uppercase;}
+.blockcard__title{font-size:19px;font-weight:700;margin:3px 0 6px;}
+.blockcard__count{font-size:13px;color:var(--soft);margin-bottom:10px;}
+.dots{display:flex;gap:5px;margin-bottom:10px;flex-wrap:wrap;}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+
+/* ---- progress bar ---- */
+.pbar-wrap{margin-top:10px;}
+.pbar-track{height:9px;border-radius:5px;background:#EEF1EF;overflow:hidden;}
+.pbar-fill{height:100%;border-radius:5px;transition:width .4s ease;}
+.pbar-caption{display:flex;justify-content:space-between;align-items:center;margin-top:5px;font-size:12px;color:var(--soft);}
+.pbar-caption b{color:var(--ink);}
+
+/* ---- subject grid (block page) ---- */
+.subjgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.subjcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 14px;}
+.subjcard__title{font-weight:700;font-size:14.5px;margin-top:2px;}
+.subjcard__count{font-size:12px;color:var(--soft);margin-top:3px;}
+.examcard{display:block;margin-top:8px;background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+.examcard__title{font-weight:700;font-size:15.5px;color:var(--subject);margin:2px 0 2px;}
+.examcard__meta{font-size:12.5px;color:var(--soft);}
+
+/* ---- subject page: lecture spine ---- */
+.spine{list-style:none;margin:0;padding:0;}
+.spine li{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:11px 0;}
+.spine li:last-child{border-bottom:none;}
+.chk{width:21px;height:21px;flex-shrink:0;border-radius:6px;border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;background:#fff;transition:.15s;}
+.chk.on{background:var(--subject);border-color:var(--subject);}
+.chk svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:3;opacity:0;transition:.1s;}
+.chk.on svg{opacity:1;}
+.chk.disabled{opacity:.3;cursor:default;pointer-events:none;}
+.lecrow{flex:1;display:block;min-width:0;}
+.lecrow__code{font-size:11px;font-weight:700;color:var(--subject);letter-spacing:.03em;}
+.lecrow__title{font-size:14.5px;font-weight:600;margin:1px 0;}
+.lecrow__meta{font-size:12px;color:var(--soft);display:flex;align-items:center;gap:6px;}
+.tag{font-size:10.5px;background:var(--tint);color:var(--subject);padding:1px 6px;border-radius:20px;font-weight:600;}
+.tag--soon{background:#F1F2F1;color:var(--soft);}
+.lecrow--soon{opacity:.55;}
+.empty{color:var(--soft);text-align:center;padding:30px 10px;font-size:14px;}
+
+/* ---- lecture page: resource cards ---- */
+.reslist{display:flex;flex-direction:column;gap:10px;margin:18px 0 26px;}
+.rescard{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);
+  border-radius:12px;padding:13px 15px;}
+.rescard__icon{width:38px;height:38px;border-radius:9px;background:var(--tint);color:var(--subject);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rescard__icon svg{width:19px;height:19px;}
+.rescard__body{flex:1;min-width:0;}
+.rescard__label{font-weight:700;font-size:14.5px;}
+.rescard__note{font-size:12px;color:var(--soft);margin-top:1px;}
+.rescard__btn{flex-shrink:0;background:var(--subject);color:#fff;border:none;border-radius:8px;
+  padding:8px 14px;font-size:13px;font-weight:600;white-space:nowrap;}
+.rescard__btn.disabled{background:#EEF1EF;color:var(--soft);}
+.rescard.missing{opacity:.6;}
+
+/* ---- spaced review ---- */
+.review{margin-top:8px;border-top:2px solid var(--subject);padding-top:14px;}
+.rlabel{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--subject);text-transform:uppercase;margin-bottom:10px;}
+.rboxes{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;}
+.rb{border:1.5px solid var(--line);border-radius:9px;padding:9px 4px;font-size:11.5px;color:var(--soft);
+  text-align:center;cursor:pointer;background:#fff;transition:.15s;user-select:none;}
+.rb .rbchk{display:block;width:15px;height:15px;margin:0 auto 5px;border-radius:50%;border:1.5px solid var(--line);
+  position:relative;}
+.rb.on{background:var(--tint);border-color:var(--subject);color:var(--subject);font-weight:700;}
+.rb.on .rbchk{background:var(--subject);border-color:var(--subject);}
+.rb.on .rbchk::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;
+  border-width:0 2px 2px 0;transform:rotate(45deg);}
+
+/* ---- pager / foot ---- */
+.pager{display:flex;justify-content:space-between;margin-top:22px;font-size:13.5px;color:var(--subject);font-weight:600;}
+.crumb{font-size:12.5px;color:var(--soft);margin:0 0 6px;}
+.foot{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--soft);}
+.foot span{display:block;margin-bottom:2px;}
+.seclabel{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin:26px 0 10px;}
+@media (min-width:520px){.blockgrid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div id="scrollbar"></div>
+<div class="topbar"><div class="topinner">
+  <a class="brandmark" href="#/">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="5"/>
+      <path d="M37,30 C33,30 32,34 33,38 C34,46 37,54 42,60" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M63,30 C67,30 68,34 67,38 C66,46 63,54 58,60" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path d="M42,60 C45,66 55,66 58,60" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <line x1="50" y1="64" x2="50" y2="72" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+    MEDucation
+  </a>
+  <a id="back" href="#/">&larr; Home</a>
+</div></div>
+<div class="wrap" id="app"></div>
+
+<script>
+let DATA = null;
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+
+const THEMES = {
+  brand:        ["#1B7A4B", "#E4F2EA"],
+  anatomy:      ["#0F6E72", "#E0F0F0"],
+  physiology:   ["#1B7A4B", "#E4F2EA"],
+  biochemistry: ["#A32552", "#FAE7EE"],
+  histology:    ["#6B3FA0", "#EFE8F7"],
+  genetics:     ["#3C4A5A", "#E9ECEF"],
+  micro:        ["#1F5FA8", "#E5EEF9"],
+  pharm:        ["#C2610A", "#FCEDDD"],
+  pathology:    ["#B3322B", "#FBEAE8"],
+};
+function theme(name){
+  const t = THEMES[name] || THEMES.brand;
+  document.documentElement.style.setProperty("--subject", t[0]);
+  document.documentElement.style.setProperty("--tint", t[1]);
+}
+
+/* ---------- storage helpers ---------- */
+function studiedKey(b,s,code){ return `meducation-studied:${b}:${s}:${slug(code)}`; }
+function reviewKey(b,s,code){ return `meducation-review:${b}:${s}:${slug(code)}`; }
+function isStudied(b,s,code){ try{ return localStorage.getItem(studiedKey(b,s,code)) === "1"; }catch(e){ return false; } }
+function setStudied(b,s,code,val){ try{ localStorage.setItem(studiedKey(b,s,code), val ? "1":"0"); }catch(e){} }
+function getReview(b,s,code){
+  try{ return JSON.parse(localStorage.getItem(reviewKey(b,s,code)) || "{}"); }catch(e){ return {}; }
+}
+function setReview(b,s,code,obj){
+  try{ localStorage.setItem(reviewKey(b,s,code), JSON.stringify(obj)); }catch(e){}
+}
+function blockConfettiSeenKey(b){ return `meducation-confetti:${b}`; }
+
+/* ---------- progress calc ---------- */
+function blockProgress(b){
+  let total = 0, done = 0;
+  for (const subjId in b.subjects){
+    for (const l of (b.subjects[subjId]||[])){
+      if (!l.published) continue;
+      total++;
+      if (isStudied(b.id, subjId, l.code)) done++;
+    }
+  }
+  return {total, done, pct: total ? Math.round(done/total*100) : 0};
+}
+function bandFor(pct){
+  if (pct >= 90) return {colour:"var(--r-gold)", caption:"Gordon Ramsay is quiet since this dropped \u{1F9D1}\u200D\u{1F373}"};
+  if (pct >= 75) return {colour:"var(--r-green)", caption:"Certified Chef. \u{1F393}"};
+  if (pct >= 60) return {colour:"var(--r-yellow)", caption:"Smells good in here. \u{1F967}"};
+  if (pct >= 40) return {colour:"var(--r-amber)", caption:"Wait, let him cook. \u{1F963}"};
+  if (pct >= 20) return {colour:"var(--r-orange)", caption:"Academic comeback starting soon... right? \u{1F4C9}"};
+  return {colour:"var(--r-red)", caption:"Pack your bags, buddy. \u{1F392}"};
+}
+function progressBarHTML(b){
+  const {total, done, pct} = blockProgress(b);
+  if (!total) return "";
+  const band = bandFor(pct);
+  return `<div class="pbar-wrap" data-block="${b.id}">
+    <div class="pbar-track"><div class="pbar-fill" style="width:${pct}%;background:${band.colour}"></div></div>
+    <div class="pbar-caption"><span>${band.caption}</span><b>${done}/${total} &middot; ${pct}%</b></div>
+  </div>`;
+}
+function maybeConfetti(blockId, pct){
+  if (pct < 90) return;
+  const key = blockConfettiSeenKey(blockId);
+  try{
+    if (localStorage.getItem(key) === "1") return;
+    localStorage.setItem(key, "1");
+  }catch(e){ return; }
+  fireConfetti();
+}
+function fireConfetti(){
+  const colors = ["#B08D1E","#1B7A4B","#C2610A","#B3322B","#6B3FA0"];
+  const n = 60;
+  for (let i=0;i<n;i++){
+    const el = document.createElement("div");
+    const c = colors[i % colors.length];
+    const startX = Math.random()*100;
+    el.style.cssText = `position:fixed;top:-10px;left:${startX}vw;width:8px;height:8px;background:${c};
+      z-index:999;pointer-events:none;border-radius:2px;opacity:.9;`;
+    document.body.appendChild(el);
+    const fall = 100 + Math.random()*40;
+    const drift = (Math.random()-0.5)*30;
+    const rot = Math.random()*720;
+    el.animate([
+      {transform:`translate(0,0) rotate(0deg)`, opacity:1},
+      {transform:`translate(${drift}vw, ${fall}vh) rotate(${rot}deg)`, opacity:0}
+    ], {duration: 2200 + Math.random()*1200, easing:"cubic-bezier(.25,.46,.45,.94)"}).onfinish = () => el.remove();
+  }
+}
+
+function setBack(label, href){
+  const el = document.getElementById("back");
+  if (!label){ el.style.display = "none"; return; }
+  el.style.display = "";
+  el.textContent = label;
+  el.setAttribute("href", href);
+}
+function findBlock(id){ return DATA.blocks.find(b => b.id === id); }
+function findSubject(id){ return DATA.subjects.find(s => s.id === id); }
+function findLecture(block, subjId, code){
+  return (block.subjects[subjId] || []).find(l => slug(l.code) === code);
+}
+function foot(line, second){
+  return `<div class="foot"><span>${esc(line)}</span>${second ? `<span>${esc(second)}</span>` : ""}</div>`;
+}
+const pub = list => (list || []).filter(l => l.published);
+
+/* ---------------- home ---------------- */
+function viewHome(){
+  theme("brand");
+  setBack("", null);
+  const s = DATA.site;
+  const cards = DATA.blocks.map(b => {
+    const total = Object.values(b.subjects).reduce((n,v) => n + pub(v).length, 0);
+    const dots = DATA.subjects.map(sub => {
+      const on = pub(b.subjects[sub.id]).length > 0;
+      const t = THEMES[sub.theme] || THEMES.brand;
+      const col = on ? t[0] : "var(--line)";
+      return `<span class="dot" style="background:${col}" title="${esc(sub.name)}"></span>`;
+    }).join("");
+    const count = total ? `${total} lecture${total===1?"":"s"} published` : "Nothing published yet";
+    const bar = total ? progressBarHTML(b) : "";
+    return `<a class="blockcard" href="#/b/${b.id}">
+      <div class="blockcard__subject">${esc(s.stage)}</div>
+      <div class="blockcard__title">${esc(b.title)}</div>
+      <div class="blockcard__count">${count}</div>
+      <div class="dots">${dots}</div>
+      ${bar}
+    </a>`;
+  }).join("");
+  return `<div class="pagehead">
+      <p class="eyebrow">${esc(s.stage)}</p>
+      <h1>${esc(s.name)}</h1><p>${esc(s.tagline)}</p></div>
+    <div class="blockgrid">${cards}</div>
+    ${foot(s.subtitle, "MEDucation by " + s.author)}`;
+}
+
+/* ---------------- block ---------------- */
+function viewBlock(blockId){
+  const b = findBlock(blockId);
+  if (!b) return viewMissing();
+  theme("brand");
+  setBack("\u2190 Home", "#/");
+
+  const cards = DATA.subjects.map(sub => {
+    const list = b.subjects[sub.id] || [];
+    const done = pub(list).length;
+    const t = THEMES[sub.theme] || THEMES.brand;
+    return `<a class="subjcard" href="#/s/${b.id}/${sub.id}" style="--subject:${t[0]};--tint:${t[1]}">
+      <div class="blockcard__subject" style="color:${t[0]}">${esc(sub.name)}</div>
+      <div class="subjcard__count">${done ? done + " summar" + (done===1?"y":"ies") : "Nothing yet"}</div>
+    </a>`;
+  }).join("");
+
+  let exam = "";
+  if (b.exam){
+    const t = THEMES[b.exam.theme] || THEMES.brand;
+    exam = `<section><h2 class="seclabel">When the block ends</h2>
+      <a class="examcard" href="#/e/${b.id}" style="--subject:${t[0]};--tint:${t[1]}">
+        <div class="blockcard__subject" style="color:${t[0]}">Mock exam</div>
+        <div class="examcard__title">${esc(b.exam.title)}</div>
+        <div class="examcard__meta">${b.exam.questions} questions &middot; ${b.exam.minutes} minutes &middot; ${esc(b.exam.note)}</div>
+      </a></section>`;
+  }
+
+  const bar = progressBarHTML(b);
+
+  return `<div class="pagehead">
+      <p class="eyebrow">${esc(DATA.site.stage)} &middot; ${esc(b.short)}</p>
+      <h1>${esc(b.title)}</h1><p>Pick a subject.</p>
+      ${bar}
+    </div>
+    <div class="subjgrid">${cards}</div>${exam}
+    ${foot(b.title + " Block \u00b7 MEDucation by " + DATA.site.author)}`;
+}
+
+/* ---------------- subject ---------------- */
+function viewSubject(blockId, subjId){
+  const b = findBlock(blockId), sub = findSubject(subjId);
+  if (!b || !sub) return viewMissing();
+  theme(sub.theme);
+  setBack("\u2190 " + b.short, "#/b/" + b.id);
+
+  const list = b.subjects[subjId] || [];
+  const done = pub(list).length;
+
+  const inner = !list.length
+    ? `<div class="empty">No summaries for this subject yet.<br>They appear here as the lectures happen.</div>`
+    : `<ul class="spine">${list.map(l => {
+        if (!l.published){
+          return `<li>
+            <span class="chk disabled"><svg viewBox="0 0 20 20"><polyline points="4,10 8,14 16,5"/></svg></span>
+            <div class="lecrow lecrow--soon">
+              <div class="lecrow__code">${esc(l.code)}</div>
+              <div class="lecrow__title">${esc(l.title)}</div>
+              <div class="lecrow__meta"><span class="tag tag--soon">Coming</span></div>
+            </div></li>`;
+        }
+        const checked = isStudied(b.id, subjId, l.code);
+        return `<li>
+          <span class="chk${checked ? " on":""}" data-studied-toggle data-block="${b.id}" data-subj="${subjId}" data-code="${esc(l.code)}">
+            <svg viewBox="0 0 20 20"><polyline points="4,10 8,14 16,5"/></svg>
+          </span>
+          <a class="lecrow" href="#/l/${b.id}/${subjId}/${slug(l.code)}">
+            <div class="lecrow__code">${esc(l.code)}</div>
+            <div class="lecrow__title">${esc(l.title)}</div>
+            <div class="lecrow__meta">${l.lecturer ? esc(l.lecturer) + " &middot; " : ""}<span class="tag">Read</span></div>
+          </a></li>`;
+      }).join("")}</ul>`;
+
+  return `<div class="pagehead">
+      <p class="crumb"><a href="#/b/${b.id}">${esc(b.short)}</a> &nbsp;/&nbsp; ${esc(sub.name)}</p>
+      <h1>${esc(sub.name)}</h1>
+      <p>${list.length ? done + " of " + list.length + " published" : "Nothing published yet"}</p></div>
+    ${inner}
+    ${foot(sub.name + " \u00b7 " + b.title + " Block \u00b7 MEDucation by " + DATA.site.author)}`;
+}
+
+/* ---------------- lecture ---------------- */
+function resourceRow(iconSvg, label, note, href, missing){
+  const btn = missing
+    ? `<button class="rescard__btn disabled" disabled>Not yet</button>`
+    : `<a class="rescard__btn" href="${href}" target="_blank" rel="noopener">Download</a>`;
+  return `<div class="rescard${missing ? " missing":""}">
+    <div class="rescard__icon">${iconSvg}</div>
+    <div class="rescard__body"><div class="rescard__label">${esc(label)}</div>
+      <div class="rescard__note">${esc(note)}</div></div>
+    ${btn}
+  </div>`;
+}
+const ICON_LECTURE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`;
+const ICON_SUMMARY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>`;
+const ICON_MCQ = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2 2-2.5 3.5"/><line x1="12" y1="16.5" x2="12" y2="16.5"/></svg>`;
+
+function reviewBoxes(b, subjId, l){
+  const state = getReview(b.id, subjId, l.code);
+  const days = [["day1","Day 1"],["day3","Day 3"],["day7","Day 7"],["day21","Day 21"],["pre","Pre-exam"]];
+  const boxes = days.map(([k,label]) => {
+    const on = !!state[k];
+    return `<div class="rb${on?" on":""}" data-review-toggle data-block="${b.id}" data-subj="${subjId}" data-code="${esc(l.code)}" data-day="${k}">
+      <span class="rbchk"></span>${label}
+    </div>`;
+  }).join("");
+  return `<div class="review">
+    <div class="rlabel">Spaced review</div>
+    <div class="rboxes">${boxes}</div>
+  </div>`;
+}
+
+function viewLecture(blockId, subjId, code){
+  const b = findBlock(blockId), sub = findSubject(subjId);
+  if (!b || !sub) return viewMissing();
+  const list = b.subjects[subjId] || [];
+  const l = findLecture(b, subjId, code);
+  if (!l) return viewMissing();
+
+  theme(sub.theme);
+  setBack("\u2190 " + sub.name, "#/s/" + b.id + "/" + subjId);
+
+  const i = list.indexOf(l);
+  const prev = [...list.slice(0,i)].reverse().find(x => x.published);
+  const next = list.slice(i+1).find(x => x.published);
+  const pending = list[i+1];
+
+  const left = prev
+    ? `<a href="#/l/${b.id}/${subjId}/${slug(prev.code)}">\u2190 ${esc(prev.code)}</a>`
+    : `<span style="color:var(--soft);font-weight:400">\u2190 First one</span>`;
+  const right = next
+    ? `<a href="#/l/${b.id}/${subjId}/${slug(next.code)}">${esc(next.code)} \u2192</a>`
+    : pending ? `<span style="color:var(--soft);font-weight:400">${esc(pending.code)} coming</span>` : `<span style="color:var(--soft);font-weight:400">End of subject</span>`;
+
+  const resources = [
+    resourceRow(ICON_LECTURE, "Original lecture", l.lecture_pdf_note || "Slides as given in class", l.lecture_pdf ? "lectures/" + encodeURIComponent(l.lecture_pdf) : null, !l.lecture_pdf),
+    resourceRow(ICON_SUMMARY, "Summary", l.pdf_note || "MEDucation summary PDF", l.pdf ? "pdfs/" + encodeURIComponent(l.pdf) : null, !l.pdf),
+    resourceRow(ICON_MCQ, "MCQs", l.mcq_note || "Practice questions", l.mcq ? "mcqs/" + encodeURIComponent(l.mcq) : null, !l.mcq),
+  ].join("");
+
+  return `<div class="pagehead">
+      <p class="crumb"><a href="#/b/${b.id}">${esc(b.short)}</a> &nbsp;/&nbsp;
+        <a href="#/s/${b.id}/${subjId}">${esc(sub.name)}</a> &nbsp;/&nbsp; ${esc(l.code)}</p>
+      <h1>${esc(l.title)}</h1><p>${esc(l.lecturer || "")}</p></div>
+    <div class="reslist">${resources}</div>
+    ${reviewBoxes(b, subjId, l)}
+    <div class="pager">${left}${right}</div>
+    ${foot(sub.name + " \u00b7 " + b.title + " Block \u00b7 MEDucation by " + DATA.site.author,
+           "Study alongside the lecture, not instead of it.")}`;
+}
+
+/* ---------------- exam (shell) ---------------- */
+function viewExam(blockId){
+  const b = findBlock(blockId);
+  if (!b || !b.exam) return viewMissing();
+  theme(b.exam.theme);
+  setBack("\u2190 " + b.short, "#/b/" + b.id);
+  return `<div class="pagehead">
+      <p class="crumb"><a href="#/b/${b.id}">${esc(b.short)}</a> &nbsp;/&nbsp; Mock exam</p>
+      <h1>${esc(b.exam.title)}</h1>
+      <p>${b.exam.questions} questions &middot; ${b.exam.minutes} minutes</p></div>
+    <div class="empty">This opens ${esc(b.exam.note || "soon")}. Check back once the block wraps up.</div>
+    ${foot(b.title + " Block \u00b7 MEDucation by " + DATA.site.author)}`;
+}
+
+function viewMissing(){
+  setBack("\u2190 Home", "#/");
+  theme("brand");
+  return `<div class="pagehead"><h1>Not found</h1><p>That page doesn't exist.</p></div>
+    <div class="empty"><a href="#/">Back to the blocks</a></div>`;
+}
+
+/* ---------------- router ---------------- */
+function route(){
+  const app = document.getElementById("app");
+  const hash = location.hash.replace(/^#\/?/, "");
+  const parts = hash.split("/").filter(Boolean);
+  let html;
+  if (parts[0] === "b" && parts[1]) html = viewBlock(parts[1]);
+  else if (parts[0] === "s" && parts[1] && parts[2]) html = viewSubject(parts[1], parts[2]);
+  else if (parts[0] === "l" && parts[1] && parts[2] && parts[3]) html = viewLecture(parts[1], parts[2], parts[3]);
+  else if (parts[0] === "e" && parts[1]) html = viewExam(parts[1]);
+  else html = viewHome();
+  app.innerHTML = html;
+  window.scrollTo(0,0);
+  wireInteractions();
+}
+
+function wireInteractions(){
+  document.querySelectorAll("[data-studied-toggle]").forEach(el => {
+    el.addEventListener("click", () => {
+      const {block, subj, code} = el.dataset;
+      const was = isStudied(block, subj, code);
+      setStudied(block, subj, code, !was);
+      el.classList.toggle("on", !was);
+      const b = findBlock(block);
+      if (b){
+        const {pct} = blockProgress(b);
+        maybeConfetti(block, pct);
+        document.querySelectorAll(`.pbar-wrap[data-block="${block}"]`).forEach(w => {
+          const band = bandFor(pct);
+          const {total, done} = blockProgress(b);
+          w.querySelector(".pbar-fill").style.width = pct + "%";
+          w.querySelector(".pbar-fill").style.background = band.colour;
+          w.querySelector(".pbar-caption span").textContent = band.caption;
+          w.querySelector(".pbar-caption b").textContent = `${done}/${total} \u00b7 ${pct}%`;
+        });
+      }
+    });
+  });
+  document.querySelectorAll("[data-review-toggle]").forEach(el => {
+    el.addEventListener("click", () => {
+      const {block, subj, code, day} = el.dataset;
+      const state = getReview(block, subj, code);
+      state[day] = !state[day];
+      setReview(block, subj, code, state);
+      el.classList.toggle("on", state[day]);
+    });
+  });
+}
+
+/* ---------------- scroll progress bar ---------------- */
+window.addEventListener("scroll", () => {
+  const h = document.documentElement;
+  const scrolled = h.scrollTop;
+  const max = h.scrollHeight - h.clientHeight;
+  const pct = max > 0 ? (scrolled / max) * 100 : 0;
+  document.getElementById("scrollbar").style.width = pct + "%";
+});
+
+window.addEventListener("hashchange", route);
+fetch("content.json").then(r => r.json()).then(d => { DATA = d; route(); })
+  .catch(err => {
+    document.getElementById("app").innerHTML =
+      `<div class="pagehead"><h1>Couldn't load content</h1><p>content.json failed to load. This page only works when served from the real web address, not opened directly from Finder.</p></div>`;
+    console.error(err);
+  });
+</script>
+</body>
+</html>
