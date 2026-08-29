@@ -8,46 +8,14 @@
     "subtitle": "Everything posted on the channel, kept here so you can find it again."
   },
   "subjects": [
-    {
-      "id": "anatomy",
-      "name": "Anatomy",
-      "theme": "anatomy"
-    },
-    {
-      "id": "physiology",
-      "name": "Physiology",
-      "theme": "physiology"
-    },
-    {
-      "id": "biochemistry",
-      "name": "Biochemistry",
-      "theme": "biochemistry"
-    },
-    {
-      "id": "histology",
-      "name": "Histology",
-      "theme": "histology"
-    },
-    {
-      "id": "genetics",
-      "name": "Genetics",
-      "theme": "genetics"
-    },
-    {
-      "id": "microbiology",
-      "name": "Microbiology",
-      "theme": "micro"
-    },
-    {
-      "id": "pharmacology",
-      "name": "Pharmacology",
-      "theme": "pharm"
-    },
-    {
-      "id": "pathology",
-      "name": "Pathology",
-      "theme": "pathology"
-    }
+    { "id": "anatomy", "name": "Anatomy", "theme": "anatomy" },
+    { "id": "physiology", "name": "Physiology", "theme": "physiology" },
+    { "id": "biochemistry", "name": "Biochemistry", "theme": "biochemistry" },
+    { "id": "histology", "name": "Histology", "theme": "histology" },
+    { "id": "genetics", "name": "Genetics", "theme": "genetics" },
+    { "id": "microbiology", "name": "Microbiology", "theme": "micro" },
+    { "id": "pharmacology", "name": "Pharmacology", "theme": "pharm" },
+    { "id": "pathology", "name": "Pathology", "theme": "pathology" }
   ],
   "blocks": [
     {
@@ -56,249 +24,254 @@
       "short": "GIT",
       "subjects": {
         "anatomy": [],
-        "physiology": [{
-  "code": "LG 1",
-  "title": "Oral Cavity & Salivation",
-  "lecturer": "Dr. Sherwan R Shal",
-  "published": true,
-  "pdf": "git-physiology-lg-1.pdf",
-  "pdf_note": "3 pages",
-"lecture_pdf": "git-physiology-lg-1-lecture.pdf"
-},
-{
-  "code": "LG 2",
-  "title": "Swallowing (Deglutition)",
-  "lecturer": "Dr. Nazleen Shakir Akreyi",
-  "published": true,
-  "pdf": "git-physiology-lg-2.pdf",
-  "pdf_note": "3 pages",
-"lecture_pdf": "git-physiology-lg-2-lecture.pdf"
-},
-{
-  "code": "LG 3",
-  "title": "Physiology of the Defecation Reflex",
-  "lecturer": "Dr. Nazleen Shakir Akreyi",
-  "published": true,
-  "pdf": "git-physiology-lg-3.pdf",
-  "pdf_note": "3 pages",
-"lecture_pdf": "git-physiology-lg-3-lecture.pdf"
-},
-{
-  "code": "LG 4",
-  "title": "Physiology of the Liver",
-  "lecturer": "Dr. Sherwan R Shal",
-  "published": true,
-  "pdf": "git-physiology-lg-4.pdf",
-  "pdf_note": "4 pages",
-"lecture_pdf": "git-physiology-lg-4-lecture.pdf"
-},
-{
-  "code": "SGL 1",
-  "title": "Stomach and Duodenum",
-  "lecturer": "TBC — not printed on slides",
-  "published": true,
-  "pdf": "git-physiology-sgl-1.pdf",
-  "pdf_note": "4 pages",
-"lecture_pdf": "git-physiology-sgl-1-lecture.pdf"
-},
-{
-  "code": "SGL 2",
-  "title": "Physiology of Small Intestine",
-  "lecturer": "Dr. Dler Qader Gallaly",
-  "published": true,
-  "pdf": "git-physiology-sgl-2.pdf",
-  "pdf_note": "4 pages",
-"lecture_pdf": "git-physiology-sgl-2-lecture.pdf"
-},
-{
-  "code": "SGL 3",
-  "title": "Physiology of the Large Intestine",
-  "lecturer": "Dr. Nidhal Gorgees Hanna",
-  "published": true,
-  "pdf": "git-physiology-sgl-3.pdf",
-  "pdf_note": "3 pages",
-"lecture_pdf": "git-physiology-sgl-3-lecture.pdf"
-}
-],
+        "physiology": [
+          {
+            "code": "LG 1",
+            "title": "Oral Cavity & Salivation",
+            "lecturer": "Dr. Sherwan R Shal",
+            "published": true,
+            "pdf": "git-physiology-lg-1.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-lg-1-lecture.pdf"
+          },
+          {
+            "code": "LG 2",
+            "title": "Swallowing (Deglutition)",
+            "lecturer": "Dr. Nazleen Shakir Akreyi",
+            "published": true,
+            "pdf": "git-physiology-lg-2.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-lg-2-lecture.pdf"
+          },
+          {
+            "code": "LG 3",
+            "title": "Physiology of the Defecation Reflex",
+            "lecturer": "Dr. Nazleen Shakir Akreyi",
+            "published": true,
+            "pdf": "git-physiology-lg-3.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-lg-3-lecture.pdf"
+          },
+          {
+            "code": "LG 4",
+            "title": "Physiology of the Liver",
+            "lecturer": "Dr. Sherwan R Shal",
+            "published": true,
+            "pdf": "git-physiology-lg-4.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-lg-4-lecture.pdf"
+          },
+          {
+            "code": "SGL 1",
+            "title": "Stomach and Duodenum",
+            "lecturer": "TBC — not printed on slides",
+            "published": true,
+            "pdf": "git-physiology-sgl-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-sgl-1-lecture.pdf"
+          },
+          {
+            "code": "SGL 2",
+            "title": "Physiology of Small Intestine",
+            "lecturer": "Dr. Dler Qader Gallaly",
+            "published": true,
+            "pdf": "git-physiology-sgl-2.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-sgl-2-lecture.pdf"
+          },
+          {
+            "code": "SGL 3",
+            "title": "Physiology of the Large Intestine",
+            "lecturer": "Dr. Nidhal Gorgees Hanna",
+            "published": true,
+            "pdf": "git-physiology-sgl-3.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-sgl-3-lecture.pdf"
+          }
+        ],
         "biochemistry": [
-{
-  "code": "LG 1",
-  "title": "GIT Enzymes and Hormones",
-  "lecturer": "Dr. Sardar N. Ahmed",
-  "published": true,
-  "pdf": "git-biochemistry-sgl-1.pdf",
-  "pdf_note": "3 pages",
-"lecture_pdf": "git-biochemistry-sgl-1-lecture.pdf"
-},
-{
-  "code": "LG 2",
-  "title": "Liver Function Tests",
-  "lecturer": "Dr. Fargeen E. ALmukhtar",
-  "published": true,
-  "pdf": "git-biochemistry-lg-1.pdf",
-  "pdf_note": "3 pages",
-"lecture_pdf": "git-biochemistry-lg-1-lecture.pdf"
-}
-],
+          {
+            "code": "LG 1",
+            "title": "GIT Enzymes and Hormones",
+            "lecturer": "Dr. Sardar N. Ahmed",
+            "published": true,
+            "pdf": "git-biochemistry-sgl-1.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-biochemistry-sgl-1-lecture.pdf"
+          },
+          {
+            "code": "LG 2",
+            "title": "Liver Function Tests",
+            "lecturer": "Dr. Fargeen E. ALmukhtar",
+            "published": true,
+            "pdf": "git-biochemistry-lg-1.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-biochemistry-lg-1-lecture.pdf"
+          }
+        ],
         "histology": [
-{
-  "code": "LG 1",
-  "title": "Basic Layers of the GI Wall",
-  "lecturer": "Dr Hero K. Mustafa",
-  "published": true,
-  "pdf": "git-histology-lg-1.pdf",
-  "pdf_note": "4 pages",
-"lecture_pdf": "git-histology-lg-1-lecture.pdf"
-},
-{
-  "code": "LG 2",
-  "title": "Gastric Mucosa — Regional Structure",
-  "lecturer": "Dr Hero K. Mustafa",
-  "published": true,
-  "pdf": "git-histology-lg-2.pdf",
-  "pdf_note": "5 pages",
-"lecture_pdf": "git-histology-lg-2-lecture.pdf"
-},
-{
-  "code": "LG 3",
-  "title": "Histology of the Pancreas",
-  "lecturer": "Dr. Hero K. Mustafa",
-  "published": true,
-  "pdf": "git-histology-lg-3.pdf",
-  "pdf_note": "5 pages",
-"lecture_pdf": "git-histology-lg-3-lecture.pdf"
-},
-{
-  "code": "SGL 1",
-  "title": "Oral Cavity & Salivary Glands",
-  "lecturer": "Dr. Hero K. Mustafa",
-  "published": true,
-  "pdf": "git-histology-sgl-1.pdf",
-  "pdf_note": "6 pages",
-"lecture_pdf": "git-histology-sgl-1-lecture.pdf"
-},
-{
-  "code": "SGL 2",
-  "title": "Small Intestine",
-  "lecturer": "Dr. Hero K. Mustafa",
-  "published": true,
-  "pdf": "git-histology-sgl-2.pdf",
-  "pdf_note": "5 pages",
-"lecture_pdf": "git-histology-sgl-2-lecture.pdf"
-},
-{
-  "code": "SGL 3",
-  "title": "Large Intestine & Anal Canal",
-  "lecturer": "Dr. Hero K. Mustafa",
-  "published": true,
-  "pdf": "git-histology-sgl-3.pdf",
-  "pdf_note": "6 pages",
-"lecture_pdf": "git-histology-sgl-3-lecture.pdf"
-},
-{
-  "code": "SGL 4",
-  "title": "Liver & Extrahepatic Biliary Apparatus",
-  "lecturer": "Dr. Hero K. Mustafa",
-  "published": true,
-  "pdf": "git-histology-sgl-4.pdf",
-  "pdf_note": "6 pages",
-"lecture_pdf": "git-histology-sgl-4-lecture.pdf"
-}
-],
-        "genetics": [{
-  "code": "LG 1",
-  "title": "GI Tract Genetic Disorders — Overview",
-  "lecturer": "Dr. Evan Latef Khlef",
-  "published": true,
-  "pdf": "git-genetics-lg-1.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-genetics-lg-1-lecture.pdf"
-},
-{
-  "code": "LG 2",
-  "title": "Reading a Genetic Analysis Report",
-  "lecturer": "Dr. Evan Latef Khlef",
-  "published": true,
-  "pdf": "git-genetics-lg-2.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-genetics-lg-2-lecture.pdf"
-}
-],
+          {
+            "code": "LG 1",
+            "title": "Basic Layers of the GI Wall",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-lg-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-lg-1-lecture.pdf"
+          },
+          {
+            "code": "LG 2",
+            "title": "Gastric Mucosa — Regional Structure",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-lg-2.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-histology-lg-2-lecture.pdf"
+          },
+          {
+            "code": "LG 3",
+            "title": "Histology of the Pancreas",
+            "lecturer": "Dr. Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-lg-3.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-histology-lg-3-lecture.pdf"
+          },
+          {
+            "code": "SGL 1",
+            "title": "Oral Cavity & Salivary Glands",
+            "lecturer": "Dr. Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-1.pdf",
+            "pdf_note": "6 pages",
+            "lecture_pdf": "git-histology-sgl-1-lecture.pdf"
+          },
+          {
+            "code": "SGL 2",
+            "title": "Small Intestine",
+            "lecturer": "Dr. Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-2.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-histology-sgl-2-lecture.pdf"
+          },
+          {
+            "code": "SGL 3",
+            "title": "Large Intestine & Anal Canal",
+            "lecturer": "Dr. Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-3.pdf",
+            "pdf_note": "6 pages",
+            "lecture_pdf": "git-histology-sgl-3-lecture.pdf"
+          },
+          {
+            "code": "SGL 4",
+            "title": "Liver & Extrahepatic Biliary Apparatus",
+            "lecturer": "Dr. Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-4.pdf",
+            "pdf_note": "6 pages",
+            "lecture_pdf": "git-histology-sgl-4-lecture.pdf"
+          }
+        ],
+        "genetics": [
+          {
+            "code": "LG 1",
+            "title": "GI Tract Genetic Disorders — Overview",
+            "lecturer": "Dr. Evan Latef Khlef",
+            "published": true,
+            "pdf": "git-genetics-lg-1.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-genetics-lg-1-lecture.pdf"
+          },
+          {
+            "code": "LG 2",
+            "title": "Reading a Genetic Analysis Report",
+            "lecturer": "Dr. Evan Latef Khlef",
+            "published": true,
+            "pdf": "git-genetics-lg-2.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-genetics-lg-2-lecture.pdf"
+          }
+        ],
         "microbiology": [],
-        "pharmacology": [{
-  "code": "LG 1",
-  "title": "Emetic and Antiemetic Drugs",
-  "lecturer": "Dr. Jangi Shawkat Salai",
-  "published": true,
-  "pdf": "git-pharmacology-lg-1.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf"
-},
-{
-  "code": "LG 2",
-  "title": "Treatment of GI Parasitic Infestations",
-  "lecturer": "Dr. Begard O. Berzinji",
-  "published": true,
-  "pdf": "git-pharmacology-lg-2.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-pharmacology-lg-2-lecture.pdf"
-},
-{
-  "code": "LG 3",
-  "title": "Laxatives and Anti-diarrhoeal Agents",
-  "lecturer": "Dr. Susan Abdulkadir Farhadi",
-  "published": true,
-  "pdf": "git-pharmacology-lg-3.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-pharmacology-lg-3-lecture.pdf"
-},
-{
-  "code": "SGL 1",
-  "title": "Drugs in Bowel Diseases",
-  "lecturer": "Dr. Jangi Shawkat Salai",
-  "published": true,
-  "pdf": "git-pharmacology-sgl-1.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
-},
-{
-  "code": "SGL 2",
-  "title": "Acid-Related Disorders",
-  "lecturer": "Dr. Begard O. Berzinji",
-  "published": true,
-  "pdf": "git-pharmacology-sgl-2.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-pharmacology-sgl-2-lecture.pdf"
-},
-{
-  "code": "SGL 3",
-  "title": "GI Infections & Viral Hepatitis Therapy",
-  "lecturer": "Dr. Jangi Salai",
-  "published": true,
-  "pdf": "git-pharmacology-sgl-3.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-pharmacology-sgl-3-lecture.pdf"
-},
-{
-  "code": "SGL 4",
-  "title": "Drug-Induced Liver Injury (DILI)",
-  "lecturer": "Asst. Prof. Nidhal Abdulkader & Asst. Lect. Nermin Jamal",
-  "published": true,
-  "pdf": "git-pharmacology-sgl-4.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-pharmacology-sgl-4-lecture.pdf"
-}
-],
+        "pharmacology": [
+          {
+            "code": "LG 1",
+            "title": "Emetic and Antiemetic Drugs",
+            "lecturer": "Dr. Jangi Shawkat Salai",
+            "published": true,
+            "pdf": "git-pharmacology-lg-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf"
+          },
+          {
+            "code": "LG 2",
+            "title": "Treatment of GI Parasitic Infestations",
+            "lecturer": "Dr. Begard O. Berzinji",
+            "published": true,
+            "pdf": "git-pharmacology-lg-2.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-lg-2-lecture.pdf"
+          },
+          {
+            "code": "LG 3",
+            "title": "Laxatives and Anti-diarrhoeal Agents",
+            "lecturer": "Dr. Susan Abdulkadir Farhadi",
+            "published": true,
+            "pdf": "git-pharmacology-lg-3.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-lg-3-lecture.pdf"
+          },
+          {
+            "code": "SGL 1",
+            "title": "Drugs in Bowel Diseases",
+            "lecturer": "Dr. Jangi Shawkat Salai",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
+          },
+          {
+            "code": "SGL 2",
+            "title": "Acid-Related Disorders",
+            "lecturer": "Dr. Begard O. Berzinji",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-2.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-sgl-2-lecture.pdf"
+          },
+          {
+            "code": "SGL 3",
+            "title": "GI Infections & Viral Hepatitis Therapy",
+            "lecturer": "Dr. Jangi Salai",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-3.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-sgl-3-lecture.pdf"
+          },
+          {
+            "code": "SGL 4",
+            "title": "Drug-Induced Liver Injury (DILI)",
+            "lecturer": "Asst. Prof. Nidhal Abdulkader & Asst. Lect. Nermin Jamal",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-4.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pharmacology-sgl-4-lecture.pdf"
+          }
+        ],
         "pathology": [
           {
-             "code": "LG 1",
-    "title": "Oral Cavity & Salivary Glands",
-    "lecturer": "Dr Jawher Tahir Omer",
-    "published": true,
-    "pdf": "git-pathology-lg-1.pdf",
-    "pdf_note": "4 pages",
-    "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
-    "lecture_note": "31 slides"
+            "code": "LG 1",
+            "title": "Oral Cavity & Salivary Glands",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-lg-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
+            "lecture_note": "31 slides",
+            "mcq": "git-pathology-lg-1-mcq.pdf",
+            "mcq_note": "20 questions · 8 case-based"
           },
           {
             "code": "LG 2",
@@ -306,7 +279,9 @@
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
             "pdf": "git-pathology-lg-2.pdf",
-"lecture_pdf": "git-pathology-lg-2-lecture.pdf"
+            "lecture_pdf": "git-pathology-lg-2-lecture.pdf",
+            "mcq": "git-pathology-lg-2-mcq.pdf",
+            "mcq_note": "20 questions · 9 case-based"
           },
           {
             "code": "SGL 1 · I",
@@ -314,7 +289,9 @@
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
             "pdf": "git-pathology-sgl-1-i.pdf",
-"lecture_pdf": "git-pathology-sgl-1-i-lecture.pdf"
+            "lecture_pdf": "git-pathology-sgl-1-i-lecture.pdf",
+            "mcq": "git-pathology-sgl-1-i-mcq.pdf",
+            "mcq_note": "20 questions · 9 case-based"
           },
           {
             "code": "SGL 1 · II",
@@ -322,7 +299,9 @@
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
             "pdf": "git-pathology-sgl-1-ii.pdf",
-"lecture_pdf": "git-pathology-sgl-1-ii-lecture.pdf"
+            "lecture_pdf": "git-pathology-sgl-1-ii-lecture.pdf",
+            "mcq": "git-pathology-sgl-1-ii-mcq.pdf",
+            "mcq_note": "20 questions · 9 case-based"
           },
           {
             "code": "LG 3",
@@ -330,7 +309,9 @@
             "lecturer": "Dr Jawher Tahir Omer",
             "published": true,
             "pdf": "git-pathology-lg-3.pdf",
-"lecture_pdf": "git-pathology-lg-3-lecture.pdf"
+            "lecture_pdf": "git-pathology-lg-3-lecture.pdf",
+            "mcq": "git-pathology-lg-3-mcq.pdf",
+            "mcq_note": "20 questions · 9 case-based"
           }
         ]
       },
@@ -349,14 +330,8 @@
       "title": "Genitourinary",
       "short": "GUE",
       "subjects": {
-        "anatomy": [],
-        "physiology": [],
-        "biochemistry": [],
-        "histology": [],
-        "genetics": [],
-        "microbiology": [],
-        "pharmacology": [],
-        "pathology": []
+        "anatomy": [], "physiology": [], "biochemistry": [], "histology": [],
+        "genetics": [], "microbiology": [], "pharmacology": [], "pathology": []
       }
     },
     {
@@ -364,14 +339,8 @@
       "title": "Nervous System",
       "short": "NS",
       "subjects": {
-        "anatomy": [],
-        "physiology": [],
-        "biochemistry": [],
-        "histology": [],
-        "genetics": [],
-        "microbiology": [],
-        "pharmacology": [],
-        "pathology": []
+        "anatomy": [], "physiology": [], "biochemistry": [], "histology": [],
+        "genetics": [], "microbiology": [], "pharmacology": [], "pathology": []
       }
     },
     {
@@ -379,14 +348,8 @@
       "title": "Transitional",
       "short": "Transitional",
       "subjects": {
-        "anatomy": [],
-        "physiology": [],
-        "biochemistry": [],
-        "histology": [],
-        "genetics": [],
-        "microbiology": [],
-        "pharmacology": [],
-        "pathology": []
+        "anatomy": [], "physiology": [], "biochemistry": [], "histology": [],
+        "genetics": [], "microbiology": [], "pharmacology": [], "pathology": []
       }
     }
   ]

@@ -81,15 +81,6 @@ section+section,.subjgrid+section{margin-top:44px}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
 .dot--on{background:var(--subject)}
 
-/* ---------- progress ---------- */
-.progresswrap{margin:12px 0 10px}
-.progressbar{height:8px;border-radius:5px;background:var(--line);overflow:hidden}
-.progressfill{height:100%;border-radius:5px;transition:width .35s ease,background-color .35s ease}
-.progressmeta{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
-  font-size:11.5px;color:var(--ink-2);margin-top:6px;font-family:var(--mono)}
-.progressmeta__msg{text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.progressmeta--big{font-size:13px;margin-top:8px}
-
 .subjgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .subjcard{display:block;text-decoration:none;background:var(--card);
   border:1px solid var(--line);border-top:3px solid var(--subject);
@@ -113,10 +104,9 @@ a.subjcard:hover{transform:translateY(-1px);box-shadow:0 4px 14px var(--shadow)}
 .node{position:absolute;left:0;top:20px;width:13px;height:13px;border-radius:50%;
   border:2px solid var(--line);background:var(--paper)}
 .node--done{border-color:var(--subject);background:var(--subject)}
-
-.lecrow-flex{display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--line)}
-.spine li:last-child .lecrow-flex{border-bottom:0}
-.lecrow{display:block;text-decoration:none;padding:16px 0;flex:1;min-width:0}
+.lecrow{display:block;text-decoration:none;padding:16px 0;
+  border-bottom:1px solid var(--line)}
+.spine li:last-child .lecrow{border-bottom:0}
 .lecrow__code{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-3)}
 a.lecrow .lecrow__code{color:var(--subject)}
 .lecrow__title{font-family:var(--serif);font-size:18px;font-weight:600;
@@ -127,10 +117,6 @@ a.lecrow .lecrow__code{color:var(--subject)}
   text-transform:uppercase;padding:2px 7px;border-radius:3px;
   background:var(--tint);color:var(--subject)}
 .tag--soon{background:var(--line);color:var(--ink-3)}
-
-.lecchk{display:flex;align-items:center;justify-content:center;padding:6px;
-  cursor:pointer;flex:none}
-.lecchk input{width:20px;height:20px;accent-color:var(--subject);cursor:pointer}
 
 .examcard{display:block;text-decoration:none;background:var(--tint);
   border:1px solid var(--line);border-radius:var(--radius);padding:18px}
@@ -146,7 +132,7 @@ a.lecrow .lecrow__code{color:var(--subject)}
 .downloadbar{position:fixed;left:0;right:0;bottom:0;background:var(--barbg);
   backdrop-filter:blur(8px);border-top:1px solid var(--line);
   padding:11px var(--gutter) calc(11px + env(safe-area-inset-bottom));z-index:20}
-.downloadbar__inner{max-width:620px;margin:0 auto;display:flex;align-items:center;gap:10px}
+.downloadbar__inner{max-width:620px;margin:0 auto;display:flex;align-items:center;gap:12px}
 .downloadbar__label{font-size:13px;color:var(--ink-2);flex:1;min-width:0}
 
 .notice{border-left:3px solid var(--subject);padding:2px 0 2px 14px;margin:24px 0;
@@ -165,19 +151,26 @@ a.lecrow .lecrow__code{color:var(--subject)}
 .foot strong{color:var(--ink-2);font-weight:500}
 main.haspdf{padding-bottom:90px}
 .pdfview{width:100%;height:80vh;min-height:520px;border:1px solid var(--line);
-  border-radius:var(--radius);background:#fff;display:block;margin:0}
+  border-radius:var(--radius);background:#fff;display:block;margin:20px 0 0}
 .pdfcard{display:block;text-decoration:none;background:var(--tint);
   border:1px solid var(--line);border-radius:var(--radius);
-  padding:22px;text-align:center;margin:14px 0 0}
-.pdfcard:first-of-type{margin-top:20px}
+  padding:22px;text-align:center;margin:20px 0 0}
 .pdfcard__title{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:4px}
 .pdfcard__meta{font-size:13.5px;color:var(--ink-2);margin-bottom:14px}
 
-.restabs{display:flex;gap:6px;margin:20px 0 0}
-.restab{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
-  padding:9px 15px;border-radius:8px 8px 0 0;border:1px solid var(--line);border-bottom:none;
-  background:var(--tint);color:var(--ink-2);cursor:pointer}
-.restab--on{background:var(--card);color:var(--subject);font-weight:600}
+/* ---------- resource row (summary / lecture / mcq) ---------- */
+.reslist{display:flex;flex-direction:column;gap:8px;margin:18px 0 0}
+.rescard{display:flex;align-items:center;gap:12px;text-decoration:none;
+  background:var(--card);border:1px solid var(--line);border-left:4px solid var(--subject);
+  border-radius:var(--radius);padding:13px 14px;transition:transform .14s ease,box-shadow .14s ease}
+.rescard:hover{transform:translateY(-1px);box-shadow:0 4px 14px var(--shadow)}
+.rescard__icon{flex:none;width:34px;height:34px;border-radius:8px;background:var(--tint);
+  color:var(--subject);display:flex;align-items:center;justify-content:center}
+.rescard__icon svg{width:17px;height:17px}
+.rescard__text{flex:1;min-width:0}
+.rescard__title{font-family:var(--serif);font-size:15.5px;font-weight:600;line-height:1.25}
+.rescard__meta{font-size:12.5px;color:var(--ink-2);margin-top:1px}
+.rescard__go{flex:none;font-family:var(--mono);font-size:11px;color:var(--subject)}
 
 @media (min-width:700px){.pagehead h1{font-size:36px}.pagehead{padding:46px 0 30px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -228,6 +221,11 @@ const THEMES = {
 const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>';
 const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg>';
 
+/* icons for the resource row */
+const ICON_SUMMARY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6M9 9h1"/></svg>';
+const ICON_LECTURE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 21h8M12 16v5"/></svg>';
+const ICON_MCQ = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.3a2.8 2.8 0 1 1 3.9 3c-.8.5-1.1 1-1.1 1.9"/><path d="M12 17h.01"/></svg>';
+
 let MODE = "light";
 let CURRENT = "brand";
 
@@ -251,7 +249,6 @@ function applyMode(mode, save){
 }
 
 let DATA = null;
-let LEC_RES = [];   // resources (summary/lecture) for the lecture page currently open
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g,
   c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -285,140 +282,6 @@ function foot(line, second){
     second ? "<br>" + esc(second) : ""}</footer>`;
 }
 
-/* ---------------- progress tracking (per-browser, localStorage) ---------------- */
-
-function loadProgress(){
-  try { return JSON.parse(localStorage.getItem("meducation-progress") || "{}"); }
-  catch(e){ return {}; }
-}
-function saveProgress(p){
-  try { localStorage.setItem("meducation-progress", JSON.stringify(p)); } catch(e){}
-}
-function lectureKey(blockId, subjId, code){ return blockId + "::" + subjId + "::" + code; }
-
-/* how many published lectures in a block are checked off */
-function blockProgress(b){
-  const p = loadProgress();
-  let total = 0, done = 0;
-  DATA.subjects.forEach(sub => {
-    pub(b.subjects[sub.id]).forEach(l => {
-      total++;
-      if (p[lectureKey(b.id, sub.id, l.code)]) done++;
-    });
-  });
-  const pct = total ? Math.round((done / total) * 100) : 0;
-  return { pct, total, done };
-}
-
-function progressMessage(pct){
-  if (pct < 20)  return { text: "Pack your bags, buddy.", emoji: "🎒" };
-  if (pct < 40)  return { text: "Academic comeback starting soon... right?", emoji: "📉" };
-  if (pct < 60)  return { text: "Wait, let him cook.", emoji: "🥣" };
-  if (pct < 75)  return { text: "Smells good in here.", emoji: "🥧" };
-  if (pct < 90)  return { text: "Certified Chef.", emoji: "🎓" };
-  return { text: "Gordon Ramsay is quiet since this dropped", emoji: "🧑‍🍳" };
-}
-
-function progressColor(pct){
-  if (pct < 20)  return "#B3322B"; // red
-  if (pct < 40)  return "#C2610A"; // orange
-  if (pct < 60)  return "#D4A017"; // amber
-  if (pct < 75)  return "#8BAA3C"; // yellow-green
-  if (pct < 90)  return "#1B7A4B"; // green
-  return "#B8860B"; // gold — top tier
-}
-
-function progressBarHtml(prog, big){
-  const msg = progressMessage(prog.pct);
-  const col = progressColor(prog.pct);
-  return `<div class="progresswrap">
-    <div class="progressbar"><div class="progressfill" style="width:${prog.pct}%;background:${col}"></div></div>
-    <div class="progressmeta${big ? " progressmeta--big" : ""}">
-      <span>${prog.done}/${prog.total} &middot; ${prog.pct}%</span>
-      <span class="progressmeta__msg">${msg.emoji} ${esc(msg.text)}</span>
-    </div>
-  </div>`;
-}
-
-function handleCheckboxChange(e){
-  const key = e.target.getAttribute("data-key");
-  const blockId = e.target.getAttribute("data-block");
-  const b = blockId ? findBlock(blockId) : null;
-  const before = b ? blockProgress(b).pct : 0;
-
-  const p = loadProgress();
-  p[key] = e.target.checked;
-  saveProgress(p);
-
-  if (b){
-    const after = blockProgress(b).pct;
-    if (after >= 90 && before < 90) fireConfetti();
-  }
-}
-
-function attachInteractive(){
-  document.querySelectorAll(".lecchk input[data-key]").forEach(cb => {
-    cb.addEventListener("change", handleCheckboxChange);
-  });
-}
-
-/* tiny confetti burst, no external dependency */
-function fireConfetti(){
-  const canvas = document.createElement("canvas");
-  canvas.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:999;";
-  canvas.width = innerWidth; canvas.height = innerHeight;
-  document.body.appendChild(canvas);
-  const ctx = canvas.getContext("2d");
-  const colors = ["#B3322B","#1B7A4B","#1F5FA8","#6B3FA0","#C2610A","#0F6E72","#B8860B"];
-  const pieces = Array.from({ length: 150 }, () => ({
-    x: Math.random() * canvas.width,
-    y: -20 - Math.random() * canvas.height * 0.6,
-    r: 4 + Math.random() * 5,
-    c: colors[Math.floor(Math.random() * colors.length)],
-    vy: 2.2 + Math.random() * 3,
-    vx: -1.6 + Math.random() * 3.2,
-    rot: Math.random() * 360,
-    vr: -7 + Math.random() * 14
-  }));
-  let start = null;
-  function frame(t){
-    if (!start) start = t;
-    const elapsed = t - start;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    pieces.forEach(p => {
-      p.x += p.vx; p.y += p.vy; p.rot += p.vr;
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.rot * Math.PI / 180);
-      ctx.fillStyle = p.c;
-      ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 1.6);
-      ctx.restore();
-    });
-    if (elapsed < 3000 && canvas.isConnected) requestAnimationFrame(frame);
-    else canvas.remove();
-  }
-  requestAnimationFrame(frame);
-}
-
-/* ---------------- resources (summary + original lecture) ---------------- */
-
-function resourceList(l){
-  const list = [];
-  if (l.pdf) list.push({ type: "summary", label: "Summary", pdf: l.pdf, note: l.pdf_note });
-  if (l.lecture_pdf) list.push({ type: "lecture", label: "Original Lecture", pdf: l.lecture_pdf, note: l.lecture_note });
-  return list;
-}
-function resourceSrc(r){
-  return (r.type === "lecture" ? "lectures/" : "pdfs/") + encodeURIComponent(r.pdf);
-}
-function selectResource(idx){
-  const r = LEC_RES[idx];
-  if (!r) return;
-  const iframe = document.getElementById("pdfview");
-  if (iframe) iframe.src = resourceSrc(r) + "#view=FitH";
-  document.querySelectorAll(".restab").forEach((btn, i) => btn.classList.toggle("restab--on", i === idx));
-}
-
 /* ---------------- home ---------------- */
 function viewHome(){
   theme("brand");
@@ -433,12 +296,9 @@ function viewHome(){
       return `<span class="dot" style="background:${col}" title="${esc(sub.name)}"></span>`;
     }).join("");
     const count = total ? `${total} summar${total === 1 ? "y" : "ies"}` : "Nothing yet";
-    const prog = blockProgress(b);
-    const progHtml = prog.total ? progressBarHtml(prog, false) : "";
     return `<a class="blockcard" href="#/b/${b.id}">
       <div class="blockcard__subject">${esc(s.stage)} · ${esc(b.short)}</div>
       <div class="blockcard__title">${esc(b.title)}</div>
-      ${progHtml}
       <div class="dots">${dots}</div>
       <div class="blockcard__count">${count} &nbsp;·&nbsp; ${DATA.subjects.length} subjects</div>
     </a>`;
@@ -493,14 +353,9 @@ function viewBlock(id){
       </a></section>`;
   }
 
-  const prog = blockProgress(b);
-  const progHtml = prog.total ? progressBarHtml(prog, true) : "";
-
   return `<div class="pagehead">
       <p class="eyebrow">${esc(DATA.site.stage)} · ${esc(b.short)}</p>
-      <h1>${esc(b.title)}</h1><p>Pick a subject.</p>
-      ${progHtml}
-    </div>
+      <h1>${esc(b.title)}</h1><p>Pick a subject.</p></div>
     <div class="subjgrid">${cards}</div>${exam}
     ${foot(b.title + " Block · MEDucation by " + DATA.site.author)}`;
 }
@@ -514,36 +369,23 @@ function viewSubject(blockId, subjId){
 
   const list = b.subjects[subjId] || [];
   const done = pub(list).length;
-  const progress = loadProgress();
 
   const inner = !list.length
     ? `<div class="empty">No summaries for this subject yet.<br>
         They appear here as the lectures happen.</div>`
-    : `<ul class="spine">${list.map(l => {
-        if (!l.published){
-          return `<li><span class="node"></span>
-            <div class="lecrow-flex">
-              <div class="lecrow lecrow--soon">
-                <div class="lecrow__code">${esc(l.code)}</div>
-                <div class="lecrow__title">${esc(l.title)}</div>
-                <div class="lecrow__meta"><span class="tag tag--soon">Coming</span></div>
-              </div>
-            </div></li>`;
-        }
-        const key = lectureKey(b.id, subjId, l.code);
-        const checked = !!progress[key];
-        return `<li><span class="node node--done"></span>
-            <div class="lecrow-flex">
-              <a class="lecrow" href="#/l/${b.id}/${sub.id}/${slug(l.code)}">
-                <div class="lecrow__code">${esc(l.code)}</div>
-                <div class="lecrow__title">${esc(l.title)}</div>
-                <div class="lecrow__meta">${l.lecturer ? esc(l.lecturer) + " &nbsp;·&nbsp; " : ""}<span class="tag">Read</span></div>
-              </a>
-              <label class="lecchk" title="Mark as studied">
-                <input type="checkbox" data-key="${key}" data-block="${b.id}" ${checked ? "checked" : ""}>
-              </label>
-            </div></li>`;
-      }).join("")}</ul>`;
+    : `<ul class="spine">${list.map(l => l.published
+        ? `<li><span class="node node--done"></span>
+            <a class="lecrow" href="#/l/${b.id}/${sub.id}/${slug(l.code)}">
+              <div class="lecrow__code">${esc(l.code)}</div>
+              <div class="lecrow__title">${esc(l.title)}</div>
+              <div class="lecrow__meta">${l.lecturer ? esc(l.lecturer) + " &nbsp;·&nbsp; " : ""}<span class="tag">Read</span></div>
+            </a></li>`
+        : `<li><span class="node"></span>
+            <div class="lecrow lecrow--soon">
+              <div class="lecrow__code">${esc(l.code)}</div>
+              <div class="lecrow__title">${esc(l.title)}</div>
+              <div class="lecrow__meta"><span class="tag tag--soon">Coming</span></div>
+            </div></li>`).join("")}</ul>`;
 
   return `<div class="pagehead">
       <p class="crumb"><a href="#/b/${b.id}">${esc(b.short)}</a> &nbsp;/&nbsp; ${esc(sub.name)}</p>
@@ -554,6 +396,17 @@ function viewSubject(blockId, subjId){
 }
 
 /* ---------------- lecture ---------------- */
+function resCard(href, icon, title, meta){
+  return `<a class="rescard" href="${href}" target="_blank" rel="noopener">
+      <span class="rescard__icon">${icon}</span>
+      <span class="rescard__text">
+        <span class="rescard__title">${esc(title)}</span>
+        <span class="rescard__meta">${esc(meta)}</span>
+      </span>
+      <span class="rescard__go">Open →</span>
+    </a>`;
+}
+
 function viewLecture(blockId, subjId, code){
   const b = findBlock(blockId), sub = findSubject(subjId);
   if (!b || !sub) return viewMissing();
@@ -576,39 +429,29 @@ function viewLecture(blockId, subjId, code){
     ? `<a href="#/l/${b.id}/${sub.id}/${slug(next.code)}">${esc(next.code)} →</a>`
     : pending ? `<span>${esc(pending.code)} coming</span>` : `<span>End of subject</span>`;
 
-  const resources = resourceList(l);
-  let notes;
-
-  if (Array.isArray(l.notes) && l.notes.length){
-    notes = `<ul>${l.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`;
-  } else if (resources.length){
-    const narrow = window.matchMedia("(max-width: 780px)").matches;
-    if (narrow){
-      notes = resources.map(r => `
-        <a class="pdfcard" href="${resourceSrc(r)}" target="_blank" rel="noopener">
-          <div class="pdfcard__title">Open the ${r.type === "lecture" ? "original lecture" : "summary"}</div>
-          <div class="pdfcard__meta">${esc(r.note || "PDF")}</div>
-          <span class="btn">Open PDF</span>
-        </a>`).join("");
-    } else {
-      LEC_RES = resources;
-      const tabs = resources.length > 1
-        ? `<div class="restabs">${resources.map((r,idx) =>
-            `<button type="button" class="restab${idx === 0 ? " restab--on" : ""}" onclick="selectResource(${idx})">${esc(r.label)}</button>`
-          ).join("")}</div>`
-        : "";
-      notes = `${tabs}<iframe id="pdfview" class="pdfview" src="${resourceSrc(resources[0])}#view=FitH"
-           title="${esc(l.title)}"></iframe>`;
-    }
-  } else {
-    notes = `<div class="empty">Nothing attached to this one yet.</div>`;
+  /* resource row — summary / original lecture / mcqs, each only if present */
+  const resCards = [];
+  if (l.pdf){
+    resCards.push(resCard("pdfs/" + encodeURIComponent(l.pdf), ICON_SUMMARY,
+      "Summary", l.pdf_note || "MEDucation summary PDF"));
   }
+  if (l.lecture_pdf){
+    resCards.push(resCard("lectures/" + encodeURIComponent(l.lecture_pdf), ICON_LECTURE,
+      "Original lecture", l.lecture_note || "Source slides"));
+  }
+  if (l.mcq){
+    resCards.push(resCard("mcqs/" + encodeURIComponent(l.mcq), ICON_MCQ,
+      "Practice MCQs", l.mcq_note || "20 questions with answers"));
+  }
+  const resources = resCards.length
+    ? `<div class="reslist">${resCards.join("")}</div>`
+    : `<div class="empty">Nothing attached to this one yet.</div>`;
 
-  if (resources.length){
+  if (l.pdf){
     document.getElementById("bar").innerHTML =
       `<div class="downloadbar"><div class="downloadbar__inner">
-        <span class="downloadbar__label">${esc(l.code)}${resources[0].note ? " · " + esc(resources[0].note) : ""}</span>
-        ${resources.map(r => `<a class="btn${r.type === "lecture" ? " btn--quiet" : ""}" href="${resourceSrc(r)}" download>${r.type === "lecture" ? "Download Lecture" : "Download Summary"}</a>`).join("")}
+        <span class="downloadbar__label">${esc(l.code)} · Summary${l.pdf_note ? " · " + esc(l.pdf_note) : ""}</span>
+        <a class="btn" href="pdfs/${encodeURIComponent(l.pdf)}" download>Download</a>
       </div></div>`;
     document.getElementById("app").classList.add("haspdf");
   }
@@ -617,7 +460,7 @@ function viewLecture(blockId, subjId, code){
       <p class="crumb"><a href="#/b/${b.id}">${esc(b.short)}</a> &nbsp;/&nbsp;
         <a href="#/s/${b.id}/${sub.id}">${esc(sub.name)}</a> &nbsp;/&nbsp; ${esc(l.code)}</p>
       <h1>${esc(l.title)}</h1><p>${esc(l.lecturer || "")}</p></div>
-    ${notes}
+    ${resources}
     <h2 class="seclabel" style="margin-top:34px">Spaced review</h2>
     <div class="review"><span>Day 1</span><span>Day 3</span><span>Day 7</span>
       <span>Day 21</span><span>Pre-exam</span></div>
@@ -665,7 +508,6 @@ function render(){
   const app = document.getElementById("app");
   document.getElementById("bar").innerHTML = "";
   app.classList.remove("haspdf");
-  LEC_RES = [];
 
   const p = (location.hash || "#/").slice(2).split("/").filter(Boolean);
   let html;
@@ -677,7 +519,6 @@ function render(){
   else                              html = viewMissing();
 
   app.innerHTML = html;
-  attachInteractive();
   window.scrollTo(0, 0);
 }
 
