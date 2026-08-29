@@ -98,7 +98,7 @@
         ],
         "biochemistry": [
           {
-            "code": "LG 1",
+            "code": "SGL 1",
             "title": "GIT Enzymes and Hormones",
             "lecturer": "Dr. Sardar N. Ahmed",
             "published": true,
@@ -107,7 +107,7 @@
             "lecture_pdf": "git-biochemistry-sgl-1-lecture.pdf"
           },
           {
-            "code": "LG 2",
+            "code": "LG 1",
             "title": "Liver Function Tests",
             "lecturer": "Dr. Fargeen E. ALmukhtar",
             "published": true,
