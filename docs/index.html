@@ -169,6 +169,7 @@ a.lecrow .lecrow__code{color:var(--subject)}
 main.haspdf{padding-bottom:90px}
 .pdfview{width:100%;height:80vh;min-height:520px;border:1px solid var(--line);
   border-radius:var(--radius);background:#fff;display:block;margin:0}
+@media (max-width:480px){.pdfview{height:65vh;min-height:380px}}
 .pdfcard{display:block;text-decoration:none;background:var(--tint);
   border:1px solid var(--line);border-radius:var(--radius);
   padding:22px;text-align:center;margin:14px 0 0}
@@ -196,10 +197,11 @@ main.haspdf{padding-bottom:90px}
   text-overflow:ellipsis;white-space:nowrap}
 .dlbtn{flex:none;display:flex;align-items:center;gap:6px;background:var(--subject);color:#fff;
   border:0;border-radius:7px;padding:9px 13px;font-family:var(--sans);font-size:12.5px;
-  font-weight:500;cursor:pointer;white-space:nowrap}
+  font-weight:500;cursor:pointer;white-space:nowrap;text-decoration:none}
 .dlbtn:hover{filter:brightness(1.08)}
 .dlbtn svg{width:14px;height:14px;flex:none}
-.dlbtn--busy{opacity:.6;pointer-events:none}
+.dlhint{font-size:12px;color:var(--ink-2);margin:10px 2px 0;line-height:1.5}
+.dlhint strong{color:var(--ink)}
 
 @media (min-width:700px){.pagehead h1{font-size:36px}.pagehead{padding:46px 0 30px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -475,40 +477,6 @@ function selectResource(idx){
   document.querySelectorAll(".resrow").forEach((row, i) => row.classList.toggle("resrow--on", i === idx));
 }
 
-/* download a resource. On iOS/iPadOS (and any browser with the Web Share
-   API for files) this opens the native share sheet so students can save
-   straight into Files, a notes app, etc. Falls back to a plain download. */
-async function downloadResource(btn){
-  const url = btn.getAttribute("data-url");
-  const filename = btn.getAttribute("data-filename");
-  const original = btn.innerHTML;
-  btn.classList.add("dlbtn--busy");
-  try{
-    const resp = await fetch(url);
-    if (!resp.ok) throw new Error("fetch failed");
-    const blob = await resp.blob();
-    const file = new File([blob], filename, { type: blob.type || "application/pdf" });
-    if (navigator.canShare && navigator.canShare({ files: [file] })){
-      await navigator.share({ files: [file], title: filename });
-      btn.classList.remove("dlbtn--busy");
-      return;
-    }
-    const blobUrl = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = blobUrl; a.download = filename; a.rel = "noopener";
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(() => URL.revokeObjectURL(blobUrl), 4000);
-  } catch(e){
-    if (e && e.name === "AbortError"){ btn.classList.remove("dlbtn--busy"); return; }
-    // last-resort fallback: plain navigation to the file
-    const a = document.createElement("a");
-    a.href = url; a.download = filename; a.rel = "noopener"; a.target = "_blank";
-    document.body.appendChild(a); a.click(); a.remove();
-  }
-  btn.classList.remove("dlbtn--busy");
-  btn.innerHTML = original;
-}
-
 /* ---------------- home ---------------- */
 function viewHome(){
   theme("brand");
@@ -673,28 +641,27 @@ function viewLecture(blockId, subjId, code){
     notes = `<ul>${l.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`;
   } else if (resources.length){
     LEC_RES = resources;
-    const narrow = window.matchMedia("(max-width: 780px)").matches;
 
     const rows = `<ul class="reslist">${resources.map((r,idx) => `
         <li class="resrow${idx === 0 ? " resrow--on" : ""}">
           <span class="resrow__icon">${RES_ICONS[r.type] || RES_ICONS.summary}</span>
           <a class="resrow__main" href="${resourceSrc(r)}" target="_blank" rel="noopener"
-             onclick="${narrow ? "" : `return selectResourceClick(event, ${idx})`}">
+             onclick="return selectResourceClick(event, ${idx})">
             <div class="resrow__title">${esc(r.label)}</div>
             <div class="resrow__meta">${esc(r.note || "PDF")}</div>
           </a>
-          <button type="button" class="dlbtn" data-url="${resourceSrc(r)}"
-                  data-filename="${esc(r.pdf)}" onclick="downloadResource(this)">
+          <a class="dlbtn" href="${resourceSrc(r)}" download="${esc(r.pdf)}"
+             target="_blank" rel="noopener">
             ${DL_ICON}<span>Download</span>
-          </button>
+          </a>
         </li>`).join("")}</ul>`;
 
-    const preview = !narrow
-      ? `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
-           src="${resourceSrc(resources[0])}#view=FitH" title="${esc(l.title)}"></iframe>`
-      : "";
+    const preview = `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
+           src="${resourceSrc(resources[0])}#view=FitH" title="${esc(l.title)}"></iframe>`;
 
-    notes = rows + preview;
+    const dlhint = `<p class="dlhint">On a laptop, <strong>Download</strong> saves the file straight away. On iPhone/iPad or Android it opens the PDF in a new tab — use your browser's own share or download icon from there to save it, or send it to a specific app. Don't see your notes app listed? Choose <strong>Save to Files</strong> (iPhone/iPad) or <strong>Save/Download</strong> (Android) first, then use that app's own Import option.</p>`;
+
+    notes = rows + dlhint + preview;
   } else {
     notes = `<div class="empty">Nothing attached to this one yet.</div>`;
   }
