@@ -480,16 +480,23 @@ function selectResource(idx){
   document.querySelectorAll(".resrow").forEach((row, i) => row.classList.toggle("resrow--on", i === idx));
 }
 
-/* download a resource. Opens the PDF in a new tab and lets the browser's
-   own PDF viewer take over from there — on desktop that's the built-in
-   viewer's print/download controls, on iOS Safari it's the share icon,
-   on Android Chrome it's the download/share icons in its PDF viewer.
-   Deliberately simple: every platform already has good native tools for
-   "save this file somewhere" or "share this file to an app," so we hand
-   off to those instead of re-implementing them in JS. */
+/* download a resource. On desktop (mouse/trackpad) this saves the file
+   straight away via a normal download link. On touch devices — iPhone,
+   iPad, Android — direct downloads are unreliable or hidden behind extra
+   taps, so instead we open the PDF in a new tab and let the browser's own
+   share/download icon take over from there, which is the reliable native
+   path on every one of those platforms. */
 function downloadResource(btn){
   const url = btn.getAttribute("data-url");
-  window.open(url, "_blank", "noopener");
+  const filename = btn.getAttribute("data-filename");
+  const isTouch = window.matchMedia("(pointer: coarse)").matches;
+  if (isTouch){
+    window.open(url, "_blank", "noopener");
+    return;
+  }
+  const a = document.createElement("a");
+  a.href = url; a.download = filename; a.rel = "noopener";
+  document.body.appendChild(a); a.click(); a.remove();
 }
 
 /* ---------------- home ---------------- */
@@ -674,7 +681,7 @@ function viewLecture(blockId, subjId, code){
     const preview = `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
            src="${resourceSrc(resources[0])}#view=FitH" title="${esc(l.title)}"></iframe>`;
 
-    const dlhint = `<p class="dlhint">Don't see your notes app when you tap Share? Choose <strong>Save to Files</strong> (iPhone/iPad) or <strong>Save/Download</strong> (Android), then open it from within your notes app's own Import option.</p>`;
+    const dlhint = `<p class="dlhint">On a laptop, Download saves the file straight away. On iPhone/iPad or Android it opens the PDF in a new tab — use your browser's own share or download icon from there to save it, or send it to a specific app. Don't see your notes app listed? Choose <strong>Save to Files</strong> (iPhone/iPad) or <strong>Save/Download</strong> (Android) first, then use that app's own Import option.</p>`;
 
     notes = rows + dlhint + preview;
   } else {
