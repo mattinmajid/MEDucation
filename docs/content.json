@@ -137,25 +137,25 @@
         ],
         "biochemistry": [
           {
-            "code": "LG 1",
+            "code": "SGL 1",
             "title": "GIT Enzymes and Hormones",
             "lecturer": "Dr Sardar N. Ahmed",
+            "published": true,
+            "pdf": "git-biochemistry-sgl-1.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-biochemistry-sgl-1-lecture.pdf",
+            "mcq": "git-biochemistry-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 1",
+            "title": "Liver Function Tests",
+            "lecturer": "Dr Fargeen E. Almukhtar",
             "published": true,
             "pdf": "git-biochemistry-lg-1.pdf",
             "pdf_note": "3 pages",
             "lecture_pdf": "git-biochemistry-lg-1-lecture.pdf",
             "mcq": "git-biochemistry-lg-1-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "LG 2",
-            "title": "Liver Function Tests",
-            "lecturer": "Dr Fargeen E. Almukhtar",
-            "published": true,
-            "pdf": "git-biochemistry-lg-2.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-biochemistry-lg-2-lecture.pdf",
-            "mcq": "git-biochemistry-lg-2-mcq.pdf",
             "mcq_note": "20 questions"
           }
         ],
