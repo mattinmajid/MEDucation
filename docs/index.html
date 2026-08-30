@@ -167,9 +167,12 @@ a.lecrow .lecrow__code{color:var(--subject)}
   font-size:13px;color:var(--ink-3)}
 .foot strong{color:var(--ink-2);font-weight:500}
 main.haspdf{padding-bottom:90px}
-.pdfview{width:100%;height:80vh;min-height:520px;border:1px solid var(--line);
-  border-radius:var(--radius);background:#fff;display:block;margin:0}
-@media (max-width:480px){.pdfview{height:65vh;min-height:380px}}
+.pdfview{width:100%;height:80vh;height:80dvh;min-height:520px;max-height:900px;
+  border:1px solid var(--line);border-radius:var(--radius);background:#fff;
+  display:block;margin:0;-webkit-overflow-scrolling:touch}
+@media (max-width:780px){
+  .pdfview{height:75vh;height:75dvh;min-height:420px;max-height:760px}
+}
 .pdfcard{display:block;text-decoration:none;background:var(--tint);
   border:1px solid var(--line);border-radius:var(--radius);
   padding:22px;text-align:center;margin:14px 0 0}
@@ -197,7 +200,7 @@ main.haspdf{padding-bottom:90px}
   text-overflow:ellipsis;white-space:nowrap}
 .dlbtn{flex:none;display:flex;align-items:center;gap:6px;background:var(--subject);color:#fff;
   border:0;border-radius:7px;padding:9px 13px;font-family:var(--sans);font-size:12.5px;
-  font-weight:500;cursor:pointer;white-space:nowrap;text-decoration:none}
+  font-weight:500;cursor:pointer;white-space:nowrap}
 .dlbtn:hover{filter:brightness(1.08)}
 .dlbtn svg{width:14px;height:14px;flex:none}
 .dlhint{font-size:12px;color:var(--ink-2);margin:10px 2px 0;line-height:1.5}
@@ -477,6 +480,18 @@ function selectResource(idx){
   document.querySelectorAll(".resrow").forEach((row, i) => row.classList.toggle("resrow--on", i === idx));
 }
 
+/* download a resource. Opens the PDF in a new tab and lets the browser's
+   own PDF viewer take over from there — on desktop that's the built-in
+   viewer's print/download controls, on iOS Safari it's the share icon,
+   on Android Chrome it's the download/share icons in its PDF viewer.
+   Deliberately simple: every platform already has good native tools for
+   "save this file somewhere" or "share this file to an app," so we hand
+   off to those instead of re-implementing them in JS. */
+function downloadResource(btn){
+  const url = btn.getAttribute("data-url");
+  window.open(url, "_blank", "noopener");
+}
+
 /* ---------------- home ---------------- */
 function viewHome(){
   theme("brand");
@@ -650,16 +665,16 @@ function viewLecture(blockId, subjId, code){
             <div class="resrow__title">${esc(r.label)}</div>
             <div class="resrow__meta">${esc(r.note || "PDF")}</div>
           </a>
-          <a class="dlbtn" href="${resourceSrc(r)}" download="${esc(r.pdf)}"
-             target="_blank" rel="noopener">
+          <button type="button" class="dlbtn" data-url="${resourceSrc(r)}"
+                  data-filename="${esc(r.pdf)}" onclick="downloadResource(this)">
             ${DL_ICON}<span>Download</span>
-          </a>
+          </button>
         </li>`).join("")}</ul>`;
 
     const preview = `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
            src="${resourceSrc(resources[0])}#view=FitH" title="${esc(l.title)}"></iframe>`;
 
-    const dlhint = `<p class="dlhint">On a laptop, <strong>Download</strong> saves the file straight away. On iPhone/iPad or Android it opens the PDF in a new tab — use your browser's own share or download icon from there to save it, or send it to a specific app. Don't see your notes app listed? Choose <strong>Save to Files</strong> (iPhone/iPad) or <strong>Save/Download</strong> (Android) first, then use that app's own Import option.</p>`;
+    const dlhint = `<p class="dlhint">Don't see your notes app when you tap Share? Choose <strong>Save to Files</strong> (iPhone/iPad) or <strong>Save/Download</strong> (Android), then open it from within your notes app's own Import option.</p>`;
 
     notes = rows + dlhint + preview;
   } else {
