@@ -189,7 +189,16 @@
             "mcq_note": "20 questions"
           }
         ],
-        "microbiology": [],
+        "microbiology": [
+{ "code": "LG 1", "title": "Immunological Aspects of the GIT", "lecturer": "", "published": true, "pdf": "git-microbiology-lg-1.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-1-lecture.pdf", "mcq": "git-microbiology-lg-1-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "LG 2", "title": "Microbiology of the Oral Cavity", "lecturer": "Dr Samira Fattah", "published": true, "pdf": "git-microbiology-lg-2.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-microbiology-lg-2-lecture.pdf", "mcq": "git-microbiology-lg-2-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "LG 3", "title": "Taeniasis — Taenia spp.", "lecturer": "Dr Hadi M. Ahmad", "published": true, "pdf": "git-microbiology-lg-3.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-3-lecture.pdf", "mcq": "git-microbiology-lg-3-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "LG 4", "title": "Enterobius vermicularis (Pinworm)", "lecturer": "Dr Hadi M. Ahmad", "published": true, "pdf": "git-microbiology-lg-4.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-4-lecture.pdf", "mcq": "git-microbiology-lg-4-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "LG 5", "title": "Hookworms", "lecturer": "Dr Hadi M. Ahmad", "published": true, "pdf": "git-microbiology-lg-5.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-5-lecture.pdf", "mcq": "git-microbiology-lg-5-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "SGL 1", "title": "Normal Microbiota of the GI Tract", "lecturer": "Dr Shler Ghafour Raheem", "published": true, "pdf": "git-microbiology-sgl-1.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-1-lecture.pdf", "mcq": "git-microbiology-sgl-1-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "SGL 2", "title": "Immunology of IBD & Celiac Disease", "lecturer": "Dr Feyan M. Abdullah", "published": true, "pdf": "git-microbiology-sgl-2.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-2-lecture.pdf", "mcq": "git-microbiology-sgl-2-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "SGL 4", "title": "Bacterial Diarrhea", "lecturer": "Dr Shler Ghafour Raheem", "published": true, "pdf": "git-microbiology-sgl-4.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-4-lecture.pdf", "mcq": "git-microbiology-sgl-4-mcq.pdf", "mcq_note": "20 questions" }
+],
         "pharmacology": [
         {
   "code": "SGL 1",
