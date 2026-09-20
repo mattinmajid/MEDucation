@@ -167,12 +167,8 @@ a.lecrow .lecrow__code{color:var(--subject)}
   font-size:13px;color:var(--ink-3)}
 .foot strong{color:var(--ink-2);font-weight:500}
 main.haspdf{padding-bottom:90px}
-.pdfview{width:100%;height:80vh;height:80dvh;min-height:520px;max-height:900px;
-  border:1px solid var(--line);border-radius:var(--radius);background:#fff;
-  display:block;margin:0;-webkit-overflow-scrolling:touch}
-@media (max-width:780px){
-  .pdfview{height:75vh;height:75dvh;min-height:420px;max-height:760px}
-}
+.pdfview{width:100%;height:80vh;min-height:520px;border:1px solid var(--line);
+  border-radius:var(--radius);background:#fff;display:block;margin:0}
 .pdfcard{display:block;text-decoration:none;background:var(--tint);
   border:1px solid var(--line);border-radius:var(--radius);
   padding:22px;text-align:center;margin:14px 0 0}
@@ -203,8 +199,23 @@ main.haspdf{padding-bottom:90px}
   font-weight:500;cursor:pointer;white-space:nowrap}
 .dlbtn:hover{filter:brightness(1.08)}
 .dlbtn svg{width:14px;height:14px;flex:none}
-.dlhint{font-size:12px;color:var(--ink-2);margin:10px 2px 0;line-height:1.5}
-.dlhint strong{color:var(--ink)}
+.dlbtn--busy{opacity:.6;pointer-events:none}
+
+/* ---------- weekly schedule ---------- */
+.schedcard{display:flex;align-items:center;gap:14px;background:var(--card);
+  border:1px solid var(--line);border-left:5px solid var(--subject);border-radius:var(--radius);
+  padding:16px 16px 16px 18px;text-decoration:none;
+  transition:transform .14s ease,box-shadow .14s ease}
+.schedcard:hover{transform:translateY(-1px);box-shadow:0 4px 14px var(--shadow)}
+.schedcard__icon{flex:none;width:44px;height:44px;border-radius:10px;background:var(--tint);
+  color:var(--subject);display:flex;align-items:center;justify-content:center}
+.schedcard__icon svg{width:22px;height:22px}
+.schedcard__body{flex:1;min-width:0}
+.schedcard__title{font-family:var(--serif);font-size:20px;font-weight:600;
+  letter-spacing:-.01em;line-height:1.25}
+.schedcard__meta{font-size:13px;color:var(--ink-2);margin-top:2px}
+.schedcard__go{flex:none;color:var(--subject);display:flex}
+.schedcard__go svg{width:20px;height:20px}
 
 @media (min-width:700px){.pagehead h1{font-size:36px}.pagehead{padding:46px 0 30px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -453,8 +464,10 @@ function fireConfetti(){
 const RES_ICONS = {
   lecture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
   summary: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>',
-  mcq: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a2.9 2.9 0 0 1 5.7.8c0 1.9-2.6 2.2-2.8 3.7"/><path d="M12 17.2v.1"/></svg>'
+  mcq: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a2.9 2.9 0 0 1 5.7.8c0 1.9-2.6 2.2-2.8 3.7"/><path d="M12 17.2v.1"/></svg>',
+  schedule: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/><path d="M8 14.5h.01M12 14.5h.01M16 14.5h.01M8 18h.01M12 18h.01"/></svg>'
 };
+const CHEVRON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>';
 const DL_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>';
 
 /* order students see them: original lecture, then summary, then mcqs */
@@ -466,7 +479,8 @@ function resourceList(l){
   return list;
 }
 function resourceFolder(type){
-  return type === "lecture" ? "lectures/" : type === "mcq" ? "mcqs/" : "pdfs/";
+  return type === "lecture" ? "lectures/" : type === "mcq" ? "mcqs/" :
+         type === "schedule" ? "schedule/" : "pdfs/";
 }
 function resourceSrc(r){
   return resourceFolder(r.type) + encodeURIComponent(r.pdf);
@@ -480,23 +494,38 @@ function selectResource(idx){
   document.querySelectorAll(".resrow").forEach((row, i) => row.classList.toggle("resrow--on", i === idx));
 }
 
-/* download a resource. On desktop (mouse/trackpad) this saves the file
-   straight away via a normal download link. On touch devices — iPhone,
-   iPad, Android — direct downloads are unreliable or hidden behind extra
-   taps, so instead we open the PDF in a new tab and let the browser's own
-   share/download icon take over from there, which is the reliable native
-   path on every one of those platforms. */
-function downloadResource(btn){
+/* download a resource. On iOS/iPadOS (and any browser with the Web Share
+   API for files) this opens the native share sheet so students can save
+   straight into Files, a notes app, etc. Falls back to a plain download. */
+async function downloadResource(btn){
   const url = btn.getAttribute("data-url");
   const filename = btn.getAttribute("data-filename");
-  const isTouch = window.matchMedia("(pointer: coarse)").matches;
-  if (isTouch){
-    window.open(url, "_blank", "noopener");
-    return;
+  const original = btn.innerHTML;
+  btn.classList.add("dlbtn--busy");
+  try{
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error("fetch failed");
+    const blob = await resp.blob();
+    const file = new File([blob], filename, { type: blob.type || "application/pdf" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })){
+      await navigator.share({ files: [file], title: filename });
+      btn.classList.remove("dlbtn--busy");
+      return;
+    }
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = blobUrl; a.download = filename; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 4000);
+  } catch(e){
+    if (e && e.name === "AbortError"){ btn.classList.remove("dlbtn--busy"); return; }
+    // last-resort fallback: plain navigation to the file
+    const a = document.createElement("a");
+    a.href = url; a.download = filename; a.rel = "noopener"; a.target = "_blank";
+    document.body.appendChild(a); a.click(); a.remove();
   }
-  const a = document.createElement("a");
-  a.href = url; a.download = filename; a.rel = "noopener";
-  document.body.appendChild(a); a.click(); a.remove();
+  btn.classList.remove("dlbtn--busy");
+  btn.innerHTML = original;
 }
 
 /* ---------------- home ---------------- */
@@ -533,11 +562,25 @@ function viewHome(){
     </a>`;
   }).join("");
 
+  const wk = scheduleWeeks();
+  const sched = wk.length
+    ? `<section><h2 class="seclabel">This week</h2>
+      <a class="schedcard" href="#/schedule">
+        <span class="schedcard__icon">${RES_ICONS.schedule}</span>
+        <span class="schedcard__body">
+          <div class="schedcard__title">${esc((DATA.schedule && DATA.schedule.title) || "Weekly schedule")}</div>
+          <div class="schedcard__meta">${esc(wk[0].label || "Tap to open")}</div>
+        </span>
+        <span class="schedcard__go">${CHEVRON}</span>
+      </a></section>`
+    : "";
+
   return `<div class="pagehead">
       <p class="eyebrow">${esc(s.stage)}</p>
       <h1>${esc(s.tagline)}</h1>
       <p>${esc(s.subtitle)}</p>
     </div>
+    ${sched}
     <section><h2 class="seclabel">Blocks</h2>${cards}</section>
     ${exams ? `<section><h2 class="seclabel">Mock exams</h2>${exams}</section>` : ""}
     <p class="notice">Summaries are made to study <strong>alongside</strong> the lecture,
@@ -663,12 +706,13 @@ function viewLecture(blockId, subjId, code){
     notes = `<ul>${l.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`;
   } else if (resources.length){
     LEC_RES = resources;
+    const narrow = window.matchMedia("(max-width: 780px)").matches;
 
     const rows = `<ul class="reslist">${resources.map((r,idx) => `
         <li class="resrow${idx === 0 ? " resrow--on" : ""}">
           <span class="resrow__icon">${RES_ICONS[r.type] || RES_ICONS.summary}</span>
           <a class="resrow__main" href="${resourceSrc(r)}" target="_blank" rel="noopener"
-             onclick="return selectResourceClick(event, ${idx})">
+             onclick="${narrow ? "" : `return selectResourceClick(event, ${idx})`}">
             <div class="resrow__title">${esc(r.label)}</div>
             <div class="resrow__meta">${esc(r.note || "PDF")}</div>
           </a>
@@ -678,12 +722,12 @@ function viewLecture(blockId, subjId, code){
           </button>
         </li>`).join("")}</ul>`;
 
-    const preview = `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
-           src="${resourceSrc(resources[0])}#view=FitH" title="${esc(l.title)}"></iframe>`;
+    const preview = !narrow
+      ? `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
+           src="${resourceSrc(resources[0])}#view=FitH" title="${esc(l.title)}"></iframe>`
+      : "";
 
-    const dlhint = `<p class="dlhint">On a laptop, Download saves the file straight away. On iPhone/iPad or Android it opens the PDF in a new tab — use your browser's own share or download icon from there to save it, or send it to a specific app. Don't see your notes app listed? Choose <strong>Save to Files</strong> (iPhone/iPad) or <strong>Save/Download</strong> (Android) first, then use that app's own Import option.</p>`;
-
-    notes = rows + dlhint + preview;
+    notes = rows + preview;
   } else {
     notes = `<div class="empty">Nothing attached to this one yet.</div>`;
   }
@@ -714,6 +758,69 @@ function selectResourceClick(evt, idx){
   evt.preventDefault();
   selectResource(idx);
   return false;
+}
+
+/* ---------------- schedule ---------------- */
+/* content.json → "schedule": { "title": "...", "weeks": [ newest first ] }
+   Each week: { "label": "...", "pdf": "schedule-YYYY-MM-DD.pdf", "note": "..." (optional) }
+   PDFs live in docs/schedule/. First item = this week, the rest = earlier weeks. */
+function scheduleWeeks(){
+  const s = DATA && DATA.schedule;
+  return (s && Array.isArray(s.weeks) ? s.weeks : []).filter(w => w && w.pdf);
+}
+
+function scheduleRow(w, on, fallbackNote){
+  const src = resourceSrc({ type: "schedule", pdf: w.pdf });
+  return `<li class="resrow${on ? " resrow--on" : ""}">
+      <span class="resrow__icon">${RES_ICONS.schedule}</span>
+      <a class="resrow__main" href="${esc(src)}" target="_blank" rel="noopener">
+        <div class="resrow__title">${esc(w.label || "Schedule")}</div>
+        <div class="resrow__meta">${esc(w.note || fallbackNote)}</div>
+      </a>
+      <button type="button" class="dlbtn" data-url="${esc(src)}"
+              data-filename="${esc(w.pdf)}" onclick="downloadResource(this)">
+        ${DL_ICON}<span>Download</span>
+      </button>
+    </li>`;
+}
+
+function viewSchedule(){
+  theme("brand");
+  setBack("← home", "#/");
+  const weeks = scheduleWeeks();
+  const title = (DATA.schedule && DATA.schedule.title) || "Weekly schedule";
+  const credit = foot(title + " · MEDucation by " + DATA.site.author,
+                      "Schedules come from the class representatives.");
+
+  if (!weeks.length){
+    return `<div class="pagehead">
+        <p class="eyebrow">Schedule</p><h1>${esc(title)}</h1>
+        <p>This week's schedule isn't up yet.</p></div>
+      <div class="empty">Nothing posted yet.<br>It appears here as soon as it's sent.</div>
+      ${credit}`;
+  }
+
+  const cur = weeks[0];
+  const narrow = window.matchMedia("(max-width: 780px)").matches;
+  const preview = !narrow
+    ? `<iframe id="pdfview" class="pdfview" style="margin-top:16px"
+         src="${esc(resourceSrc({ type: "schedule", pdf: cur.pdf }))}#view=FitH"
+         title="${esc(cur.label || title)}"></iframe>`
+    : "";
+  const older = weeks.slice(1);
+  const olderHtml = older.length
+    ? `<h2 class="seclabel" style="margin-top:34px">Earlier weeks</h2>
+       <ul class="reslist" style="margin-top:0">${older.map(w => scheduleRow(w, false, "PDF")).join("")}</ul>`
+    : "";
+
+  return `<div class="pagehead">
+      <p class="eyebrow">This week</p>
+      <h1>${esc(cur.label || title)}</h1>
+      <p>Tap to open the schedule, or download it to keep on your device.</p></div>
+    <ul class="reslist" style="margin-top:0">${scheduleRow(cur, true, "PDF · tap to open")}</ul>
+    ${preview}
+    ${olderHtml}
+    ${credit}`;
 }
 
 /* ---------------- exam ---------------- */
@@ -764,6 +871,7 @@ function render(){
   else if (p[0] === "s" && p[2])     html = viewSubject(p[1], p[2]);
   else if (p[0] === "l" && p[3])     html = viewLecture(p[1], p[2], p[3]);
   else if (p[0] === "e" && p[1])     html = viewExam(p[1]);
+  else if (p[0] === "schedule")     html = viewSchedule();
   else                              html = viewMissing();
 
   app.innerHTML = html;

@@ -159,7 +159,11 @@
   "pdf": "git-histology-sgl-3.pdf", "pdf_note": "4 pages",
   "lecture_pdf": "git-histology-sgl-3-lecture.pdf", "lecture_note": "16 slides",
   "mcq": "git-histology-sgl-3-mcq.pdf", "mcq_note": "20 questions" 
-}
+},
+{ "code": "SGL 4", "title": "Liver & Extrahepatic Biliary Apparatus", "lecturer": "Dr Hero K. Mustafa", "published": true,
+  "pdf": "git-histology-sgl-4.pdf", "pdf_note": "4 pages",
+  "lecture_pdf": "git-histology-sgl-4-lecture.pdf", "lecture_note": "23 slides",
+  "mcq": "git-histology-sgl-4-mcq.pdf", "mcq_note": "20 questions" }
         ],
         "genetics": [
           {
@@ -200,61 +204,32 @@
 }
         ],
         "pathology": [
-          {
-            "code": "LG 1",
-            "title": "Oral Cavity & Salivary Glands",
-            "lecturer": "Dr Jawher Tahir Omer",
-            "published": true,
-            "pdf": "git-pathology-lg-1.pdf",
-            "pdf_note": "4 pages",
-            "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
-            "mcq": "git-pathology-lg-1-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "LG 2",
-            "title": "Esophagus",
-            "lecturer": "Dr Jawher Tahir Omer",
-            "published": true,
-            "pdf": "git-pathology-lg-2.pdf",
-            "pdf_note": "5 pages",
-            "lecture_pdf": "git-pathology-lg-2-lecture.pdf",
-            "mcq": "git-pathology-lg-2-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "SGL 1 · I",
-            "title": "Stomach I — Gastritis & Peptic Ulcer Disease",
-            "lecturer": "Dr Jawher Tahir Omer",
-            "published": true,
-            "pdf": "git-pathology-sgl-1-i.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-pathology-sgl-1-i-lecture.pdf",
-            "mcq": "git-pathology-sgl-1-i-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "SGL 1 · II",
-            "title": "Stomach II — Polyps & Gastric Cancer",
-            "lecturer": "Dr Jawher Tahir Omer",
-            "published": true,
-            "pdf": "git-pathology-sgl-1-ii.pdf",
-            "pdf_note": "4 pages",
-            "lecture_pdf": "git-pathology-sgl-1-ii-lecture.pdf",
-            "mcq": "git-pathology-sgl-1-ii-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "LG 3",
-            "title": "Non-neoplastic Intestinal Disease",
-            "lecturer": "Dr Jawher Tahir Omer",
-            "published": true,
-            "pdf": "git-pathology-lg-3.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-pathology-lg-3-lecture.pdf",
-            "mcq": "git-pathology-lg-3-mcq.pdf",
-            "mcq_note": "20 questions"
-          }
+          
+  { "code": "LG 1", "title": "Oral Cavity & Salivary Glands", "lecturer": "Dr Jawher Tahir Omer", "published": true,
+    "pdf": "git-pathology-lg-1.pdf", "pdf_note": "4 pages",
+    "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
+    "mcq": "git-pathology-lg-1-mcq.pdf", "mcq_note": "20 questions" },
+  { "code": "LG 2", "title": "Esophagus", "lecturer": "Dr Jawher Tahir Omer", "published": true,
+    "pdf": "git-pathology-lg-2.pdf", "pdf_note": "5 pages",
+    "lecture_pdf": "git-pathology-lg-2-lecture.pdf",
+    "mcq": "git-pathology-lg-2-mcq.pdf", "mcq_note": "20 questions" },
+  { "code": "SGL 1 · I", "title": "Stomach I: Gastritis & Peptic Ulcer Disease", "lecturer": "Dr Jawher Tahir Omer", "published": true,
+    "pdf": "git-pathology-sgl-1-i.pdf", "pdf_note": "4 pages",
+    "lecture_pdf": "git-pathology-sgl-1-lecture.pdf",
+    "mcq": "git-pathology-sgl-1-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
+  { "code": "SGL 1 · II", "title": "Stomach II: Polyps & Gastric Cancer", "lecturer": "Dr Jawher Tahir Omer", "published": true,
+    "pdf": "git-pathology-sgl-1-ii.pdf", "pdf_note": "4 pages",
+    "lecture_pdf": "git-pathology-sgl-1-lecture.pdf",
+    "mcq": "git-pathology-sgl-1-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
+  { "code": "SGL 2 · I", "title": "Bowel I: Ischemia, Malabsorption & Celiac Disease", "lecturer": "Dr Jawher Tahir Omer", "published": true,
+    "pdf": "git-pathology-sgl-2-i.pdf", "pdf_note": "4 pages",
+    "lecture_pdf": "git-pathology-sgl-2-lecture.pdf",
+    "mcq": "git-pathology-sgl-2-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
+  { "code": "SGL 2 · II", "title": "Bowel II: Intestinal Polyps", "lecturer": "Dr Jawher Tahir Omer", "published": true,
+    "pdf": "git-pathology-sgl-2-ii.pdf", "pdf_note": "3 pages",
+    "lecture_pdf": "git-pathology-sgl-2-lecture.pdf",
+    "mcq": "git-pathology-sgl-2-mcq.pdf", "mcq_note": "20 questions (covers both parts)" }
+
         ]
       },
       "exam": {
@@ -310,7 +285,14 @@
         "microbiology": [],
         "pharmacology": [],
         "pathology": []
+}
+}
+],
+"schedule": {
+  "title": "Weekly schedule",
+  "weeks": [
+    { "label": "Sun 20 – Thu 24 Sep 2026", "pdf": "schedule-2026-09-20.pdf" }
+  ]
       }
     }
-  ]
-}
+  
