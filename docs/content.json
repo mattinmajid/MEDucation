@@ -81,6 +81,30 @@
   "lecture_note": "16 slides",
   "mcq": "git-physiology-lg-3-mcq.pdf",
   "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 1",
+  "title": "Stomach & Duodenum",
+  "lecturer": "Dr Feedan Tahseen Muhammadhelmi",
+  "published": true,
+  "pdf": "git-physiology-sgl-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-physiology-sgl-1-lecture.pdf",
+  "lecture_note": "28 slides",
+  "mcq": "git-physiology-sgl-1-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 2",
+  "title": "Small Intestine",
+  "lecturer": "Dr Dler Qader Gallaly",
+  "published": true,
+  "pdf": "git-physiology-sgl-2.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-physiology-sgl-2-lecture.pdf",
+  "lecture_note": "38 slides",
+  "mcq": "git-physiology-sgl-2-mcq.pdf",
+  "mcq_note": "20 questions"
 }
         
        
