@@ -57,83 +57,33 @@
       "subjects": {
         "anatomy": [],
         "physiology": [
-          {
-            "code": "LG 1",
-            "title": "Oral Cavity & Salivation",
-            "lecturer": "Dr. Sherwan R Shal",
-            "published": true,
-            "pdf": "git-physiology-lg-1.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-lg-1-lecture.pdf",
-            "mcq": "git-physiology-lg-1-mcq.pdf",
-            "mcq_note": "20 questions"
+       {
+  "code": "LG 1 & 2",
+  "title": "Saliva & Swallowing",
+  "lecturer": "Dr Sherwan Rahman Sulaiman",
+  "published": true,
+  "pdf": "git-physiology-lg-1-2.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-physiology-lg-1-2-lecture.pdf",
+  "lecture_note": "21 slides",
+  "mcq": "git-physiology-lg-1-2-mcq.pdf",
+  "mcq_note": "20 questions"
+
           },
           {
-            "code": "LG 2",
-            "title": "Swallowing (Deglutition)",
-            "lecturer": "Dr. Nazleen Shakir Akreyi",
-            "published": true,
-            "pdf": "git-physiology-lg-2.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-lg-2-lecture.pdf",
-            "mcq": "git-physiology-lg-2-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "LG 3",
-            "title": "Physiology of the Defecation Reflex",
-            "lecturer": "Dr. Nazleen Shakir Akreyi",
-            "published": true,
-            "pdf": "git-physiology-lg-3.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-lg-3-lecture.pdf",
-            "mcq": "git-physiology-lg-3-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "LG 4",
-            "title": "Physiology of the Liver",
-            "lecturer": "Dr. Sherwan R Shal",
-            "published": true,
-            "pdf": "git-physiology-lg-4.pdf",
-            "pdf_note": "4 pages",
-            "lecture_pdf": "git-physiology-lg-4-lecture.pdf",
-            "mcq": "git-physiology-lg-4-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "SGL 1",
-            "title": "Stomach and Duodenum",
-            "lecturer": "Not printed on slides",
-            "published": true,
-            "pdf": "git-physiology-sgl-1.pdf",
-            "pdf_note": "4 pages",
-            "lecture_pdf": "git-physiology-sgl-1-lecture.pdf",
-            "mcq": "git-physiology-sgl-1-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "SGL 2",
-            "title": "Physiology of Small Intestine",
-            "lecturer": "Dr. Dler Qader Gallaly",
-            "published": true,
-            "pdf": "git-physiology-sgl-2.pdf",
-            "pdf_note": "4 pages",
-            "lecture_pdf": "git-physiology-sgl-2-lecture.pdf",
-            "mcq": "git-physiology-sgl-2-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
-          {
-            "code": "SGL 3",
-            "title": "Physiology of the Large Intestine",
-            "lecturer": "Dr. Nidhal Gorgees Hanna",
-            "published": true,
-            "pdf": "git-physiology-sgl-3.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
-            "mcq": "git-physiology-sgl-3-mcq.pdf",
-            "mcq_note": "20 questions"
-          }
+  "code": "LG 3",
+  "title": "Defecation",
+  "lecturer": "Dr Niyan Jassim Mohammad",
+  "published": true,
+  "pdf": "git-physiology-lg-3.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-physiology-lg-3-lecture.pdf",
+  "lecture_note": "16 slides",
+  "mcq": "git-physiology-lg-3-mcq.pdf",
+  "mcq_note": "20 questions"
+}
+        
+       
         ],
         "biochemistry": [
           {
