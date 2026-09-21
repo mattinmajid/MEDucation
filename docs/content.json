@@ -105,6 +105,18 @@
   "lecture_note": "38 slides",
   "mcq": "git-physiology-sgl-2-mcq.pdf",
   "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 3",
+  "title": "Large Intestine",
+  "lecturer": "Dr Nidhal Gorgees Hanna",
+  "published": true,
+  "pdf": "git-physiology-sgl-3.pdf",
+  "pdf_note": "3 pages",
+  "lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
+  "lecture_note": "18 slides",
+  "mcq": "git-physiology-sgl-3-mcq.pdf",
+  "mcq_note": "20 questions"
 }
         
        
