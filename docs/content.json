@@ -210,7 +210,8 @@
 { "code": "SGL 1", "title": "Normal Microbiota of the GI Tract", "lecturer": "Dr Shler Ghafour Raheem", "published": true, "pdf": "git-microbiology-sgl-1.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-1-lecture.pdf", "mcq": "git-microbiology-sgl-1-mcq.pdf", "mcq_note": "20 questions" },
 { "code": "SGL 2", "title": "Immunology of IBD & Celiac Disease", "lecturer": "Dr Feyan M. Abdullah", "published": true, "pdf": "git-microbiology-sgl-2.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-2-lecture.pdf", "mcq": "git-microbiology-sgl-2-mcq.pdf", "mcq_note": "20 questions" },
 { "code": "SGL 4", "title": "Bacterial Diarrhea", "lecturer": "Dr Shler Ghafour Raheem", "published": true, "pdf": "git-microbiology-sgl-4.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-4-lecture.pdf", "mcq": "git-microbiology-sgl-4-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "SGL 5", "title": "Intestinal Protozoa — Giardia, Cryptosporidium, Balantidium", "lecturer": "Niyan Inaam Muhammed Yousif", "published": true, "pdf": "git-microbiology-sgl-5.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-microbiology-sgl-5-lecture.pdf", "mcq": "git-microbiology-sgl-5-mcq.pdf", "mcq_note": "20 questions" }
+{ "code": "SGL 5", "title": "Intestinal Protozoa — Giardia, Cryptosporidium, Balantidium", "lecturer": "Niyan Inaam Muhammed Yousif", "published": true, "pdf": "git-microbiology-sgl-5.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-microbiology-sgl-5-lecture.pdf", "mcq": "git-microbiology-sgl-5-mcq.pdf", "mcq_note": "20 questions" },
+{ "code": "SGL 6", "title": "Viral Gastroenteritis", "lecturer": "Hawry A.H. Hussein", "published": true, "pdf": "git-microbiology-sgl-6.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-microbiology-sgl-6-lecture.pdf", "mcq": "git-microbiology-sgl-6-mcq.pdf", "mcq_note": "20 questions" }
 ],
         "pharmacology": [
         {
