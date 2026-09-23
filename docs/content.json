@@ -55,7 +55,8 @@
       "title": "Gastrointestinal Tract",
       "short": "GIT",
       "subjects": {
-        "anatomy": [],
+        "anatomy": [{ "code": "SGL 3", "title": "Stomach & Small Intestine", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "lecture_pdf": "git-anatomy-sgl-3-lecture.pdf", "mcq": "git-anatomy-sgl-3-mcq.pdf", "mcq_note": "20 questions" }
+],
         "physiology": [
        {
   "code": "LG 1 & 2",
