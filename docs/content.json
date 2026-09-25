@@ -316,8 +316,8 @@
 "schedule": {
   "title": "Weekly schedule",
   "weeks": [
-    { "label": "Sun 20 – Thu 24 Sep 2026", "pdf": "schedule-2026-09-20.pdf" }
-  ]
+  { "label": "27 Sep – 17 Oct 2026 (W4–W6)", "pdf": "schedule-2026-09-27.pdf", "note": "GIT Module — through End Module Exam" }
+]
       }
     }
   
