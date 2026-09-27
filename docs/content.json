@@ -250,6 +250,17 @@
   "mcq": "git-pharmacology-sgl-1-mcq.pdf",
   "mcq_note": "20 questions · answer key",
   "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
+},
+{
+  "code": "LG 1",
+  "title": "Treatment of GI Parasitic Infestations",
+  "lecturer": "Dr. Begard O. Berzinji",
+  "published": true,
+  "pdf": "git-pharmacology-lg-1.pdf",
+  "pdf_note": "5 pages",
+  "mcq": "git-pharmacology-lg-1-mcq.pdf",
+  "mcq_note": "20 questions · answer key",
+  "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf"
 }
         ],
         "pathology": [
