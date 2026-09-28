@@ -56,75 +56,112 @@
       "short": "GIT",
       "subjects": {
         "anatomy": [
-{ "code": "LG 1", "title": "Oral Cavity, Palate & Salivary Glands", "lecturer": "Dr. Faris Muhammed", "published": true, "pdf": "git-anatomy-lg-1.pdf", "pdf_note": "5 pages", "lecture_pdf": "git-anatomy-lg-1-lecture.pdf", "mcq": "git-anatomy-lg-1-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "LG 2", "title": "Pharynx & Esophagus", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "pdf": "git-anatomy-lg-2.pdf", "pdf_note": "5 pages", "lecture_pdf": "git-anatomy-lg-2-lecture.pdf", "mcq": "git-anatomy-lg-2-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "LG 3", "title": "Large Intestine", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "pdf": "git-anatomy-lg-3.pdf", "pdf_note": "5 pages", "lecture_pdf": "git-anatomy-lg-3-lecture.pdf", "mcq": "git-anatomy-lg-3-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "SGL 3", "title": "Stomach & Small Intestine", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "pdf": "git-anatomy-sgl-3.pdf", "pdf_note": "6 pages", "lecture_pdf": "git-anatomy-sgl-3-lecture.pdf", "mcq": "git-anatomy-sgl-3-mcq.pdf", "mcq_note": "20 questions" }
-],
-        "physiology": [
-       {
-  "code": "LG 1 & 2",
-  "title": "Saliva & Swallowing",
-  "lecturer": "Dr Sherwan Rahman Sulaiman",
-  "published": true,
-  "pdf": "git-physiology-lg-1-2.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-physiology-lg-1-2-lecture.pdf",
-  "lecture_note": "21 slides",
-  "mcq": "git-physiology-lg-1-2-mcq.pdf",
-  "mcq_note": "20 questions"
-
+          {
+            "code": "LG 1",
+            "title": "Oral Cavity, Palate & Salivary Glands",
+            "lecturer": "Dr. Faris Muhammed",
+            "published": true,
+            "pdf": "git-anatomy-lg-1.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-anatomy-lg-1-lecture.pdf",
+            "mcq": "git-anatomy-lg-1-mcq.pdf",
+            "mcq_note": "20 questions"
           },
           {
-  "code": "LG 3",
-  "title": "Defecation",
-  "lecturer": "Dr Niyan Jassim Mohammad",
-  "published": true,
-  "pdf": "git-physiology-lg-3.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-physiology-lg-3-lecture.pdf",
-  "lecture_note": "16 slides",
-  "mcq": "git-physiology-lg-3-mcq.pdf",
-  "mcq_note": "20 questions"
-},
-{
-  "code": "SGL 1",
-  "title": "Stomach & Duodenum",
-  "lecturer": "Dr Feedan Tahseen Muhammadhelmi",
-  "published": true,
-  "pdf": "git-physiology-sgl-1.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-physiology-sgl-1-lecture.pdf",
-  "lecture_note": "28 slides",
-  "mcq": "git-physiology-sgl-1-mcq.pdf",
-  "mcq_note": "20 questions"
-},
-{
-  "code": "SGL 2",
-  "title": "Small Intestine",
-  "lecturer": "Dr Dler Qader Gallaly",
-  "published": true,
-  "pdf": "git-physiology-sgl-2.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-physiology-sgl-2-lecture.pdf",
-  "lecture_note": "38 slides",
-  "mcq": "git-physiology-sgl-2-mcq.pdf",
-  "mcq_note": "20 questions"
-},
-{
-  "code": "SGL 3",
-  "title": "Large Intestine",
-  "lecturer": "Dr Nidhal Gorgees Hanna",
-  "published": true,
-  "pdf": "git-physiology-sgl-3.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
-  "lecture_note": "18 slides",
-  "mcq": "git-physiology-sgl-3-mcq.pdf",
-  "mcq_note": "20 questions"
-}
-        
-       
+            "code": "LG 2",
+            "title": "Pharynx & Esophagus",
+            "lecturer": "Dr. Nali Abdulkader Maaruf",
+            "published": true,
+            "pdf": "git-anatomy-lg-2.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-anatomy-lg-2-lecture.pdf",
+            "mcq": "git-anatomy-lg-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 3",
+            "title": "Large Intestine",
+            "lecturer": "Dr. Nali Abdulkader Maaruf",
+            "published": true,
+            "pdf": "git-anatomy-lg-3.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-anatomy-lg-3-lecture.pdf",
+            "mcq": "git-anatomy-lg-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 3",
+            "title": "Stomach & Small Intestine",
+            "lecturer": "Dr. Nali Abdulkader Maaruf",
+            "published": true,
+            "pdf": "git-anatomy-sgl-3.pdf",
+            "pdf_note": "6 pages",
+            "lecture_pdf": "git-anatomy-sgl-3-lecture.pdf",
+            "mcq": "git-anatomy-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          }
+        ],
+        "physiology": [
+          {
+            "code": "LG 1 & 2",
+            "title": "Saliva & Swallowing",
+            "lecturer": "Dr Sherwan Rahman Sulaiman",
+            "published": true,
+            "pdf": "git-physiology-lg-1-2.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-lg-1-2-lecture.pdf",
+            "lecture_note": "21 slides",
+            "mcq": "git-physiology-lg-1-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 3",
+            "title": "Defecation",
+            "lecturer": "Dr Niyan Jassim Mohammad",
+            "published": true,
+            "pdf": "git-physiology-lg-3.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-lg-3-lecture.pdf",
+            "lecture_note": "16 slides",
+            "mcq": "git-physiology-lg-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 1",
+            "title": "Stomach & Duodenum",
+            "lecturer": "Dr Feedan Tahseen Muhammadhelmi",
+            "published": true,
+            "pdf": "git-physiology-sgl-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-sgl-1-lecture.pdf",
+            "lecture_note": "28 slides",
+            "mcq": "git-physiology-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 2",
+            "title": "Small Intestine",
+            "lecturer": "Dr Dler Qader Gallaly",
+            "published": true,
+            "pdf": "git-physiology-sgl-2.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-physiology-sgl-2-lecture.pdf",
+            "lecture_note": "38 slides",
+            "mcq": "git-physiology-sgl-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 3",
+            "title": "Large Intestine",
+            "lecturer": "Dr Nidhal Gorgees Hanna",
+            "published": true,
+            "pdf": "git-physiology-sgl-3.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-physiology-sgl-3-lecture.pdf",
+            "lecture_note": "18 slides",
+            "mcq": "git-physiology-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          }
         ],
         "biochemistry": [
           {
@@ -151,36 +188,78 @@
           }
         ],
         "histology": [
-      { 
-"code": "LG 1", "title": "Basic Layers of the GI Wall", "lecturer": "Dr Hero K. Mustafa", "published": true,
-  "pdf": "git-histology-lg-1.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-histology-lg-1-lecture.pdf", "lecture_note": "19 slides",
-  "mcq": "git-histology-lg-1-mcq.pdf", "mcq_note": "20 questions" 
-},
-{ "code": "LG 2", "title": "Gastric Mucosa: Regions & Cells", "lecturer": "Dr Hero K. Mustafa", "published": true,
-  "pdf": "git-histology-lg-2.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-histology-lg-2-lecture.pdf", "lecture_note": "20 slides",
-  "mcq": "git-histology-lg-2-mcq.pdf", "mcq_note": "20 questions" 
-},
-{ "code": "SGL 1", "title": "Oral Cavity & Salivary Glands", "lecturer": "Dr Hero K. Mustafa", "published": true,
-  "pdf": "git-histology-sgl-1.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-histology-sgl-1-lecture.pdf", "lecture_note": "24 slides",
-  "mcq": "git-histology-sgl-1-mcq.pdf", "mcq_note": "20 questions" 
-},
-{ "code": "SGL 2", "title": "Small Intestine", "lecturer": "Dr Hero K. Mustafa", "published": true,
-  "pdf": "git-histology-sgl-2.pdf", "pdf_note": "3 pages",
-  "lecture_pdf": "git-histology-sgl-2-lecture.pdf", "lecture_note": "18 slides",
-  "mcq": "git-histology-sgl-2-mcq.pdf", "mcq_note": "20 questions" 
-},
-{ "code": "SGL 3", "title": "Large Intestine & Anal Canal", "lecturer": "Dr Hero K. Mustafa", "published": true,
-  "pdf": "git-histology-sgl-3.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-histology-sgl-3-lecture.pdf", "lecture_note": "16 slides",
-  "mcq": "git-histology-sgl-3-mcq.pdf", "mcq_note": "20 questions" 
-},
-{ "code": "SGL 4", "title": "Liver & Extrahepatic Biliary Apparatus", "lecturer": "Dr Hero K. Mustafa", "published": true,
-  "pdf": "git-histology-sgl-4.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-histology-sgl-4-lecture.pdf", "lecture_note": "23 slides",
-  "mcq": "git-histology-sgl-4-mcq.pdf", "mcq_note": "20 questions" }
+          {
+            "code": "LG 1",
+            "title": "Basic Layers of the GI Wall",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-lg-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-lg-1-lecture.pdf",
+            "lecture_note": "19 slides",
+            "mcq": "git-histology-lg-1-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 2",
+            "title": "Gastric Mucosa: Regions & Cells",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-lg-2.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-lg-2-lecture.pdf",
+            "lecture_note": "20 slides",
+            "mcq": "git-histology-lg-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 1",
+            "title": "Oral Cavity & Salivary Glands",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-sgl-1-lecture.pdf",
+            "lecture_note": "24 slides",
+            "mcq": "git-histology-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 2",
+            "title": "Small Intestine",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-2.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-histology-sgl-2-lecture.pdf",
+            "lecture_note": "18 slides",
+            "mcq": "git-histology-sgl-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 3",
+            "title": "Large Intestine & Anal Canal",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-3.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-sgl-3-lecture.pdf",
+            "lecture_note": "16 slides",
+            "mcq": "git-histology-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 4",
+            "title": "Liver & Extrahepatic Biliary Apparatus",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-sgl-4.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-sgl-4-lecture.pdf",
+            "lecture_note": "23 slides",
+            "mcq": "git-histology-sgl-4-mcq.pdf",
+            "mcq_note": "20 questions"
+          }
         ],
         "genetics": [
           {
@@ -207,114 +286,296 @@
           }
         ],
         "microbiology": [
-{ "code": "LG 1", "title": "Immunological Aspects of the GIT", "lecturer": "", "published": true, "pdf": "git-microbiology-lg-1.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-1-lecture.pdf", "mcq": "git-microbiology-lg-1-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "LG 2", "title": "Microbiology of the Oral Cavity", "lecturer": "Dr Samira Fattah", "published": true, "pdf": "git-microbiology-lg-2.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-microbiology-lg-2-lecture.pdf", "mcq": "git-microbiology-lg-2-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "LG 3", "title": "Taeniasis — Taenia spp.", "lecturer": "Dr Hadi M. Ahmad", "published": true, "pdf": "git-microbiology-lg-3.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-3-lecture.pdf", "mcq": "git-microbiology-lg-3-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "LG 4", "title": "Enterobius vermicularis (Pinworm)", "lecturer": "Dr Hadi M. Ahmad", "published": true, "pdf": "git-microbiology-lg-4.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-4-lecture.pdf", "mcq": "git-microbiology-lg-4-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "LG 5", "title": "Hookworms", "lecturer": "Dr Hadi M. Ahmad", "published": true, "pdf": "git-microbiology-lg-5.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-lg-5-lecture.pdf", "mcq": "git-microbiology-lg-5-mcq.pdf", "mcq_note": "20 questions" },
-{
-  "code": "LG 6",
-  "title": "Hepatic and Biliary Fascioliasis",
-  "lecturer": "Niyan Inaam Muhammed Yousif",
-  "published": "2026-09-27",
-  "pdf": "git-microbiology-lg-6.pdf",
-  "pdf_note": "3 pages",
-  "lecture_pdf": "git-microbiology-lg-6-lecture.pdf",
-  "mcq": "git-microbiology-lg-6-mcq.pdf",
-  "mcq_note": "20 questions"
-},
-{ "code": "SGL 1", "title": "Normal Microbiota of the GI Tract", "lecturer": "Dr Shler Ghafour Raheem", "published": true, "pdf": "git-microbiology-sgl-1.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-1-lecture.pdf", "mcq": "git-microbiology-sgl-1-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "SGL 2", "title": "Immunology of IBD & Celiac Disease", "lecturer": "Dr Feyan M. Abdullah", "published": true, "pdf": "git-microbiology-sgl-2.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-2-lecture.pdf", "mcq": "git-microbiology-sgl-2-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "SGL 3", "title": "Food Poisoning", "lecturer": "Assist. Prof. Dr. Vian B. Barzinji", "published": true, "pdf": "git-microbiology-sgl-3.pdf", "pdf_note": "5 pages", "lecture_pdf": "git-microbiology-sgl-3-lecture.pdf", "mcq": "git-microbiology-sgl-3-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "SGL 4", "title": "Bacterial Diarrhea", "lecturer": "Dr Shler Ghafour Raheem", "published": true, "pdf": "git-microbiology-sgl-4.pdf", "pdf_note": "3 pages", "lecture_pdf": "git-microbiology-sgl-4-lecture.pdf", "mcq": "git-microbiology-sgl-4-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "SGL 5", "title": "Intestinal Protozoa — Giardia, Cryptosporidium, Balantidium", "lecturer": "Niyan Inaam Muhammed Yousif", "published": true, "pdf": "git-microbiology-sgl-5.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-microbiology-sgl-5-lecture.pdf", "mcq": "git-microbiology-sgl-5-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "SGL 6", "title": "Viral Gastroenteritis", "lecturer": "Hawry A.H. Hussein", "published": true, "pdf": "git-microbiology-sgl-6.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-microbiology-sgl-6-lecture.pdf", "mcq": "git-microbiology-sgl-6-mcq.pdf", "mcq_note": "20 questions" },
-{
-  "code": "SGL 7",
-  "title": "Vibrio Cholerae",
-  "lecturer": "Asst. Prof Dr. Shler Ghafour Raheem",
-  "published": "2026-09-27",
-  "pdf": "git-microbiology-sgl-7.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-microbiology-sgl-7-lecture.pdf",
-  "mcq": "git-microbiology-sgl-7-mcq.pdf",
-  "mcq_note": "20 questions"
-}
-],
+          {
+            "code": "LG 1",
+            "title": "Immunological Aspects of the GIT",
+            "lecturer": "",
+            "published": true,
+            "pdf": "git-microbiology-lg-1.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-lg-1-lecture.pdf",
+            "mcq": "git-microbiology-lg-1-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 2",
+            "title": "Microbiology of the Oral Cavity",
+            "lecturer": "Dr Samira Fattah",
+            "published": true,
+            "pdf": "git-microbiology-lg-2.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-microbiology-lg-2-lecture.pdf",
+            "mcq": "git-microbiology-lg-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 3",
+            "title": "Taeniasis — Taenia spp.",
+            "lecturer": "Dr Hadi M. Ahmad",
+            "published": true,
+            "pdf": "git-microbiology-lg-3.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-lg-3-lecture.pdf",
+            "mcq": "git-microbiology-lg-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 4",
+            "title": "Enterobius vermicularis (Pinworm)",
+            "lecturer": "Dr Hadi M. Ahmad",
+            "published": true,
+            "pdf": "git-microbiology-lg-4.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-lg-4-lecture.pdf",
+            "mcq": "git-microbiology-lg-4-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 5",
+            "title": "Hookworms",
+            "lecturer": "Dr Hadi M. Ahmad",
+            "published": true,
+            "pdf": "git-microbiology-lg-5.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-lg-5-lecture.pdf",
+            "mcq": "git-microbiology-lg-5-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 6",
+            "title": "Hepatic and Biliary Fascioliasis",
+            "lecturer": "Niyan Inaam Muhammed Yousif",
+            "published": "2026-09-27",
+            "pdf": "git-microbiology-lg-6.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-lg-6-lecture.pdf",
+            "mcq": "git-microbiology-lg-6-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 1",
+            "title": "Normal Microbiota of the GI Tract",
+            "lecturer": "Dr Shler Ghafour Raheem",
+            "published": true,
+            "pdf": "git-microbiology-sgl-1.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-sgl-1-lecture.pdf",
+            "mcq": "git-microbiology-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 2",
+            "title": "Immunology of IBD & Celiac Disease",
+            "lecturer": "Dr Feyan M. Abdullah",
+            "published": true,
+            "pdf": "git-microbiology-sgl-2.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-sgl-2-lecture.pdf",
+            "mcq": "git-microbiology-sgl-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 3",
+            "title": "Food Poisoning",
+            "lecturer": "Assist. Prof. Dr. Vian B. Barzinji",
+            "published": true,
+            "pdf": "git-microbiology-sgl-3.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-microbiology-sgl-3-lecture.pdf",
+            "mcq": "git-microbiology-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 4",
+            "title": "Bacterial Diarrhea",
+            "lecturer": "Dr Shler Ghafour Raheem",
+            "published": true,
+            "pdf": "git-microbiology-sgl-4.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-microbiology-sgl-4-lecture.pdf",
+            "mcq": "git-microbiology-sgl-4-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 5",
+            "title": "Intestinal Protozoa — Giardia, Cryptosporidium, Balantidium",
+            "lecturer": "Niyan Inaam Muhammed Yousif",
+            "published": true,
+            "pdf": "git-microbiology-sgl-5.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-microbiology-sgl-5-lecture.pdf",
+            "mcq": "git-microbiology-sgl-5-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 6",
+            "title": "Viral Gastroenteritis",
+            "lecturer": "Hawry A.H. Hussein",
+            "published": true,
+            "pdf": "git-microbiology-sgl-6.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-microbiology-sgl-6-lecture.pdf",
+            "mcq": "git-microbiology-sgl-6-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 7",
+            "title": "Vibrio Cholerae",
+            "lecturer": "Asst. Prof Dr. Shler Ghafour Raheem",
+            "published": "2026-09-27",
+            "pdf": "git-microbiology-sgl-7.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-microbiology-sgl-7-lecture.pdf",
+            "mcq": "git-microbiology-sgl-7-mcq.pdf",
+            "mcq_note": "20 questions"
+          }
+        ],
         "pharmacology": [
-        {
-  "code": "SGL 1",
-  "title": "Drugs for Acid-Related Disorders",
-  "lecturer": "Dr. Begard O. Berzinji",
-  "published": true,
-  "pdf": "git-pharmacology-sgl-1.pdf",
-  "pdf_note": "4 pages",
-  "mcq": "git-pharmacology-sgl-1-mcq.pdf",
-  "mcq_note": "20 questions · answer key",
-  "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
-},
-{
-  "code": "LG 1",
-  "title": "Treatment of GI Parasitic Infestations",
-  "lecturer": "Dr. Begard O. Berzinji",
-  "published": true,
-  "pdf": "git-pharmacology-lg-1.pdf",
-  "pdf_note": "5 pages",
-  "mcq": "git-pharmacology-lg-1-mcq.pdf",
-  "mcq_note": "20 questions · answer key",
-  "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf"
-}
+          {
+            "code": "SGL 1",
+            "title": "Drugs for Acid-Related Disorders",
+            "lecturer": "Dr. Begard O. Berzinji",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-1.pdf",
+            "pdf_note": "4 pages",
+            "mcq": "git-pharmacology-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions · answer key",
+            "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
+          },
+          {
+            "code": "LG 1",
+            "title": "Treatment of GI Parasitic Infestations",
+            "lecturer": "Dr. Begard O. Berzinji",
+            "published": true,
+            "pdf": "git-pharmacology-lg-1.pdf",
+            "pdf_note": "5 pages",
+            "mcq": "git-pharmacology-lg-1-mcq.pdf",
+            "mcq_note": "20 questions · answer key",
+            "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf"
+          }
         ],
         "pathology": [
-          
-  { "code": "LG 1", "title": "Oral Cavity & Salivary Glands", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-    "pdf": "git-pathology-lg-1.pdf", "pdf_note": "4 pages",
-    "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
-    "mcq": "git-pathology-lg-1-mcq.pdf", "mcq_note": "20 questions" },
-  { "code": "LG 2", "title": "Esophagus", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-    "pdf": "git-pathology-lg-2.pdf", "pdf_note": "5 pages",
-    "lecture_pdf": "git-pathology-lg-2-lecture.pdf",
-    "mcq": "git-pathology-lg-2-mcq.pdf", "mcq_note": "20 questions" },
-{ "code": "LG 3", "title": "Non-Neoplastic Intestinal Disease", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-  "pdf": "git-pathology-lg-3.pdf", "pdf_note": "5 pages",
-  "lecture_pdf": "git-pathology-lg-3-lecture.pdf",
-  "mcq": "git-pathology-lg-3-mcq.pdf", "mcq_note": 20 questions },
-  { "code": "SGL 1 · I", "title": "Stomach I: Gastritis & Peptic Ulcer Disease", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-    "pdf": "git-pathology-sgl-1-i.pdf", "pdf_note": "4 pages",
-    "lecture_pdf": "git-pathology-sgl-1-lecture.pdf",
-    "mcq": "git-pathology-sgl-1-mcq.pdf", "mcq_note": ,
-  { "code": "SGL 1 · II", "title": "Stomach II: Polyps & Gastric Cancer", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-    "pdf": "git-pathology-sgl-1-ii.pdf", "pdf_note": "4 pages",
-    "lecture_pdf": "git-pathology-sgl-1-lecture.pdf",
-    "mcq": "git-pathology-sgl-1-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
-  { "code": "SGL 2 · I", "title": "Bowel I: Ischemia, Malabsorption & Celiac Disease", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-    "pdf": "git-pathology-sgl-2-i.pdf", "pdf_note": "4 pages",
-    "lecture_pdf": "git-pathology-sgl-2-lecture.pdf",
-    "mcq": "git-pathology-sgl-2-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
-  { "code": "SGL 2 · II", "title": "Bowel II: Intestinal Polyps", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-    "pdf": "git-pathology-sgl-2-ii.pdf", "pdf_note": "3 pages",
-    "lecture_pdf": "git-pathology-sgl-2-lecture.pdf",
-    "mcq": "git-pathology-sgl-2-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
-{ "code": "SGL 3 · I", "title": "Intestinal Neoplasms", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-  "pdf": "git-pathology-sgl-3-i.pdf", "pdf_note": "5 pages",
-  "lecture_pdf": "git-pathology-sgl-3-lecture.pdf",
-  "mcq": "git-pathology-sgl-3-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
-
-{ "code": "SGL 3 · II", "title": "Intestinal Diverticulum", "lecturer": "Dr Jawher Tahir Omer", "published": true,
-  "pdf": "git-pathology-sgl-3-ii.pdf", "pdf_note": "3 pages",
-  "lecture_pdf": "git-pathology-sgl-3-lecture.pdf",
-  "mcq": "git-pathology-sgl-3-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
-
-{ "code": "SGL 4 · I", "title": "Hepatitis: Viral, Autoimmune & Drug/Toxin-Induced", "lecturer": "Dr Savan Saeed Azeez", "published": true,
-  "pdf": "git-pathology-sgl-4-i.pdf", "pdf_note": "5 pages",
-  "lecture_pdf": "git-pathology-sgl-4-lecture.pdf",
-  "mcq": "git-pathology-sgl-4-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
-
-{ "code": "SGL 4 · II", "title": "Alcohol, NAFLD & Inherited Metabolic Liver Disease", "lecturer": "Dr Savan Saeed Azeez", "published": true,
-  "pdf": "git-pathology-sgl-4-ii.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-pathology-sgl-4-lecture.pdf",
-  "mcq": "git-pathology-sgl-4-mcq.pdf", "mcq_note": "20 questions (covers both parts)" }
-
+          {
+            "code": "LG 1",
+            "title": "Oral Cavity & Salivary Glands",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-lg-1.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-lg-1-lecture.pdf",
+            "mcq": "git-pathology-lg-1-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 2",
+            "title": "Esophagus",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-lg-2.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-pathology-lg-2-lecture.pdf",
+            "mcq": "git-pathology-lg-2-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "LG 3",
+            "title": "Non-Neoplastic Intestinal Disease",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-lg-3.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-pathology-lg-3-lecture.pdf",
+            "mcq": "git-pathology-lg-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 1 · I",
+            "title": "Stomach I: Gastritis & Peptic Ulcer Disease",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-sgl-1-i.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-1-lecture.pdf",
+            "mcq": "git-pathology-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          },
+          {
+            "code": "SGL 1 · II",
+            "title": "Stomach II: Polyps & Gastric Cancer",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-sgl-1-ii.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-1-lecture.pdf",
+            "mcq": "git-pathology-sgl-1-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          },
+          {
+            "code": "SGL 2 · I",
+            "title": "Bowel I: Ischemia, Malabsorption & Celiac Disease",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-sgl-2-i.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-2-lecture.pdf",
+            "mcq": "git-pathology-sgl-2-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          },
+          {
+            "code": "SGL 2 · II",
+            "title": "Bowel II: Intestinal Polyps",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-sgl-2-ii.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pathology-sgl-2-lecture.pdf",
+            "mcq": "git-pathology-sgl-2-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          },
+          {
+            "code": "SGL 3 · I",
+            "title": "Intestinal Neoplasms",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-sgl-3-i.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-pathology-sgl-3-lecture.pdf",
+            "mcq": "git-pathology-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          },
+          {
+            "code": "SGL 3 · II",
+            "title": "Intestinal Diverticulum",
+            "lecturer": "Dr Jawher Tahir Omer",
+            "published": true,
+            "pdf": "git-pathology-sgl-3-ii.pdf",
+            "pdf_note": "3 pages",
+            "lecture_pdf": "git-pathology-sgl-3-lecture.pdf",
+            "mcq": "git-pathology-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          },
+          {
+            "code": "SGL 4 · I",
+            "title": "Hepatitis: Viral, Autoimmune & Drug/Toxin-Induced",
+            "lecturer": "Dr Savan Saeed Azeez",
+            "published": true,
+            "pdf": "git-pathology-sgl-4-i.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-pathology-sgl-4-lecture.pdf",
+            "mcq": "git-pathology-sgl-4-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          },
+          {
+            "code": "SGL 4 · II",
+            "title": "Alcohol, NAFLD & Inherited Metabolic Liver Disease",
+            "lecturer": "Dr Savan Saeed Azeez",
+            "published": true,
+            "pdf": "git-pathology-sgl-4-ii.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-4-lecture.pdf",
+            "mcq": "git-pathology-sgl-4-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)"
+          }
         ]
       },
       "exam": {
@@ -370,14 +631,17 @@
         "microbiology": [],
         "pharmacology": [],
         "pathology": []
-}
-}
-],
-"schedule": {
-  "title": "Weekly schedule",
-  "weeks": [
-  { "label": "27 Sep – 17 Oct 2026 (W4–W6)", "pdf": "schedule-2026-09-27.pdf", "note": "GIT Module — through End Module Exam" }
-]
       }
     }
-  
+  ],
+  "schedule": {
+    "title": "Weekly schedule",
+    "weeks": [
+      {
+        "label": "27 Sep – 17 Oct 2026 (W4–W6)",
+        "pdf": "schedule-2026-09-27.pdf",
+        "note": "GIT Module — through End Module Exam"
+      }
+    ]
+  }
+}
