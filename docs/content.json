@@ -275,7 +275,7 @@
     "pdf": "git-pathology-lg-2.pdf", "pdf_note": "5 pages",
     "lecture_pdf": "git-pathology-lg-2-lecture.pdf",
     "mcq": "git-pathology-lg-2-mcq.pdf", "mcq_note": "20 questions" },
-{"code":"lg-3","title":"Non-Neoplastic Intestinal Disease","lecturer":"Dr Jawher Tahir Omer","published":true,"pdf":"git-pathology-lg-3.pdf","pdf_note":null,"lecture_pdf":"git-pathology-lg-3-lecture.pdf","mcq":"git-pathology-lg-3-mcq.pdf","mcq_note":null},
+{"code":"lg-3","title":"Non-Neoplastic Intestinal Disease","lecturer":"Dr Jawher Tahir Omer","published":true,"pdf":"git-pathology-lg-3.pdf","pdf_note":"4 pages","lecture_pdf":"git-pathology-lg-3-lecture.pdf","mcq":"git-pathology-lg-3-mcq.pdf","mcq_note":"20 questions"},
   { "code": "SGL 1 · I", "title": "Stomach I: Gastritis & Peptic Ulcer Disease", "lecturer": "Dr Jawher Tahir Omer", "published": true,
     "pdf": "git-pathology-sgl-1-i.pdf", "pdf_note": "4 pages",
     "lecture_pdf": "git-pathology-sgl-1-lecture.pdf",
