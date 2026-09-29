@@ -428,7 +428,18 @@
             "lecture_pdf": "git-microbiology-sgl-7-lecture.pdf",
             "mcq": "git-microbiology-sgl-7-mcq.pdf",
             "mcq_note": "20 questions"
-          }
+          },
+{
+  "code": "SGL 8",
+  "title": "Intestinal and Tissue Nematodes",
+  "lecturer": "Aras Othman Rasool",
+  "published": "2026-09-29",
+  "pdf": "git-microbiology-sgl-8.pdf",
+  "pdf_note": "5 pages",
+  "lecture_pdf": "git-microbiology-sgl-8-lecture.pdf",
+  "mcq": "git-microbiology-sgl-8-mcq.pdf",
+  "mcq_note": "20 questions"
+}
         ],
         "pharmacology": [
           {
