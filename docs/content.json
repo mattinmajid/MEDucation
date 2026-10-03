@@ -439,6 +439,28 @@
   "lecture_pdf": "git-microbiology-sgl-8-lecture.pdf",
   "mcq": "git-microbiology-sgl-8-mcq.pdf",
   "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 9",
+  "title": "Echinococcus granulosus and Hymenolepis nana",
+  "lecturer": "Niyan Inaam Muhammed Yousif",
+  "published": "2026-10-03",
+  "pdf": "git-microbiology-sgl-9.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-microbiology-sgl-9-lecture.pdf",
+  "mcq": "git-microbiology-sgl-9-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 10",
+  "title": "Entamoeba histolytica",
+  "lecturer": "Pinar Khalid Khudhur",
+  "published": "2026-10-03",
+  "pdf": "git-microbiology-sgl-10.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-microbiology-sgl-10-lecture.pdf",
+  "mcq": "git-microbiology-sgl-10-mcq.pdf",
+  "mcq_note": "20 questions"
 }
         ],
         "pharmacology": [
