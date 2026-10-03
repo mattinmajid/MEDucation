@@ -334,6 +334,15 @@ function saveProgress(p){
 }
 function lectureKey(blockId, subjId, code){ return blockId + "::" + subjId + "::" + code; }
 
+/* A lecture that's split across several PDFs shares one code with a trailing
+   " · I", " · II", ... part marker (e.g. "SGL 3 · I" and "SGL 3 · II"). This
+   strips that marker so both parts resolve to the same underlying lecture,
+   "SGL 3" — used so the checklist counts the split lecture once, not once
+   per part. */
+function lectureGroupKey(code){
+  return String(code).replace(/\s*·\s*[IVXLCDM]+\s*$/i, "").trim();
+}
+
 /* spaced-review checkpoints (Day 1 / 3 / 7 / 21 / Pre-exam), per browser */
 function loadReview(){
   try { return JSON.parse(localStorage.getItem("meducation-review") || "{}"); }
@@ -343,16 +352,23 @@ function saveReview(r){
   try { localStorage.setItem("meducation-review", JSON.stringify(r)); } catch(e){}
 }
 
-/* how many published lectures in a block are checked off */
+/* how many *lectures* (not PDF parts) in a block are checked off. A lecture
+   split into multiple parts — same code, different " · I" / " · II" suffix —
+   is one lecture to a student, so it counts once toward the total, and only
+   counts as done once every one of its parts is checked. */
 function blockProgress(b){
   const p = loadProgress();
-  let total = 0, done = 0;
+  const groups = new Map(); // "subjId::groupCode" -> [progressKey, ...]
   DATA.subjects.forEach(sub => {
     pub(b.subjects[sub.id]).forEach(l => {
-      total++;
-      if (p[lectureKey(b.id, sub.id, l.code)]) done++;
+      const g = sub.id + "::" + lectureGroupKey(l.code);
+      const key = lectureKey(b.id, sub.id, l.code);
+      if (!groups.has(g)) groups.set(g, []);
+      groups.get(g).push(key);
     });
   });
+  let total = groups.size, done = 0;
+  groups.forEach(keys => { if (keys.every(k => p[k])) done++; });
   const pct = total ? Math.round((done / total) * 100) : 0;
   return { pct, total, done };
 }
