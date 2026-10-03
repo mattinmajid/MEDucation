@@ -608,7 +608,16 @@
             "lecture_pdf": "git-pathology-sgl-4-lecture.pdf",
             "mcq": "git-pathology-sgl-4-mcq.pdf",
             "mcq_note": "20 questions (covers both parts)"
-          }
+          },
+{ "code": "SGL 5 · I", "title": "Liver Function Tests, Liver Failure & Cirrhosis", "lecturer": "Dr Savan Saeed Azeez", "published": true,
+  "pdf": "git-pathology-sgl-5-i.pdf", "pdf_note": "4 pages",
+  "lecture_pdf": "git-pathology-sgl-5-lecture.pdf",
+  "mcq": "git-pathology-sgl-5-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
+
+{ "code": "SGL 5 · II", "title": "Liver Tumors: Benign & Malignant", "lecturer": "Dr Savan Saeed Azeez", "published": true,
+  "pdf": "git-pathology-sgl-5-ii.pdf", "pdf_note": "4 pages",
+  "lecture_pdf": "git-pathology-sgl-5-lecture.pdf",
+  "mcq": "git-pathology-sgl-5-mcq.pdf", "mcq_note": "20 questions (covers both parts)" }
         ]
       },
       "exam": {
