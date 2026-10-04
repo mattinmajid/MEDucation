@@ -212,6 +212,10 @@
             "mcq": "git-histology-lg-2-mcq.pdf",
             "mcq_note": "20 questions"
           },
+{ "code": "LG 3", "title": "Histology of the Pancreas", "lecturer": "Dr Hero K. Mustafa", "published": true,
+  "pdf": "git-histology-lg-3.pdf", "pdf_note": "4 pages",
+  "lecture_pdf": "git-histology-lg-3-lecture.pdf", "lecture_note": "17 slides",
+  "mcq": "git-histology-lg-3-mcq.pdf", "mcq_note": "20 questions" },
           {
             "code": "SGL 1",
             "title": "Oral Cavity & Salivary Glands",
