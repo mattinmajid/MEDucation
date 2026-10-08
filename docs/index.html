@@ -498,7 +498,7 @@ function resourceList(l){
 }
 function resourceFolder(type){
   return type === "lecture" ? "lectures/" : type === "mcq" ? "mcqs/" :
-         type === "schedule" ? "schedule/" : "pdfs/";
+         type === "schedule" ? "schedule/" : type === "cases" ? "cases/" : "pdfs/";
 }
 function resourceSrc(r){
   return resourceFolder(r.type) + encodeURIComponent(r.pdf);
