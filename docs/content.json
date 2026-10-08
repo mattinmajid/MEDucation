@@ -212,10 +212,18 @@
             "mcq": "git-histology-lg-2-mcq.pdf",
             "mcq_note": "20 questions"
           },
-{ "code": "LG 3", "title": "Histology of the Pancreas", "lecturer": "Dr Hero K. Mustafa", "published": true,
-  "pdf": "git-histology-lg-3.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-histology-lg-3-lecture.pdf", "lecture_note": "17 slides",
-  "mcq": "git-histology-lg-3-mcq.pdf", "mcq_note": "20 questions" },
+          {
+            "code": "LG 3",
+            "title": "Histology of the Pancreas",
+            "lecturer": "Dr Hero K. Mustafa",
+            "published": true,
+            "pdf": "git-histology-lg-3.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-histology-lg-3-lecture.pdf",
+            "lecture_note": "17 slides",
+            "mcq": "git-histology-lg-3-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
           {
             "code": "SGL 1",
             "title": "Oral Cavity & Salivary Glands",
@@ -433,37 +441,59 @@
             "mcq": "git-microbiology-sgl-7-mcq.pdf",
             "mcq_note": "20 questions"
           },
+          {
+            "code": "SGL 8",
+            "title": "Intestinal and Tissue Nematodes",
+            "lecturer": "Aras Othman Rasool",
+            "published": "2026-09-29",
+            "pdf": "git-microbiology-sgl-8.pdf",
+            "pdf_note": "5 pages",
+            "lecture_pdf": "git-microbiology-sgl-8-lecture.pdf",
+            "mcq": "git-microbiology-sgl-8-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 9",
+            "title": "Echinococcus granulosus and Hymenolepis nana",
+            "lecturer": "Niyan Inaam Muhammed Yousif",
+            "published": "2026-10-03",
+            "pdf": "git-microbiology-sgl-9.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-microbiology-sgl-9-lecture.pdf",
+            "mcq": "git-microbiology-sgl-9-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
+          {
+            "code": "SGL 10",
+            "title": "Entamoeba histolytica",
+            "lecturer": "Pinar Khalid Khudhur",
+            "published": "2026-10-03",
+            "pdf": "git-microbiology-sgl-10.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-microbiology-sgl-10-lecture.pdf",
+            "mcq": "git-microbiology-sgl-10-mcq.pdf",
+            "mcq_note": "20 questions"
+          },
 {
-  "code": "SGL 8",
-  "title": "Intestinal and Tissue Nematodes",
-  "lecturer": "Aras Othman Rasool",
-  "published": "2026-09-29",
-  "pdf": "git-microbiology-sgl-8.pdf",
+  "code": "SGL 11",
+  "title": "Hepatitis Viruses — Hepatitis A and E",
+  "lecturer": "Chato Ali Taher",
+  "published": "2026-10-08",
+  "pdf": "git-microbiology-sgl-11.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-microbiology-sgl-11-lecture.pdf",
+  "mcq": "git-microbiology-sgl-11-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 12",
+  "title": "Helicobacter pylori and Peptic Ulcer",
+  "lecturer": "Samira Fattah",
+  "published": "2026-10-08",
+  "pdf": "git-microbiology-sgl-12.pdf",
   "pdf_note": "5 pages",
-  "lecture_pdf": "git-microbiology-sgl-8-lecture.pdf",
-  "mcq": "git-microbiology-sgl-8-mcq.pdf",
-  "mcq_note": "20 questions"
-},
-{
-  "code": "SGL 9",
-  "title": "Echinococcus granulosus and Hymenolepis nana",
-  "lecturer": "Niyan Inaam Muhammed Yousif",
-  "published": "2026-10-03",
-  "pdf": "git-microbiology-sgl-9.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-microbiology-sgl-9-lecture.pdf",
-  "mcq": "git-microbiology-sgl-9-mcq.pdf",
-  "mcq_note": "20 questions"
-},
-{
-  "code": "SGL 10",
-  "title": "Entamoeba histolytica",
-  "lecturer": "Pinar Khalid Khudhur",
-  "published": "2026-10-03",
-  "pdf": "git-microbiology-sgl-10.pdf",
-  "pdf_note": "4 pages",
-  "lecture_pdf": "git-microbiology-sgl-10-lecture.pdf",
-  "mcq": "git-microbiology-sgl-10-mcq.pdf",
+  "lecture_pdf": "git-microbiology-sgl-12-lecture.pdf",
+  "mcq": "git-microbiology-sgl-12-mcq.pdf",
   "mcq_note": "20 questions"
 }
         ],
@@ -613,15 +643,45 @@
             "mcq": "git-pathology-sgl-4-mcq.pdf",
             "mcq_note": "20 questions (covers both parts)"
           },
-{ "code": "SGL 5 · I", "title": "Liver Function Tests, Liver Failure & Cirrhosis", "lecturer": "Dr Savan Saeed Azeez", "published": true,
-  "pdf": "git-pathology-sgl-5-i.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-pathology-sgl-5-lecture.pdf",
-  "mcq": "git-pathology-sgl-5-mcq.pdf", "mcq_note": "20 questions (covers both parts)" },
-
-{ "code": "SGL 5 · II", "title": "Liver Tumors: Benign & Malignant", "lecturer": "Dr Savan Saeed Azeez", "published": true,
-  "pdf": "git-pathology-sgl-5-ii.pdf", "pdf_note": "4 pages",
-  "lecture_pdf": "git-pathology-sgl-5-lecture.pdf",
-  "mcq": "git-pathology-sgl-5-mcq.pdf", "mcq_note": "20 questions (covers both parts)" }
+          {
+            "code": "SGL 5 · I",
+            "title": "Liver Function Tests, Liver Failure & Cirrhosis",
+            "lecturer": "Dr Savan Saeed Azeez",
+            "published": true,
+            "pdf": "git-pathology-sgl-5-i.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-5-lecture.pdf",
+            "mcq": "git-pathology-sgl-5-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)",
+            "cases_pdf": "git-pathology-sgl-5-cases.pdf",
+            "cases_note": "2 cases · 15 pages"
+          },
+          {
+            "code": "SGL 5 · II",
+            "title": "Liver Tumors: Benign & Malignant",
+            "lecturer": "Dr Savan Saeed Azeez",
+            "published": true,
+            "pdf": "git-pathology-sgl-5-ii.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-5-lecture.pdf",
+            "mcq": "git-pathology-sgl-5-mcq.pdf",
+            "mcq_note": "20 questions (covers both parts)",
+            "cases_pdf": "git-pathology-sgl-5-cases.pdf",
+            "cases_note": "2 cases · 15 pages"
+          },
+          {
+            "code": "SGL 6",
+            "title": "Biliary Tract Disease: Cholangiopathies, Gallstones & Tumors",
+            "lecturer": "Dr Savan Saeed Azeez",
+            "published": true,
+            "pdf": "git-pathology-sgl-6.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pathology-sgl-6-lecture.pdf",
+            "mcq": "git-pathology-sgl-6-mcq.pdf",
+            "mcq_note": "20 questions",
+            "cases_pdf": "git-pathology-sgl-6-cases.pdf",
+            "cases_note": "2 cases · 16 pages"
+          }
         ]
       },
       "exam": {
