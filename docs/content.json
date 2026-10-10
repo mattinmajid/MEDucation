@@ -171,16 +171,16 @@
         ],
         "biochemistry": [
           {
-            "code": "SGL 1",
-            "title": "GIT Enzymes and Hormones",
-            "lecturer": "Dr Sardar N. Ahmed",
-            "published": true,
-            "pdf": "git-biochemistry-sgl-1.pdf",
-            "pdf_note": "3 pages",
-            "lecture_pdf": "git-biochemistry-sgl-1-lecture.pdf",
-            "mcq": "git-biochemistry-sgl-1-mcq.pdf",
-            "mcq_note": "20 questions"
-          },
+  "code": "SGL 1",
+  "title": "GIT Enzymes and Hormones",
+  "lecturer": "Shelan I. Saber",
+  "published": true,
+  "pdf": "git-biochemistry-sgl-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "git-biochemistry-sgl-1-lecture-2.pdf",
+  "mcq": "git-biochemistry-sgl-1-mcq.pdf",
+  "mcq_note": "20 questions"
+},
           {
             "code": "LG 1",
             "title": "Liver Function Tests",
