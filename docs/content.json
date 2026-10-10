@@ -89,6 +89,11 @@
             "mcq": "git-anatomy-lg-3-mcq.pdf",
             "mcq_note": "20 questions"
           },
+{ "code": "LG 4", "title": "Neck Triangles & Deep Cervical Fascia", "lecturer": "", "published": true, "pdf": "git-anatomy-lg-4.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-anatomy-lg-4-lecture.pdf", "mcq": "git-anatomy-lg-4-mcq.pdf", "mcq_note": "20 questions" },
+
+{ "code": "SGL 1", "title": "Anterior Abdominal Wall", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "pdf": "git-anatomy-sgl-1.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-anatomy-sgl-1-lecture.pdf", "mcq": "git-anatomy-sgl-1-mcq.pdf", "mcq_note": "20 questions" },
+
+{ "code": "SGL 2", "title": "Peritoneum", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "pdf": "git-anatomy-sgl-2.pdf", "pdf_note": "4 pages", "lecture_pdf": "git-anatomy-sgl-2-lecture.pdf", "mcq": "git-anatomy-sgl-2-mcq.pdf", "mcq_note": "20 questions" },
           {
             "code": "SGL 3",
             "title": "Stomach & Small Intestine",
@@ -99,7 +104,8 @@
             "lecture_pdf": "git-anatomy-sgl-3-lecture.pdf",
             "mcq": "git-anatomy-sgl-3-mcq.pdf",
             "mcq_note": "20 questions"
-          }
+          },
+{ "code": "SGL 4", "title": "Liver, Biliary System, Pancreas & Spleen", "lecturer": "Dr. Faris Muhammed", "published": true, "pdf": "git-anatomy-sgl-4.pdf", "pdf_note": "5 pages", "lecture_pdf": "git-anatomy-sgl-4-lecture.pdf", "mcq": "git-anatomy-sgl-4-mcq.pdf", "mcq_note": "20 questions" }
         ],
         "physiology": [
           {
