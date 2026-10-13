@@ -132,6 +132,18 @@
             "mcq": "git-physiology-lg-3-mcq.pdf",
             "mcq_note": "20 questions"
           },
+{
+  "code": "LG 4",
+  "title": "Liver Physiology",
+  "lecturer": "Dr Sara M. Khidhir",
+  "published": true,
+  "pdf": "git-physiology-lg-4.pdf",
+  "pdf_note": "5 pages",
+  "lecture_pdf": "git-physiology-lg-4-lecture.pdf",
+  "lecture_note": "46 slides",
+  "mcq": "git-physiology-lg-4-mcq.pdf",
+  "mcq_note": "20 questions"
+},
           {
             "code": "SGL 1",
             "title": "Stomach & Duodenum",
