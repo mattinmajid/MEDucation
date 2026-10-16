@@ -573,7 +573,7 @@ function viewHome(){
 
   const exams = DATA.blocks.filter(b => b.exam).map(b => {
     const e = b.exam;
-    return `<a class="examcard" href="#/e/${b.id}" style="--subject:${subjColor(e.theme)};--tint:${subjTint(e.theme)}">
+    return `<a class="examcard" href="${e.url ? esc(e.url) : "#/e/" + b.id}" style="--subject:${subjColor(e.theme)};--tint:${subjTint(e.theme)}">
       <div class="blockcard__subject">${esc(b.short)} Block</div>
       <div class="examcard__title">${esc(e.title)}</div>
       <div class="examcard__meta">${e.questions} questions · ${e.minutes} minutes · ${esc(e.note)}</div>
@@ -627,7 +627,7 @@ function viewBlock(id){
   let exam = "";
   if (b.exam){
     exam = `<section><h2 class="seclabel">When the block ends</h2>
-      <a class="examcard" href="#/e/${b.id}" style="--subject:${subjColor(b.exam.theme)};--tint:${subjTint(b.exam.theme)}">
+      <a class="examcard" href="${b.exam.url ? esc(b.exam.url) : "#/e/" + b.id}" style="--subject:${subjColor(b.exam.theme)};--tint:${subjTint(b.exam.theme)}">
         <div class="blockcard__subject">Mock exam</div>
         <div class="examcard__title">${esc(b.exam.title)}</div>
         <div class="examcard__meta">${b.exam.questions} questions · ${b.exam.minutes} minutes · ${esc(b.exam.note)}</div>
@@ -861,7 +861,7 @@ function viewExam(blockId){
     </ul>
     ${e.state === "closed"
       ? `<p class="notice">Not open yet. The exam ${esc(e.note)}.</p>`
-      : `<p style="margin-top:26px"><a class="btn" href="#/e/${b.id}">Begin</a></p>`}
+      : `<p style="margin-top:26px"><a class="btn" href="${e.url ? esc(e.url) : "#/e/" + b.id}">Begin</a></p>`}
     <p style="margin-top:26px">
       <a class="btn btn--quiet" href="#/b/${b.id}">Back to ${esc(b.short)}</a></p>
     ${foot("MEDucation by " + DATA.site.author)}`;

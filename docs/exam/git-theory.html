@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GIT Theory Mock</title>
+<meta name="description" content="GIT block theory mock exam — 15 short-answer questions in 60 minutes. MEDucation by Mattin Majid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+/* Layout: one narrow exam-paper column; sticky timer strip; one question per screen, then a marking sheet. */
+:root{
+  --ink:#17140F; --ink-2:#5F584E; --ink-3:#8A8378;
+  --line:#E5DFD4; --paper:#FDFCF9; --card:#FFFFFF; --rule:#D9D2C5;
+  --brand:#1B6E48; --brand-tint:#E7F1EB; --on-brand:#FFFFFF;
+  --warn:#9A5B00; --warn-tint:#FBEFD9;
+  --bad:#B3322B; --bad-tint:#FBEAE8;
+  --good:#1B7A4B; --good-tint:#E4F2EA;
+  --shadow:rgba(23,20,15,.07); --barbg:rgba(253,252,249,.95);
+  --micro:#1F5FA8; --micro-t:#E5EEF9;
+  --path:#B3322B; --path-t:#FBEAE8;
+  --anat:#0F6E72; --anat-t:#E0F0F0;
+  --histo:#6B3FA0; --histo-t:#EFE8F7;
+  --physio:#1B7A4B; --physio-t:#E4F2EA;
+  --pharm:#C2610A; --pharm-t:#FCEDDD;
+  --bio:#A32552; --bio-t:#FAE7EE;
+  --gen:#3C4A5A; --gen-t:#E9ECEF;
+  --cm:#8A6A0B; --cm-t:#F6EFD8;
+  --radio:#3D4FA1; --radio-t:#E8EBF8;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#EDE7DB; --ink-2:#A69E90; --ink-3:#7C7568;
+    --line:#302B23; --paper:#15130F; --card:#1D1A15; --rule:#3A342B;
+    --brand:#4FBE85; --brand-tint:#152A20; --on-brand:#0E2016;
+    --warn:#E0A040; --warn-tint:#2C2215;
+    --bad:#E4736A; --bad-tint:#2E1D1B;
+    --good:#4FBE85; --good-tint:#152A20;
+    --shadow:rgba(0,0,0,.4); --barbg:rgba(21,19,15,.95);
+    --micro:#6FA9EC; --micro-t:#16222F;
+    --path:#E4736A; --path-t:#2E1D1B;
+    --anat:#4FB2B6; --anat-t:#12272A;
+    --histo:#B08EDD; --histo-t:#221A2D;
+    --physio:#4FBE85; --physio-t:#152A20;
+    --pharm:#E89A4E; --pharm-t:#2C2015;
+    --bio:#E2739C; --bio-t:#2B1721;
+    --gen:#9DACBD; --gen-t:#1C2128;
+    --cm:#D9B54A; --cm-t:#2A2412;
+    --radio:#9AA8F0; --radio-t:#1B1F33;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#EDE7DB; --ink-2:#A69E90; --ink-3:#7C7568;
+  --line:#302B23; --paper:#15130F; --card:#1D1A15; --rule:#3A342B;
+  --brand:#4FBE85; --brand-tint:#152A20; --on-brand:#0E2016;
+  --warn:#E0A040; --warn-tint:#2C2215;
+  --bad:#E4736A; --bad-tint:#2E1D1B;
+  --good:#4FBE85; --good-tint:#152A20;
+  --shadow:rgba(0,0,0,.4); --barbg:rgba(21,19,15,.95);
+  --micro:#6FA9EC; --micro-t:#16222F;
+  --path:#E4736A; --path-t:#2E1D1B;
+  --anat:#4FB2B6; --anat-t:#12272A;
+  --histo:#B08EDD; --histo-t:#221A2D;
+  --physio:#4FBE85; --physio-t:#152A20;
+  --pharm:#E89A4E; --pharm-t:#2C2015;
+  --bio:#E2739C; --bio-t:#2B1721;
+  --gen:#9DACBD; --gen-t:#1C2128;
+  --cm:#D9B54A; --cm-t:#2A2412;
+  --radio:#9AA8F0; --radio-t:#1B1F33;
+  color-scheme:dark;
+}
+.s-micro{--s:var(--micro);--st:var(--micro-t)}
+.s-path{--s:var(--path);--st:var(--path-t)}
+.s-anat{--s:var(--anat);--st:var(--anat-t)}
+.s-histo{--s:var(--histo);--st:var(--histo-t)}
+.s-physio{--s:var(--physio);--st:var(--physio-t)}
+.s-pharm{--s:var(--pharm);--st:var(--pharm-t)}
+.s-bio{--s:var(--bio);--st:var(--bio-t)}
+.s-gen{--s:var(--gen);--st:var(--gen-t)}
+.s-cm{--s:var(--cm);--st:var(--cm-t)}
+.s-radio{--s:var(--radio);--st:var(--radio-t)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);
+  z-index:10;background:var(--card)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:640px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--line);background:var(--card)}
+.masthead__inner{display:flex;align-items:center;gap:10px;height:56px}
+.brandlink{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark{width:26px;height:26px;flex:none;color:var(--brand)}
+.mark svg{display:block;width:100%;height:100%}
+.wordmark{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em}
+.wordmark em{font-style:normal;color:var(--brand)}
+.masthead__right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.backlink{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-decoration:none}
+.backlink:hover{color:var(--brand)}
+.themebtn{background:none;border:0;padding:6px;cursor:pointer;color:var(--ink-2);
+  display:flex;align-items:center;border-radius:6px;line-height:0}
+.themebtn:hover{color:var(--brand);background:var(--brand-tint)}
+.themebtn svg{width:18px;height:18px}
+
+/* type */
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--brand);margin:0 0 10px}
+h1{font-family:var(--serif);font-size:30px;line-height:1.15;font-weight:600;letter-spacing:-.015em;
+  margin:0 0 8px;text-wrap:balance}
+h2{font-family:var(--serif);font-size:21px;line-height:1.25;font-weight:600;margin:0;text-wrap:balance}
+.lede{margin:0;color:var(--ink-2);font-size:15.5px;max-width:58ch}
+.seclabel{display:flex;align-items:baseline;gap:12px;margin:0 0 14px;font-family:var(--mono);
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:400}
+.seclabel::after{content:"";flex:1;height:1px;background:var(--line)}
+.mono{font-family:var(--mono)}
+.muted{color:var(--ink-2)}
+
+.pagehead{padding-block:32px 22px}
+.stack{display:flex;flex-direction:column;gap:28px;padding-bottom:56px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);
+  color:var(--on-brand);border:1px solid var(--brand);border-radius:8px;padding:11px 20px;
+  font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;min-height:44px}
+.btn:hover{filter:brightness(1.07)}
+.btn--quiet{background:transparent;color:var(--brand)}
+.btn--plain{background:transparent;color:var(--ink-2);border-color:var(--line)}
+.btn--danger{background:var(--bad);border-color:var(--bad);color:var(--on-brand)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+/* intro */
+.paperspec{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);
+  border-radius:var(--radius);background:var(--card);overflow:hidden}
+.paperspec div{padding:14px 14px 12px;border-right:1px solid var(--line)}
+.paperspec div:last-child{border-right:0}
+.paperspec b{display:block;font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.1;
+  font-variant-numeric:tabular-nums}
+.paperspec span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.rules{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:62ch}
+.rules li::marker{color:var(--ink-3)}
+.blueprint{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow-x:auto}
+.blueprint table{width:100%;border-collapse:collapse;font-size:14.5px}
+.blueprint th,.blueprint td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.blueprint tr:last-child td{border-bottom:0}
+.blueprint th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:400}
+.blueprint td.num,.blueprint th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.sw{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--s);margin-right:9px}
+.note{border-left:3px solid var(--brand);padding:2px 0 2px 14px;color:var(--ink-2);font-size:14.5px;
+  margin:0;max-width:62ch}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.input{font:inherit;font-size:16px;padding:11px 13px;border:1px solid var(--rule);border-radius:8px;
+  background:var(--card);color:var(--ink);width:100%;max-width:360px}
+.input:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px var(--brand-tint)}
+
+/* sticky exam bar */
+.exambar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--barbg);
+  backdrop-filter:saturate(1.2) blur(6px);-webkit-backdrop-filter:saturate(1.2) blur(6px);
+  border-bottom:1px solid var(--line)}
+.exambar__top{display:flex;align-items:center;gap:12px;padding-block:10px 8px}
+.timer{font-family:var(--mono);font-size:20px;font-weight:500;font-variant-numeric:tabular-nums;
+  letter-spacing:.02em;line-height:1}
+.timer small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-left:8px;font-weight:400}
+.timer.is-low{color:var(--warn)}
+.timer.is-crit{color:var(--bad)}
+.answered{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.nav{display:flex;flex-wrap:wrap;gap:5px;padding-bottom:10px}
+.nav button{flex:none;width:30px;height:30px;border-radius:6px;border:1px solid var(--rule);
+  background:var(--card);font-family:var(--mono);font-size:12px;cursor:pointer;color:var(--ink-2);
+  font-variant-numeric:tabular-nums;padding:0}
+.nav button.is-done{background:var(--brand-tint);border-color:var(--brand);color:var(--brand)}
+.nav button.is-cur{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.nav button.is-review{width:auto;padding:0 10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+
+/* question sheet */
+.qsheet{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 1px 0 var(--shadow);overflow:hidden}
+.qsheet__head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 18px;
+  border-bottom:1px solid var(--line)}
+.qno{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--s);background:var(--st);
+  padding:3px 8px;border-radius:4px}
+.pts{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--ink-2);
+  font-variant-numeric:tabular-nums;border:1px solid var(--rule);border-radius:4px;padding:2px 7px}
+.qsheet__body{padding:20px 18px 18px;display:flex;flex-direction:column;gap:18px}
+.qtext{font-family:var(--serif);font-size:19.5px;line-height:1.45;margin:0;font-weight:500;text-wrap:pretty}
+.answerline{display:flex;flex-direction:column;gap:6px}
+.answerline label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.answerline textarea{font:inherit;font-size:17px;line-height:32px;color:var(--ink);width:100%;
+  min-height:98px;resize:vertical;border:0;border-radius:0;padding:0 2px;
+  background:transparent repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--rule) 31px,var(--rule) 32px);
+  background-attachment:local}
+.answerline textarea:focus{outline:none;background:transparent repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--brand) 31px,var(--brand) 32px);background-attachment:local}
+.counter{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.counter .is-long{color:var(--warn)}
+.qfoot{display:flex;justify-content:space-between;gap:10px;align-items:center}
+
+/* review list */
+.rlist{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--card)}
+.rlist li{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:start;
+  padding:12px 14px;border-bottom:1px solid var(--line)}
+.rlist li:last-child{border-bottom:0}
+.rlist .n{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:2px;font-variant-numeric:tabular-nums}
+.rlist .q{font-size:14px;color:var(--ink-2);margin:0 0 3px}
+.rlist .a{margin:0;font-size:15px;overflow-wrap:anywhere}
+.rlist .a.is-empty{color:var(--bad);font-family:var(--mono);font-size:12.5px}
+.linkbtn{background:none;border:0;color:var(--brand);font-family:var(--mono);font-size:12px;cursor:pointer;padding:4px 0}
+.warnbox{background:var(--warn-tint);border:1px solid var(--warn);border-radius:var(--radius);
+  padding:12px 14px;color:var(--ink);font-size:14.5px}
+.warnbox b{color:var(--warn)}
+
+/* results */
+.scorecard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.scorecard__main{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;padding:20px 18px}
+.dial{width:108px;height:108px;position:relative}
+.dial svg{width:100%;height:100%;transform:rotate(-90deg)}
+.dial .pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.dial .pct b{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.dial .pct span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.verdict h2{margin-bottom:4px}
+.verdict p{margin:0;color:var(--ink-2);font-size:14.5px}
+.scorecard__stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.scorecard__stats div{padding:11px 14px;border-right:1px solid var(--line)}
+.scorecard__stats div:last-child{border-right:0}
+.scorecard__stats b{display:block;font-family:var(--mono);font-size:16px;white-space:nowrap;font-weight:500;font-variant-numeric:tabular-nums}
+.scorecard__stats span{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.subjrows{display:flex;flex-direction:column;gap:10px}
+.subjrow{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:12px;align-items:center;font-size:14px}
+.subjrow .bar{height:8px;border-radius:5px;background:var(--line);overflow:hidden}
+.subjrow .bar i{display:block;height:100%;background:var(--s);border-radius:5px;transition:width .3s ease}
+.subjrow .v{font-family:var(--mono);font-size:12px;text-align:right;white-space:nowrap;color:var(--ink-2);font-variant-numeric:tabular-nums}
+
+.marklist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.mitem{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.mitem__body{padding:14px 18px 16px;display:flex;flex-direction:column;gap:12px}
+.mitem .qtext{font-size:16.5px}
+.ansgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ansbox{border-radius:8px;padding:10px 12px;min-width:0}
+.ansbox span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
+.ansbox p{margin:0;font-size:15px;overflow-wrap:anywhere}
+.ansbox--you{border:1px solid var(--rule)}
+.ansbox--key{background:var(--good-tint)}
+.ansbox--key p{font-weight:600}
+.ansbox p.is-empty{color:var(--ink-3);font-style:italic}
+.why{margin:0;font-size:14px;color:var(--ink-2)}
+.why .ref{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+.markrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding-top:12px;border-top:1px dashed var(--line)}
+.auto{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.auto.is-hit{color:var(--good)}
+.auto.is-miss{color:var(--bad)}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:var(--card);padding:8px 14px;font-family:var(--mono);font-size:13px;
+  cursor:pointer;color:var(--ink-2);min-width:52px;min-height:38px;font-variant-numeric:tabular-nums}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"].v1{background:var(--good);color:var(--on-brand)}
+.seg button[aria-pressed="true"].vh{background:var(--warn);color:var(--on-brand)}
+.seg button[aria-pressed="true"].v0{background:var(--bad);color:var(--on-brand)}
+.mitem__head .earned{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+
+.nextnote{margin:12px 0 0;font-size:14px;color:var(--ink-2);max-width:60ch}
+#retakebox{display:contents}
+#retakebox .confirm{flex-basis:100%}
+.confirm{border:1px solid var(--bad);background:var(--bad-tint);border-radius:var(--radius);padding:14px;
+  display:flex;flex-direction:column;gap:10px}
+.confirm p{margin:0;font-size:14.5px}
+.foot{border-top:1px solid var(--line);padding-block:20px 28px;font-family:var(--mono);font-size:11.5px;
+  color:var(--ink-3);display:flex;flex-direction:column;gap:3px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:20;width:100%;height:100%}
+
+@media (max-width:480px){
+  h1{font-size:26px}
+  .qtext{font-size:18px}
+  .ansgrid{grid-template-columns:1fr}
+  .subjrow{grid-template-columns:112px minmax(0,1fr) auto;gap:8px;line-height:1.3}
+  .scorecard__stats b{font-size:14px}
+  .scorecard__stats div{padding:10px}
+  .scorecard__main{grid-template-columns:1fr;justify-items:start}
+  .paperspec b{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="brandlink" id="brandlink" href="#top" aria-label="MEDucation">
+      <span class="mark"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="50" cy="50" r="40"/><path d="M35 28 v14 a15 15 0 0 0 30 0 V28"/><path d="M50 57 v9"/><circle cx="50" cy="72" r="6"/></svg></span>
+      <span class="wordmark">MED<em>ucation</em></span>
+    </a>
+    <span class="masthead__right">
+      <a class="backlink" id="backlink" href="../#/b/git" hidden>← GIT</a>
+      <button class="themebtn" id="themebtn" type="button" aria-label="Switch between light and dark"></button>
+    </span>
+  </div>
+</header>
+<div id="bar"></div>
+<main id="app" class="wrap"></main>
+<canvas id="fx" hidden></canvas>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- subjects & weights ----------
+   Points per question are estimates of each subject's teaching load in the
+   module, kept in the range the deanery described (heavy subjects ~0.7-0.8,
+   light ones ~0.2-0.3). The real paper prints its own values on the day. */
+const SUBJ = {
+  micro:  {name:"Microbiology",      cls:"s-micro",  w:0.80},
+  path:   {name:"Pathology",         cls:"s-path",   w:0.70},
+  anat:   {name:"Anatomy",           cls:"s-anat",   w:0.65},
+  histo:  {name:"Histology",         cls:"s-histo",  w:0.50},
+  physio: {name:"Physiology",        cls:"s-physio", w:0.50},
+  pharm:  {name:"Pharmacology",      cls:"s-pharm",  w:0.40},
+  cm:     {name:"Community Medicine",cls:"s-cm",     w:0.40},
+  bio:    {name:"Biochemistry",      cls:"s-bio",    w:0.25},
+  gen:    {name:"Genetics",          cls:"s-gen",    w:0.25},
+  radio:  {name:"Radiology",         cls:"s-radio",  w:0.25}
+};
+
+/* ---------- the papers ---------- */
+const PAPER_A = [
+  {s:"micro", ref:"Microbiology SGL 7 · Vibrio cholerae",
+   q:"A stool sample from a patient with sudden, painless rice-water diarrhoea is sent for culture. Name the selective medium classically used to isolate <i>Vibrio cholerae</i>.",
+   a:"TCBS agar (thiosulphate–citrate–bile salts–sucrose)",
+   why:"TCBS is the selective medium widely used for V. cholerae. On MacConkey the colonies look colourless because lactose is fermented slowly.",
+   ok:[/\btcbs\b/, /thiosul/]},
+  {s:"micro", ref:"Microbiology LG 4 · Enterobius vermicularis",
+   q:"A 7-year-old girl scratches her perianal area every night. What is the main diagnostic method for <i>Enterobius vermicularis</i>?",
+   a:"Adhesive cellophane (Scotch) tape applied to the perianal area to pick up the eggs",
+   why:"The gravid female lays her eggs on the perianal skin at night, so the eggs are collected there with adhesive tape. In heavy infection the adult female can be seen at night.",
+   ok:[/tape/, /cellophan/, /scotch/, /sellotape/, /adhesive/]},
+  {s:"path", ref:"Pathology LG 1 · Oral cavity & salivary glands",
+   q:"What is the most common primary malignant tumour of the salivary glands?",
+   a:"Mucoepidermoid carcinoma",
+   why:"It is made of squamous, mucus-secreting and intermediate cells. Pleomorphic adenoma is commoner overall, but it is benign.",
+   ok:[/muco\s*epidermoid/]},
+  {s:"path", ref:"Pathology LG 2 · Esophagus",
+   q:"Long-standing gastro-oesophageal reflux causes acquired glandular metaplasia of the distal oesophagus. Name this condition.",
+   a:"Barrett oesophagus",
+   why:"It carries a risk of progression to adenocarcinoma, with dysplasia as the intermediate stage. Most oesophageal adenocarcinomas arise from it.",
+   ok:[/barr?ett?/]},
+  {s:"anat", ref:"Anatomy LG 1 · Oral cavity, palate & salivary glands",
+   q:"Preganglionic parasympathetic (secretomotor) fibres to the parotid gland relay in which ganglion?",
+   a:"Otic ganglion",
+   why:"Inferior salivatory nucleus (CN IX) → otic ganglion → auriculotemporal nerve (V3). The submandibular and sublingual glands relay in the submandibular ganglion.",
+   ok:[/\botic\b/]},
+  {s:"anat", ref:"Anatomy SGL 2 · Peritoneum",
+   q:"Which peritoneal recess is the most dependent part of the abdominal cavity when the patient is supine?",
+   a:"Hepatorenal pouch (Morison's pouch)",
+   why:"It lies between the liver and the front of the right kidney, so blood, pus and ascitic fluid collect there first; the right paracolic gutter links it to the pelvis.",
+   ok:[/hepato\s*renal/, /morr?is+on/]},
+  {s:"histo", ref:"Histology SGL 2 · Small intestine",
+   q:"Name the submucosal glands that identify the duodenum histologically and secrete alkaline mucus.",
+   a:"Brunner's glands (duodenal glands)",
+   why:"Their alkaline mucus protects the duodenal lining from acid chyme and brings the contents to the optimum pH for pancreatic enzymes.",
+   ok:[/brunn?er/, /duodenal\s*gland/]},
+  {s:"histo", ref:"Histology SGL 4 · Liver & extrahepatic biliary apparatus",
+   q:"Which liver cells, lying in the space of Disse, store vitamin A in cytoplasmic lipid droplets?",
+   a:"Ito cells (fat-storing / hepatic stellate cells)",
+   why:"Besides storing vitamin A, they are a major source of collagen during liver injury and regulate sinusoidal blood flow with contractile processes.",
+   ok:[/\bito\b/, /stellate/, /fat\s*storing/]},
+  {s:"physio", ref:"Physiology SGL 1 · Stomach & duodenum",
+   q:"Which phase of stimulated gastric acid secretion accounts for the largest share (about 60–70%) of acid production?",
+   a:"Gastric phase",
+   why:"Distension and digestion products stimulate G cells to release gastrin. The cephalic phase gives about 20–30% and the intestinal phase about 10%.",
+   ok:[/\bgastric\b/], no:[/cephalic/, /intestinal/]},
+  {s:"physio", ref:"Physiology LG 3 · Defecation",
+   q:"Which nerve supplies the voluntary external anal sphincter?",
+   a:"Pudendal nerve",
+   why:"The external sphincter is striated muscle under somatic control. The internal sphincter is smooth muscle, relaxed by the myenteric plexus and the pelvic parasympathetic nerves.",
+   ok:[/pudend/]},
+  {s:"pharm", ref:"Pharmacology LG 1 · GI parasitic infestations",
+   q:"A patient taking metronidazole for amoebic dysentery drinks alcohol. What reaction may occur?",
+   a:"A disulfiram-like reaction",
+   why:"It presents with nausea, vomiting, sweating, flushing, tachycardia and hypotension.",
+   ok:[/disulf/, /antabuse/]},
+  {s:"cm", ref:"Community Medicine SGL 3 · Food poisoning",
+   q:"A cook with a boil on his hand prepares a wedding meal. Guests start vomiting 2 hours after eating. Which organism is the most likely cause?",
+   a:"Staphylococcus aureus (preformed toxin)",
+   why:"Staphylococcal food poisoning has a 1–8 h incubation because the heat-resistant toxin is already in the food; skin boils are a source. Salmonella takes 12–24 h because it has to multiply in the gut.",
+   ok:[/staph/, /aureus/]},
+  {s:"bio", ref:"Biochemistry LG 1 · Liver function tests",
+   q:"In a liver function panel, an AST level higher than the ALT level points to which type of liver disease?",
+   a:"Alcoholic liver disease",
+   why:"AST > ALT suggests alcoholic liver disease; ALT > AST suggests viral or non-alcoholic disease. ALT is the more liver-specific of the two.",
+   ok:[/alcohol/], no:[/non\s*alcohol/]},
+  {s:"gen", ref:"Genetics LG 1 · GI tract genetic disorders",
+   q:"Familial adenomatous polyposis is caused by loss-of-function mutation of which tumour-suppressor gene?",
+   a:"APC (adenomatous polyposis coli)",
+   why:"Loss of APC function produces hundreds to thousands of colorectal adenomas, with a nearly 100% risk of colorectal cancer if untreated.",
+   ok:[/\bapc\b/, /adenomatous\s*polyposis\s*coli/]},
+  {s:"radio", ref:"Radiology · GIT & hepatobiliary imaging",
+   q:"On a barium enema, what appearance does a malignant stricture of the colon usually produce?",
+   a:"Apple-core appearance",
+   why:"A malignant stricture ends abruptly with shouldering; a benign stricture tapers smoothly. Barium enema is contraindicated if perforation is suspected.",
+   ok:[/apple/]}
+];
+
+const PAPER_B = [
+  {s:"micro", ref:"Microbiology SGL 11 · Hepatitis A and E",
+   q:"Which faeco-orally transmitted hepatitis virus carries a high mortality from acute liver failure when the infection occurs during pregnancy?",
+   a:"Hepatitis E virus (HEV)",
+   why:"Like HAV it is enteric and self-limiting with no carrier state, but infection in pregnancy is associated with acute liver failure and high mortality.",
+   ok:[/\bhev\b/, /\bhep(atitis)?\s*e\b/, /^e$/],
+   no:[/\bhep(atitis)?\s*[abcd]\b/, /\bh[abcd]v\b/]},
+  {s:"micro", ref:"Microbiology SGL 10 · Entamoeba histolytica",
+   q:"On a stained stool smear, what finding inside the trophozoites is diagnostic of <i>Entamoeba histolytica</i> infection?",
+   a:"Ingested red blood cells (intracytoplasmic RBCs)",
+   why:"The trophozoites also show a small, central karyosome. E. dispar looks the same on microscopy, so stool antigen ELISA or PCR is used to confirm.",
+   ok:[/red\s*(blood)?\s*cell/, /\brbcs?\b/, /erythrocyt/]},
+  {s:"path", ref:"Pathology SGL 4 · Inherited metabolic liver disease",
+   q:"In Wilson disease, what are the green-to-brown copper deposits in Descemet's membrane at the limbus of the cornea called?",
+   a:"Kayser–Fleischer rings",
+   why:"Wilson disease is an autosomal recessive loss-of-function mutation of ATP7B (chromosome 13); copper accumulates in the liver, basal ganglia and eye.",
+   ok:[/kayser/, /fleischer/, /\bk\s*f\b/]},
+  {s:"path", ref:"Pathology SGL 2 · Bowel: celiac disease",
+   q:"To confirm suspected celiac disease, from which site are the diagnostic biopsies usually taken?",
+   a:"Second part of the duodenum (or proximal jejunum)",
+   why:"The biopsy shows more intraepithelial CD8+ T lymphocytes, crypt hyperplasia and villous atrophy.",
+   ok:[/duoden/, /jejun/]},
+  {s:"anat", ref:"Anatomy LG 3 · Large intestine",
+   q:"What is the commonest position of the tip of the vermiform appendix?",
+   a:"Retrocaecal (retrocolic)",
+   why:"Retrocaecal is about 65% and pelvic, the second commonest, about 31%. All three teniae coli converge at the base of the appendix, which guides the surgeon to it.",
+   ok:[/retro\s*c(a)?ec/, /retro\s*colic/]},
+  {s:"anat", ref:"Anatomy SGL 1 · Anterior abdominal wall",
+   q:"Below the arcuate line, which layer alone forms the posterior wall of the rectus sheath?",
+   a:"Fascia transversalis",
+   why:"Below the arcuate line (midway between umbilicus and pubic symphysis) all three flat-muscle aponeuroses pass in front of rectus, so the lower abdomen is weaker and more prone to hernia.",
+   ok:[/transversalis/]},
+  {s:"histo", ref:"Histology LG 2 · Gastric mucosa",
+   q:"Which cells of the fundic (gastric) glands secrete intrinsic factor?",
+   a:"Parietal (oxyntic) cells",
+   why:"Parietal cells sit mainly in the neck of the gland and also produce HCl. Intrinsic factor is needed for vitamin B12 absorption.",
+   ok:[/parietal/, /oxyntic/]},
+  {s:"histo", ref:"Histology LG 1 · Basic layers of the GI wall",
+   q:"What type of muscle forms the muscularis externa of the upper third of the oesophagus?",
+   a:"Skeletal (striated) muscle",
+   why:"Skeletal in the upper third, a mixture of skeletal and smooth in the middle third, and smooth muscle in the lower third.",
+   ok:[/skeletal/, /striated/], no:[/smooth/, /mix/]},
+  {s:"physio", ref:"Physiology SGL 2 · Small intestine",
+   q:"Which region of the small intestine is specialised for absorbing vitamin B12 and bile salts?",
+   a:"Ileum (terminal ileum)",
+   why:"The ileum also holds Peyer's patches. The jejunum is the main site for absorbing carbohydrates, proteins and lipids.",
+   ok:[/\bile(um|al)\b/], no:[/jejun/, /duoden/]},
+  {s:"physio", ref:"Physiology LG 1 & 2 · Saliva & swallowing",
+   q:"Which major salivary gland is the main source of unstimulated (resting) saliva?",
+   a:"Submandibular gland",
+   why:"It secretes a mixed serous and mucous saliva. The parotid is mostly serous and amylase-rich, and its share rises strongly during stimulation.",
+   ok:[/submandibular/]},
+  {s:"pharm", ref:"Pharmacology SGL 1 · Acid-related disorders",
+   q:"Which H2-receptor antagonist inhibits cytochrome P450 and so potentiates drugs such as warfarin and phenytoin?",
+   a:"Cimetidine",
+   why:"Cimetidine can also cause male sexual dysfunction and gynaecomastia. H2 antagonists block H2 receptors competitively and reversibly.",
+   ok:[/cimet/]},
+  {s:"cm", ref:"Community Medicine SGL 4 · Diarrhoea",
+   q:"Diarrhoea lasting how long is defined as persistent diarrhoea?",
+   a:"14 days or more",
+   why:"Watery diarrhoea is 3 or more liquid stools in 24 hours; dysentery means blood and/or mucus in the stool.",
+   ok:[/\b14\b/, /fourteen/, /\b(2|two)\s*weeks?\b/]},
+  {s:"bio", ref:"Biochemistry SGL 1 · GIT enzymes & hormones",
+   q:"Which GIT hormone, released from the duodenum and jejunum in response to fatty acids and amino acids, strongly contracts the gallbladder?",
+   a:"Cholecystokinin (CCK)",
+   why:"It expels bile into the small intestine to emulsify fats, and it inhibits stomach contraction.",
+   ok:[/cholecysto/, /\bcck\b/]},
+  {s:"gen", ref:"Genetics LG 1 · GI tract genetic disorders",
+   q:"Peutz–Jeghers syndrome is caused by mutation of which tumour-suppressor gene?",
+   a:"STK11 (also called LKB1)",
+   why:"It causes hamartomatous polyps throughout the GI tract, especially the small intestine, with mucocutaneous pigmentation of the lips and mouth.",
+   ok:[/stk\s*11/, /lkb\s*1/]},
+  {s:"radio", ref:"Radiology · GIT & hepatobiliary imaging",
+   q:"Name the three normal indentations of the oesophagus seen on a barium swallow.",
+   a:"Aortic arch, left main bronchus and left atrium",
+   why:"The aortic arch indentation is more pronounced in the elderly. Barium swallow is the standard contrast study of the oesophagus.",
+   parts:[/aort/, /bronch/, /atri/]}
+];
+
+const PAPERS = {
+  A: {label:"Paper A", q:PAPER_A},
+  B: {label:"Paper B", q:PAPER_B}
+};
+
+const MINUTES = 60;
+const KEYS = {A:"meducation-mock-git-theory-v2", B:"meducation-mock-git-theory-v2-B"};
+const CURKEY = "meducation-mock-git-theory-paper";
+const otherPaper = id => id === "A" ? "B" : "A";
+
+/* ---------- state (one saved attempt per paper) ---------- */
+let P = "A", Q = PAPER_A, TOTALW = 0, S = null;
+const blank = () => ({stage:"intro", name:"", answers:Q.map(()=>""), cur:0,
+  startAt:0, endAt:0, doneAt:0, marks:null, celebrated:false});
+function loadPaper(id){
+  const st = blank();
+  try { const raw = localStorage.getItem(KEYS[id]); if (raw){ const v = JSON.parse(raw);
+    if (v && Array.isArray(v.answers) && v.answers.length === PAPERS[id].q.length) return Object.assign(st, v); } } catch(e){}
+  return st;
+}
+function usePaper(id){
+  P = PAPERS[id] ? id : "A"; Q = PAPERS[P].q;
+  TOTALW = Q.reduce((t,x)=>t+SUBJ[x.s].w,0);
+  S = loadPaper(P);
+  try { localStorage.setItem(CURKEY, P); } catch(e){}
+}
+function save(){ try { localStorage.setItem(KEYS[P], JSON.stringify(S)); } catch(e){} }
+let startId = "A";
+try { const c = localStorage.getItem(CURKEY); if (c && PAPERS[c]) startId = c; } catch(e){}
+usePaper(startId);
+
+/* ---------- helpers ---------- */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
+  .replace(/[’']/g,"").replace(/[^a-z0-9]+/g," ").trim();
+const words = s => (String(s).trim().match(/\S+/g) || []).length;
+const fmt = n => (Math.round(n*100)/100).toFixed(2);
+const fmtRaw = n => Number.isInteger(n) ? String(n) : n.toFixed(1);
+const fmtTime = ms => { const t = Math.max(0, Math.ceil(ms/1000)); const m = Math.floor(t/60), s = t%60;
+  return String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0"); };
+const answeredCount = () => S.answers.filter(a => a.trim()).length;
+
+function markText(q, text){
+  const t = norm(text); if (!t) return 0;
+  if (q.no && q.no.some(r => r.test(t))) return 0;
+  if (q.parts){ const hit = q.parts.filter(r => r.test(t)).length;
+    return hit === q.parts.length ? 1 : (hit*2 >= q.parts.length ? 0.5 : 0); }
+  return q.ok.some(r => r.test(t)) ? 1 : 0;
+}
+function autoMark(i){
+  return markText(Q[i], S.answers[i]);
+}
+function savedResult(id){
+  const st = loadPaperRaw(id); if (!st || st.stage !== "results" || !Array.isArray(st.marks)) return null;
+  const qs = PAPERS[id].q, tot = qs.reduce((t,x)=>t+SUBJ[x.s].w,0);
+  const pts = qs.reduce((t,x,i)=>t+(st.marks[i]||0)*SUBJ[x.s].w,0);
+  return Math.round(pts/tot*100);
+}
+function loadPaperRaw(id){
+  try { const raw = localStorage.getItem(KEYS[id]); return raw ? JSON.parse(raw) : null; } catch(e){ return null; }
+}
+function switchTo(id){
+  const nm = S.name; usePaper(id);
+  if (!S.name && nm){ S.name = nm; save(); }
+  if ((S.stage === "exam" || S.stage === "review") && S.endAt && Date.now() >= S.endAt) submit();
+  else render();
+}
+function scores(){
+  let raw = 0, pts = 0; const bySub = {};
+  Q.forEach((q,i) => {
+    const m = S.marks ? S.marks[i] : 0, w = SUBJ[q.s].w;
+    raw += m; pts += m*w;
+    bySub[q.s] = bySub[q.s] || {got:0, max:0, n:0};
+    bySub[q.s].got += m*w; bySub[q.s].max += w; bySub[q.s].n++;
+  });
+  return {raw, pts, pct: Math.round(pts/TOTALW*100), bySub};
+}
+
+/* ---------- theme toggle (same key as the site) ---------- */
+const SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+function isDark(){ const t = document.documentElement.getAttribute("data-theme");
+  return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function paintThemeBtn(){ $("themebtn").innerHTML = isDark() ? SUN : MOON; }
+try { const t = localStorage.getItem("meducation-theme"); if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t); } catch(e){}
+$("themebtn").addEventListener("click", () => {
+  const next = isDark() ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  try { localStorage.setItem("meducation-theme", next); } catch(e){}
+  paintThemeBtn();
+});
+paintThemeBtn();
+
+/* back link only on the live site (page lives in /exam/) */
+if (/\/exam\/[^/]*$/.test(location.pathname)) {
+  $("backlink").hidden = false;
+  $("brandlink").setAttribute("href", "../");
+}
+
+/* ---------- views ---------- */
+function foot(){
+  return `<footer class="foot"><span>GIT Block · Theory mock · ${PAPERS[P].label} · MEDucation by Mattin Majid</span>
+    <span>Built from this year's GIT lectures. Study alongside the lecture, not instead of it.</span></footer>`;
+}
+
+function viewIntro(){
+  const rows = Object.keys(SUBJ).map(k => {
+    const n = Q.filter(q => q.s === k).length;
+    return `<tr class="${SUBJ[k].cls}"><td><span class="sw"></span>${SUBJ[k].name}</td>
+      <td class="num">${n}</td><td class="num">${fmt(SUBJ[k].w)}</td></tr>`;
+  }).join("");
+  return `<div class="pagehead">
+      <p class="eyebrow">Stage 3 · GIT Block · End-module mock · ${PAPERS[P].label}</p>
+      <h1>Theory paper ${P}</h1>
+      <p class="lede">The same format as tomorrow's theory exam: short answers only, timed, with the point value printed on every question.</p>
+    </div>
+    <div class="stack">
+      <div class="paperspec" role="list">
+        <div role="listitem"><b>15</b><span>Questions</span></div>
+        <div role="listitem"><b>60</b><span>Minutes</span></div>
+        <div role="listitem"><b>~4</b><span>Min each</span></div>
+      </div>
+
+      <section>
+        <h2 class="seclabel">Rules</h2>
+        <ul class="rules">
+          <li>Short answer only: <b>one word, two words, or at most one sentence</b>. No essays, no parts A and B.</li>
+          <li>The timer starts when you begin and does not pause. Refreshing the page keeps your answers and your time.</li>
+          <li>Move between questions freely and change answers until you submit. The paper submits itself at 00:00.</li>
+          <li>After submitting, you mark yourself against the model answers, the way the doctors mark on a 1-point base.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="seclabel">Blueprint</h2>
+        <div class="blueprint"><table>
+          <thead><tr><th>Subject</th><th class="num">Questions</th><th class="num">Points each</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table></div>
+        <p class="note" style="margin-top:14px">Point values are estimates: heavier subjects such as Microbiology weigh about three times the lightest. The real paper prints its own values. Two of the exam's 12 subjects have no lectures on the site yet, so Histology and Physiology take two questions each to keep the paper at 15.</p>
+      </section>
+
+      <form id="startform" class="stack" style="gap:16px;padding-bottom:0" novalidate>
+        <div class="field">
+          <label for="name">Your name (shown on your result)</label>
+          <input class="input" id="name" name="name" type="text" autocomplete="name" maxlength="40" value="${esc(S.name)}" placeholder="Optional">
+        </div>
+        <div class="btnrow"><button class="btn" type="submit">Begin the 60 minutes</button>
+          <button class="btn btn--plain" type="button" data-paper="${otherPaper(P)}">Sit ${PAPERS[otherPaper(P)].label} instead</button></div>
+      </form>
+      ${foot()}
+    </div>`;
+}
+
+function barHtml(){
+  const nav = Q.map((q,i) => {
+    const cls = [S.answers[i].trim() ? "is-done" : "", (S.stage === "exam" && i === S.cur) ? "is-cur" : ""].join(" ");
+    return `<button type="button" class="${cls}" data-go="${i}" aria-label="Question ${i+1}${S.answers[i].trim() ? ", answered" : ""}">${i+1}</button>`;
+  }).join("");
+  return `<div class="exambar"><div class="wrap">
+      <div class="exambar__top">
+        <span class="timer" id="timer" aria-live="off">--:--<small>left</small></span>
+        <span class="answered"><span class="muted">${PAPERS[P].label} · </span><span id="answered">${answeredCount()} / ${Q.length} answered</span></span>
+      </div>
+      <nav class="nav" aria-label="Questions">${nav}
+        <button type="button" class="is-review ${S.stage==="review" ? "is-cur" : ""}" data-go="review">Review</button></nav>
+    </div></div>`;
+}
+
+function viewExam(){
+  const i = S.cur, q = Q[i], sub = SUBJ[q.s], w = words(S.answers[i]);
+  return `<div class="stack" style="padding-top:22px">
+    <article class="qsheet ${sub.cls}">
+      <div class="qsheet__head">
+        <span class="qno">Q${i+1} <span class="muted">of ${Q.length}</span></span>
+        <span class="chip">${sub.name}</span>
+        <span class="pts">${fmt(sub.w)} pt</span>
+      </div>
+      <div class="qsheet__body">
+        <p class="qtext" id="qtext">${q.q}</p>
+        <div class="answerline">
+          <label for="ans">Answer</label>
+          <textarea id="ans" rows="3" maxlength="300" spellcheck="false" aria-describedby="qtext counter">${esc(S.answers[i])}</textarea>
+          <div class="counter" id="counter"><span>One word to one sentence</span><span id="wc" class="${w>30?"is-long":""}">${w} word${w===1?"":"s"}${w>30?" · keep it to one sentence":""}</span></div>
+        </div>
+      </div>
+    </article>
+    <div class="qfoot">
+      <button class="btn btn--plain" type="button" id="prev" ${i===0?"disabled":""}>← Previous</button>
+      ${i < Q.length-1
+        ? `<button class="btn" type="button" id="next">Next →</button>`
+        : `<button class="btn" type="button" id="toreview">Review paper →</button>`}
+    </div>
+    ${foot()}
+  </div>`;
+}
+
+function viewReview(){
+  const missing = Q.map((q,i)=>i).filter(i => !S.answers[i].trim());
+  const list = Q.map((q,i) => {
+    const a = S.answers[i].trim();
+    const plain = q.q.replace(/<[^>]+>/g,"");
+    return `<li><span class="n">Q${i+1}</span>
+      <div><p class="q">${esc(plain)}</p>
+      ${a ? `<p class="a">${esc(a)}</p>` : `<p class="a is-empty">No answer</p>`}</div>
+      <button class="linkbtn" type="button" data-go="${i}">Edit</button></li>`;
+  }).join("");
+  return `<div class="pagehead" style="padding-bottom:16px">
+      <p class="eyebrow">Before you hand it in</p>
+      <h1>Check your paper</h1>
+      <p class="lede">The clock is still running. Tap Edit to change an answer.</p>
+    </div>
+    <div class="stack">
+      ${missing.length ? `<div class="warnbox" role="status"><b>${missing.length} unanswered:</b> Q${missing.map(i=>i+1).join(", Q")}. A blank scores zero; a short guess might not.</div>` : ""}
+      <ul class="rlist">${list}</ul>
+      <div class="btnrow">
+        <button class="btn" type="button" id="submit">${missing.length ? "Submit anyway" : "Submit paper"}</button>
+        <button class="btn btn--plain" type="button" data-go="${S.cur}">Back to questions</button>
+      </div>
+      ${foot()}
+    </div>`;
+}
+
+function verdict(p){
+  if (p >= 80) return ["Ready for tomorrow.", "Skim the model answers below for anything you got by luck."];
+  if (p >= 60) return ["Close.", "Revise the lectures behind the ones you missed tonight, then sleep."];
+  if (p >= 40) return ["Halfway there.", "Go through every model answer below and reread those lectures' key slides."];
+  return ["Start with the model answers.", "Each one is a high-yield fact from the lectures. Learn them, then retake the paper."];
+}
+
+function viewResults(){
+  const sc = scores(), v = verdict(sc.pct), otherDone = savedResult(otherPaper(P));
+  const used = S.doneAt && S.startAt ? Math.min(S.doneAt - S.startAt, MINUTES*60000) : 0;
+  const r = 46, C = 2*Math.PI*r;
+  const subj = Object.keys(SUBJ).map(k => {
+    const b = sc.bySub[k]; if (!b) return "";
+    return `<div class="subjrow ${SUBJ[k].cls}" data-sub="${k}">
+      <span>${SUBJ[k].name}</span><span class="bar"><i style="width:${b.max ? b.got/b.max*100 : 0}%"></i></span>
+      <span class="v">${fmt(b.got)} / ${fmt(b.max)}</span></div>`;
+  }).join("");
+  const items = Q.map((q,i) => {
+    const sub = SUBJ[q.s], a = S.answers[i].trim(), m = S.marks[i], am = autoMark(i);
+    const autoTxt = !a ? "Blank" : (am === 1 ? "Auto-check: matches the key" : am === 0.5 ? "Auto-check: partly matches, check it" : "Auto-check: no match, check it yourself");
+    const autoCls = !a ? "" : (am === 1 ? "is-hit" : am === 0.5 ? "" : "is-miss");
+    return `<li class="mitem ${sub.cls}" id="m${i}">
+      <div class="qsheet__head mitem__head">
+        <span class="qno">Q${i+1}</span><span class="chip">${sub.name}</span>
+        <span class="earned" id="e${i}">${fmt(m*sub.w)} / ${fmt(sub.w)} pt</span>
+      </div>
+      <div class="mitem__body">
+        <p class="qtext">${q.q}</p>
+        <div class="ansgrid">
+          <div class="ansbox ansbox--you"><span>Your answer</span>${a ? `<p>${esc(a)}</p>` : `<p class="is-empty">No answer</p>`}</div>
+          <div class="ansbox ansbox--key"><span>Model answer</span><p>${esc(q.a)}</p></div>
+        </div>
+        <p class="why">${esc(q.why)} <span class="ref">${esc(q.ref)}</span></p>
+        <div class="markrow">
+          <span class="auto ${autoCls}">${autoTxt}</span>
+          <span class="seg" role="group" aria-label="Mark for question ${i+1}">
+            <button type="button" class="v1" data-mark="${i}" data-v="1" aria-pressed="${m===1}">1</button>
+            <button type="button" class="vh" data-mark="${i}" data-v="0.5" aria-pressed="${m===0.5}">½</button>
+            <button type="button" class="v0" data-mark="${i}" data-v="0" aria-pressed="${m===0}">0</button>
+          </span>
+        </div>
+      </div>
+    </li>`;
+  }).join("");
+
+  return `<div class="pagehead" style="padding-bottom:18px">
+      <p class="eyebrow">GIT theory mock · ${PAPERS[P].label} · result${S.name ? " · " + esc(S.name) : ""}</p>
+      <h1>Your paper, marked</h1>
+      <p class="lede">Auto-check suggests a mark for each answer. You have the final say: change any mark below and the score updates.</p>
+    </div>
+    <div class="stack">
+      <section class="scorecard" aria-label="Score">
+        <div class="scorecard__main">
+          <div class="dial" aria-hidden="true">
+            <svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="${r}" fill="none" stroke="var(--line)" stroke-width="9"/>
+              <circle id="dialarc" cx="54" cy="54" r="${r}" fill="none" stroke="var(--brand)" stroke-width="9" stroke-linecap="round"
+                stroke-dasharray="${C}" stroke-dashoffset="${C*(1-sc.pct/100)}" style="transition:stroke-dashoffset .4s ease"/></svg>
+            <div class="pct"><b id="pct">${sc.pct}%</b><span>weighted</span></div>
+          </div>
+          <div class="verdict" aria-live="polite"><h2 id="vh">${v[0]}</h2><p id="vp">${v[1]}</p></div>
+        </div>
+        <div class="scorecard__stats">
+          <div><b id="raw">${fmtRaw(sc.raw)} / ${Q.length}</b><span>Raw marks</span></div>
+          <div><b id="pts">${fmt(sc.pts)} / ${fmt(TOTALW)}</b><span>Points</span></div>
+          <div><b>${used ? fmtTime(used) : "--:--"}</b><span>Time used</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="seclabel">By subject</h2>
+        <div class="subjrows" id="subjrows">${subj}</div>
+      </section>
+
+      <section>
+        <h2 class="seclabel">Marking sheet</h2>
+        <ol class="marklist">${items}</ol>
+      </section>
+
+      <section class="nextbox">
+        <h2 class="seclabel">What next</h2>
+        <div class="btnrow">
+          <button class="btn" type="button" data-paper="${otherPaper(P)}">${otherDone === null ? "Take another mock" : "Open " + PAPERS[otherPaper(P)].label}</button>
+          <span id="retakebox"><button class="btn btn--quiet" type="button" id="retake">Retake this paper</button></span>
+        </div>
+        <p class="nextnote">${otherDone === null
+          ? PAPERS[otherPaper(P)].label + ": 15 different questions, same subjects, same 60 minutes."
+          : "You've already sat " + PAPERS[otherPaper(P)].label + " (" + otherDone + "%). Opening it shows that result, and you can retake it from there."}</p>
+      </section>
+      ${foot()}
+    </div>`;
+}
+
+/* ---------- render & wiring ---------- */
+let tick = null;
+function render(scrollTop){
+  const app = $("app");
+  if (S.stage === "exam" || S.stage === "review") $("bar").innerHTML = barHtml(); else $("bar").innerHTML = "";
+  app.innerHTML = S.stage === "intro" ? viewIntro()
+    : S.stage === "exam" ? viewExam()
+    : S.stage === "review" ? viewReview() : viewResults();
+  wire();
+  if (scrollTop !== false) window.scrollTo(0,0);
+  startTick();
+  if (S.stage === "results" && !S.celebrated){
+    S.celebrated = true; save();
+    if (scores().pct >= 80) confetti();
+  }
+}
+
+function go(target){
+  if (target === "review"){ S.stage = "review"; }
+  else { S.stage = "exam"; S.cur = Math.max(0, Math.min(Q.length-1, +target)); }
+  save(); render();
+  if (S.stage === "exam"){ const t = $("ans"); if (t && matchMedia("(pointer:fine)").matches) t.focus(); }
+}
+
+function submit(){
+  S.stage = "results"; S.doneAt = Date.now();
+  S.marks = Q.map((q,i) => autoMark(i));
+  save(); render();
+}
+
+function wire(){
+  document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => go(b.dataset.go)));
+  document.querySelectorAll("[data-paper]").forEach(b => b.addEventListener("click", () => {
+    const f = $("name"); if (f && f.value.trim()){ S.name = f.value.trim().slice(0,40); save(); }
+    switchTo(b.dataset.paper);
+  }));
+  const f = $("startform");
+  if (f) f.addEventListener("submit", e => {
+    e.preventDefault();
+    S.name = $("name").value.trim().slice(0,40);
+    S.stage = "exam"; S.cur = 0; S.startAt = Date.now(); S.endAt = S.startAt + MINUTES*60000;
+    save(); render();
+  });
+  const ans = $("ans");
+  if (ans){
+    ans.addEventListener("input", () => {
+      S.answers[S.cur] = ans.value; save();
+      const w = words(ans.value), wc = $("wc");
+      wc.textContent = `${w} word${w===1?"":"s"}${w>30?" · keep it to one sentence":""}`;
+      wc.className = w > 30 ? "is-long" : "";
+      const nb = document.querySelector(`.nav [data-go="${S.cur}"]`);
+      if (nb) nb.classList.toggle("is-done", !!ans.value.trim());
+      $("answered").textContent = `${answeredCount()} / ${Q.length} answered`;
+    });
+    ans.addEventListener("keydown", e => {
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); go(S.cur < Q.length-1 ? S.cur+1 : "review"); }
+    });
+  }
+  const p = $("prev"); if (p) p.addEventListener("click", () => go(S.cur-1));
+  const n = $("next"); if (n) n.addEventListener("click", () => go(S.cur+1));
+  const tr = $("toreview"); if (tr) tr.addEventListener("click", () => go("review"));
+  const sb = $("submit"); if (sb) sb.addEventListener("click", submit);
+
+  document.querySelectorAll("[data-mark]").forEach(b => b.addEventListener("click", () => {
+    const i = +b.dataset.mark, v = +b.dataset.v;
+    S.marks[i] = v; save();
+    b.parentElement.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(+x.dataset.v === v)));
+    $("e"+i).textContent = `${fmt(v*SUBJ[Q[i].s].w)} / ${fmt(SUBJ[Q[i].s].w)} pt`;
+    refreshScore();
+  }));
+  const rt = $("retake");
+  if (rt) rt.addEventListener("click", () => {
+    $("retakebox").innerHTML = `<div class="confirm" role="alertdialog" aria-label="Confirm retake">
+      <p>This clears your answers and marks so you can sit the paper again.</p>
+      <div class="btnrow"><button class="btn btn--danger" type="button" id="doretake">Clear and retake</button>
+      <button class="btn btn--plain" type="button" id="cancelretake">Keep my result</button></div></div>`;
+    $("doretake").addEventListener("click", () => { const nm = S.name; S = blank(); S.name = nm; save(); render(); });
+    $("cancelretake").addEventListener("click", () => render(false));
+  });
+}
+
+function refreshScore(){
+  const sc = scores(), v = verdict(sc.pct), C = 2*Math.PI*46;
+  $("pct").textContent = sc.pct + "%";
+  $("dialarc").setAttribute("stroke-dashoffset", C*(1-sc.pct/100));
+  $("raw").textContent = `${fmtRaw(sc.raw)} / ${Q.length}`;
+  $("pts").textContent = `${fmt(sc.pts)} / ${fmt(TOTALW)}`;
+  $("vh").textContent = v[0]; $("vp").textContent = v[1];
+  Object.keys(sc.bySub).forEach(k => {
+    const row = document.querySelector(`.subjrow[data-sub="${k}"]`); if (!row) return;
+    const b = sc.bySub[k];
+    row.querySelector("i").style.width = (b.max ? b.got/b.max*100 : 0) + "%";
+    row.querySelector(".v").textContent = `${fmt(b.got)} / ${fmt(b.max)}`;
+  });
+}
+
+function startTick(){
+  clearInterval(tick); tick = null;
+  if (S.stage !== "exam" && S.stage !== "review") return;
+  const paint = () => {
+    const left = S.endAt - Date.now(), el = $("timer");
+    if (left <= 0){ clearInterval(tick); tick = null; submit(); return; }
+    if (el){
+      el.firstChild.nodeValue = fmtTime(left);
+      el.classList.toggle("is-low", left <= 10*60000 && left > 60000);
+      el.classList.toggle("is-crit", left <= 60000);
+    }
+  };
+  paint(); tick = setInterval(paint, 500);
+}
+
+/* ---------- confetti (80%+) ---------- */
+function confetti(){
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const cv = $("fx"), ctx = cv.getContext("2d"); if (!ctx) return;
+  cv.hidden = false;
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  const W = cv.width = innerWidth*dpr, H = cv.height = innerHeight*dpr;
+  const cols = ["#B3322B","#1B7A4B","#1F5FA8","#6B3FA0","#C2610A","#0F6E72","#A32552"];
+  const ps = Array.from({length:140}, () => ({x:W*(.2+Math.random()*.6), y:H*.35, vx:(Math.random()-.5)*14*dpr,
+    vy:(-6-Math.random()*10)*dpr, r:(3+Math.random()*4)*dpr, c:cols[Math.random()*cols.length|0], a:Math.random()*6, s:(Math.random()-.5)*.3}));
+  const t0 = performance.now();
+  (function frame(t){
+    const e = t - t0; ctx.clearRect(0,0,W,H);
+    ps.forEach(p => { p.vy += .35*dpr; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.a += p.s;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.a); ctx.globalAlpha = Math.max(0, 1 - e/2600);
+      ctx.fillStyle = p.c; ctx.fillRect(-p.r, -p.r/2, p.r*2, p.r); ctx.restore(); });
+    if (e < 2600) requestAnimationFrame(frame); else { ctx.clearRect(0,0,W,H); cv.hidden = true; }
+  })(t0);
+}
+
+/* resume: a paper whose time ran out while away gets submitted */
+if ((S.stage === "exam" || S.stage === "review") && S.endAt && Date.now() >= S.endAt) submit();
+else render();
+
+/* test hook for the self-check (no effect on students) */
+window.__mockSelfTest = () => Object.keys(PAPERS).flatMap(id => PAPERS[id].q.map((q,i) => ({paper:id, i:i+1, key:q.a, mark:markText(q, q.a)})));
+})();
+</script>
+</body>
+</html>

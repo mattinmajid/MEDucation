@@ -516,7 +516,6 @@
 }
         ],
         "pharmacology": [
-          
           {
             "code": "LG 1",
             "title": "Treatment of GI Parasitic Infestations",
@@ -524,62 +523,76 @@
             "published": true,
             "pdf": "git-pharmacology-lg-1.pdf",
             "pdf_note": "5 pages",
+            "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf",
             "mcq": "git-pharmacology-lg-1-mcq.pdf",
-            "mcq_note": "20 questions · answer key",
-            "lecture_pdf": "git-pharmacology-lg-1-lecture.pdf"
+            "mcq_note": "20 questions · answer key"
           },
-[
-  {
-    "code": "git-pharmacology-lg-2",
-    "title": "Antiemetic Drugs",
-    "lecturer": "Dr. [confirm lecturer name]",
-    "published": true,
-    "pdf": "git-pharmacology-lg-2.pdf",
-    "pdf_note": "4-page summary + 4-page MCQ set (20 Q, 4E/10M/6H) + original lecture PDF"
-  },
- {
-    "code": "git-pharmacology-lg-3",
-    "title": "Laxatives and Anti-Diarrhoeal Agents",
-    "lecturer": "Dr. Nermin Jamal",
-    "published": true,
-    "pdf": "git-pharmacology-lg-3.pdf",
-    "pdf_note": "4-page summary + 4-page MCQ set (20 Q, 4E/10M/6H) + original lecture PDF"
-  },
-{
+          {
+            "code": "LG 2",
+            "title": "Emetic and Antiemetic Drugs",
+            "lecturer": "Dr. Jangi Shawkat Salai",
+            "published": true,
+            "pdf": "git-pharmacology-lg-2.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-lg-2-lecture.pdf",
+            "mcq": "git-pharmacology-lg-2-mcq.pdf",
+            "mcq_note": "20 questions · answer key"
+          },
+          {
+            "code": "LG 3",
+            "title": "Laxatives and Anti-Diarrhoeal Agents",
+            "lecturer": "Dr. Nermin Jamal",
+            "published": true,
+            "pdf": "git-pharmacology-lg-3.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-lg-3-lecture.pdf",
+            "mcq": "git-pharmacology-lg-3-mcq.pdf",
+            "mcq_note": "20 questions · answer key"
+          },
+          {
             "code": "SGL 1",
             "title": "Drugs for Acid-Related Disorders",
             "lecturer": "Dr. Begard O. Berzinji",
             "published": true,
             "pdf": "git-pharmacology-sgl-1.pdf",
             "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf",
             "mcq": "git-pharmacology-sgl-1-mcq.pdf",
-            "mcq_note": "20 questions · answer key",
-            "lecture_pdf": "git-pharmacology-sgl-1-lecture.pdf"
+            "mcq_note": "20 questions · answer key"
           },
-  {
-    "code": "git-pharmacology-sgl-2",
-    "title": "Drugs in Bowel Diseases",
-    "lecturer": "Dr. Jangi Shawkat Salai",
-    "published": true,
-    "pdf": "git-pharmacology-sgl-2.pdf",
-    "pdf_note": "4-page summary + 5-page MCQ set (20 Q, 4E/10M/6H) + original lecture PDF"
-  },
-  {
-    "code": "git-pharmacology-sgl-3",
-    "title": "GIT Infection and Antiviral Drugs",
-    "lecturer": "Dr. Jangi Shawkat Salai",
-    "published": true,
-    "pdf": "git-pharmacology-sgl-3.pdf",
-    "pdf_note": "4-page summary + 4-page MCQ set (20 Q, 4E/10M/6H) + original lecture PDF"
-  },
-  {
-    "code": "git-pharmacology-sgl-4",
-    "title": "Drug-Induced Liver Injury",
-    "lecturer": "Assist. Prof. Nidhal Abdulkader & Nermin Jamal",
-    "published": true,
-    "pdf": "git-pharmacology-sgl-4.pdf",
-    "pdf_note": "4-page summary + 5-page MCQ set (20 Q, 4E/10M/6H) + original lecture PDF"
-  }
+          {
+            "code": "SGL 2",
+            "title": "Drugs in Bowel Diseases",
+            "lecturer": "Dr. Jangi Shawkat Salai",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-2.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-sgl-2-lecture.pdf",
+            "mcq": "git-pharmacology-sgl-2-mcq.pdf",
+            "mcq_note": "20 questions · answer key"
+          },
+          {
+            "code": "SGL 3",
+            "title": "GIT Infection and Antiviral Drugs",
+            "lecturer": "Dr. Jangi Shawkat Salai",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-3.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-sgl-3-lecture.pdf",
+            "mcq": "git-pharmacology-sgl-3-mcq.pdf",
+            "mcq_note": "20 questions · answer key"
+          },
+          {
+            "code": "SGL 4",
+            "title": "Drug-Induced Liver Injury",
+            "lecturer": "Assist. Prof. Nidhal Abdulkader & Nermin Jamal",
+            "published": true,
+            "pdf": "git-pharmacology-sgl-4.pdf",
+            "pdf_note": "4 pages",
+            "lecture_pdf": "git-pharmacology-sgl-4-lecture.pdf",
+            "mcq": "git-pharmacology-sgl-4-mcq.pdf",
+            "mcq_note": "20 questions · answer key"
+          }
         ],
         "pathology": [
           {
@@ -746,12 +759,13 @@
       },
       "exam": {
         "id": "git",
-        "title": "GIT Block mock exam",
+        "title": "GIT Block theory mock",
         "theme": "pathology",
-        "questions": 30,
-        "minutes": 30,
-        "state": "closed",
-        "note": "opens October"
+        "questions": 15,
+        "minutes": 60,
+        "state": "open",
+        "note": "Papers A & B · short answer",
+        "url": "exam/git-theory.html"
       }
     },
     {
