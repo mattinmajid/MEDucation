@@ -817,11 +817,8 @@
   "schedule": {
     "title": "Weekly schedule",
     "weeks": [
-      {
-        "label": "27 Sep – 17 Oct 2026 (W4–W6)",
-        "pdf": "schedule-2026-09-27.pdf",
-        "note": "GIT Module — through End Module Exam"
-      }
+      "weeks": [
+  { "label": "17 Oct – 12 Nov 2026 (W1–W4)", "pdf": "schedule-2026-10-17.pdf", "note": "GUE Module" }
     ]
   }
 }
