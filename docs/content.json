@@ -814,11 +814,10 @@
       }
     }
   ],
-  "schedule": {
+   "schedule": {
     "title": "Weekly schedule",
     "weeks": [
-      "weeks": [
-  { "label": "17 Oct – 12 Nov 2026 (W1–W4)", "pdf": "schedule-2026-10-17.pdf", "note": "GUE Module" }
+      { "label": "17 Oct – 12 Nov 2026 (W1–W4)", "pdf": "schedule-2026-10-17.pdf", "note": "GUE Module" }
     ]
   }
 }
