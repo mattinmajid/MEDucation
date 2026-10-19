@@ -776,6 +776,7 @@
         "anatomy": ["anatomy": [
   { "code": "LG 1", "title": "Pelvis & Perineum", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "pdf": "gue-anatomy-lg-1.pdf", "pdf_note": "4 pages", "lecture_pdf": "gue-anatomy-lg-1-lecture.pdf", "mcq": "gue-anatomy-lg-1-mcq.pdf", "mcq_note": "20 questions" },
   { "code": "SGL 1", "title": "Urinary Tract & Posterior Abdominal Wall", "lecturer": "Dr. Faris Muhammed", "published": true, "pdf": "gue-anatomy-sgl-1.pdf", "pdf_note": "5 pages", "lecture_pdf": "gue-anatomy-sgl-1-lecture.pdf", "mcq": "gue-anatomy-sgl-1-mcq.pdf", "mcq_note": "20 questions" }
+]
 ],
         "physiology": [],
         "biochemistry": [],
