@@ -777,13 +777,121 @@
   { "code": "LG 1", "title": "Pelvis & Perineum", "lecturer": "Dr. Nali Abdulkader Maaruf", "published": true, "pdf": "gue-anatomy-lg-1.pdf", "pdf_note": "4 pages", "lecture_pdf": "gue-anatomy-lg-1-lecture.pdf", "mcq": "gue-anatomy-lg-1-mcq.pdf", "mcq_note": "20 questions" },
   { "code": "SGL 1", "title": "Urinary Tract & Posterior Abdominal Wall", "lecturer": "Dr. Faris Muhammed", "published": true, "pdf": "gue-anatomy-sgl-1.pdf", "pdf_note": "5 pages", "lecture_pdf": "gue-anatomy-sgl-1-lecture.pdf", "mcq": "gue-anatomy-sgl-1-mcq.pdf", "mcq_note": "20 questions" }
 ],
-        "physiology": [],
+        "physiology": [
+{
+  "code": "SGL 1",
+  "title": "Physiology of Urine Formation",
+  "lecturer": "Dr. Dler Qader Gallaly",
+  "published": true,
+  "pdf": "gue-physiology-sgl-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-physiology-sgl-1-lecture.pdf",
+  "mcq": "gue-physiology-sgl-1-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 2",
+  "title": "Renal Acid-Base Balance",
+  "lecturer": "Dr. Sara M. Khidhir",
+  "published": true,
+  "pdf": "gue-physiology-sgl-2.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-physiology-sgl-2-lecture.pdf",
+  "mcq": "gue-physiology-sgl-2-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "LG 1",
+  "title": "Water & Electrolyte Balance by the Kidneys",
+  "lecturer": "Assist. Prof. Dr. Sherwan R Shal",
+  "published": true,
+  "pdf": "gue-physiology-lg-1.pdf",
+  "pdf_note": "5 pages",
+  "lecture_pdf": "gue-physiology-lg-1-lecture.pdf",
+  "mcq": "gue-physiology-lg-1-mcq.pdf",
+  "mcq_note": "20 questions"
+}
+],
         "biochemistry": [],
         "histology": [],
         "genetics": [],
-        "microbiology": [],
-        "pharmacology": [],
-        "pathology": []
+        "microbiology": [
+{
+  "code": "LG 1",
+  "title": "Blood Flukes (Schistosomes)",
+  "lecturer": "Dr Niyan Inaam Muhammed Yousif",
+  "published": true,
+  "pdf": "gue-microbiology-lg-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-microbiology-lg-1-lecture.pdf",
+  "mcq": "gue-microbiology-lg-1-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "LG 2",
+  "title": "Staphylococcus saprophyticus and Enterococcus",
+  "lecturer": "Dr Samira Fattah",
+  "published": true,
+  "pdf": "gue-microbiology-lg-2.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-microbiology-lg-2-lecture.pdf",
+  "mcq": "gue-microbiology-lg-2-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 1",
+  "title": "E. coli, Klebsiella, Proteus and Enterobacter spp.",
+  "lecturer": "Dr Samira Fattah",
+  "published": true,
+  "pdf": "gue-microbiology-sgl-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-microbiology-sgl-1-lecture.pdf",
+  "mcq": "gue-microbiology-sgl-1-mcq.pdf",
+  "mcq_note": "20 questions"
+}
+],
+        "pharmacology": [
+{
+  "code": "SGL 1",
+  "title": "Female Sex Hormones and Contraception",
+  "lecturer": "Dr. Chro Yaseen Qader",
+  "published": true,
+  "pdf": "gue-pharmacology-sgl-1.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-pharmacology-sgl-1-lecture.pdf",
+  "mcq": "gue-pharmacology-sgl-1-mcq.pdf",
+  "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 2",
+  "title": "Drugs Used for Infertility and Assisted Reproduction",
+  "lecturer": "Dr. Chro Yaseen Qader",
+  "published": true,
+  "pdf": "gue-pharmacology-sgl-2.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-pharmacology-sgl-2-lecture.pdf",
+  "mcq": "gue-pharmacology-sgl-2-mcq.pdf",
+  "mcq_note": "20 questions"
+}
+],
+        "pathology": [
+{
+  "code": "SGL 1 · I",
+  "title": "Tubular & Tubulointerstitial Diseases",
+  "lecturer": "",
+  "published": true,
+  "pdf": "gue-pathology-sgl-1-i.pdf",
+  "pdf_note": "4 pages"
+},
+{
+  "code": "SGL 1 · II",
+  "title": "Renal Stones & Cystic Diseases of the Kidney",
+  "lecturer": "",
+  "published": true,
+  "pdf": "gue-pathology-sgl-1-ii.pdf",
+  "pdf_note": "5 pages"
+}
+]
       }
     },
     {
