@@ -848,6 +848,17 @@
   "lecture_pdf": "gue-microbiology-sgl-1-lecture.pdf",
   "mcq": "gue-microbiology-sgl-1-mcq.pdf",
   "mcq_note": "20 questions"
+},
+{
+  "code": "SGL 2",
+  "title": "Poststreptococcal Glomerulonephritis and IgA Nephropathy",
+  "lecturer": "Prof. Dr. Ruqaya M. Al Barzinji",
+  "published": true,
+  "pdf": "gue-microbiology-sgl-2.pdf",
+  "pdf_note": "4 pages",
+  "lecture_pdf": "gue-microbiology-sgl-2-lecture.pdf",
+  "mcq": "gue-microbiology-sgl-2-mcq.pdf",
+  "mcq_note": "20 questions"
 }
 ],
         "pharmacology": [
