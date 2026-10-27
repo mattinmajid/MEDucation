@@ -814,7 +814,19 @@
 ],
         "biochemistry": [],
         "histology": [],
-        "genetics": [],
+        "genetics": [
+{
+  "code": "LG 1",
+  "title": "Genetic Disorders of the Urinary Tract",
+  "lecturer": "Assist. Prof. Dr. Evan Latef Khlef",
+  "published": true,
+  "pdf": "gue-genetics-lg-1.pdf",
+  "pdf_note": "5 pages",
+  "lecture_pdf": "gue-genetics-lg-1-lecture.pdf",
+  "mcq": "gue-genetics-lg-1-mcq.pdf",
+  "mcq_note": "20 questions"
+}
+],
         "microbiology": [
 {
   "code": "LG 1",
