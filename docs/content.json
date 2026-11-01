@@ -968,6 +968,17 @@
   "lecture_pdf": "gue-pathology-lg-1-lecture.pdf",
   "mcq": "gue-pathology-lg-1-mcq.pdf",
   "mcq_note": "20 questions"
+},
+{
+  "code": "LG 2",
+  "title": "Diseases of Vulva, Vagina & Cervix",
+  "lecturer": "Dr. Zheen Othman Hama Faraj",
+  "published": true,
+  "pdf": "gue-pathology-lg-2.pdf",
+  "pdf_note": "5 pages",
+  "lecture_pdf": "gue-pathology-lg-2-lecture.pdf",
+  "mcq": "gue-pathology-lg-2-mcq.pdf",
+  "mcq_note": "20 questions"
 }
 ]
       }
